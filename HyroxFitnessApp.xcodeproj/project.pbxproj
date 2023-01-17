@@ -1,0 +1,645 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		097229D2296CAFE7006F55CA /* HyroxFitnessAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097229D1296CAFE7006F55CA /* HyroxFitnessAppApp.swift */; };
+		097229D4296CAFE7006F55CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097229D3296CAFE7006F55CA /* ContentView.swift */; };
+		097229D6296CAFE9006F55CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 097229D5296CAFE9006F55CA /* Assets.xcassets */; };
+		097229D9296CAFE9006F55CA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 097229D8296CAFE9006F55CA /* Preview Assets.xcassets */; };
+		097229E3296CAFEA006F55CA /* HyroxFitnessAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097229E2296CAFEA006F55CA /* HyroxFitnessAppTests.swift */; };
+		097229ED296CAFEA006F55CA /* HyroxFitnessAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097229EC296CAFEA006F55CA /* HyroxFitnessAppUITests.swift */; };
+		097229EF296CAFEA006F55CA /* HyroxFitnessAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097229EE296CAFEA006F55CA /* HyroxFitnessAppUITestsLaunchTests.swift */; };
+		09722A37296F02FB006F55CA /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 09722A36296F02FA006F55CA /* FirebaseAuth */; };
+		09722A39296F02FB006F55CA /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 09722A38296F02FB006F55CA /* FirebaseFirestore */; };
+		09722A3F296F1A69006F55CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09722A3E296F1A69006F55CA /* GoogleService-Info.plist */; };
+		09722A41296F28F7006F55CA /* WorkOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09722A40296F28F7006F55CA /* WorkOutView.swift */; };
+		09722A43296F2B17006F55CA /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09722A42296F2B17006F55CA /* DataManager.swift */; };
+		09722A45296F6DCF006F55CA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09722A44296F6DCF006F55CA /* User.swift */; };
+		09722A85297320E7006F55CA /* CustomNavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09722A84297320E7006F55CA /* CustomNavBarView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		097229DF296CAFEA006F55CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 097229C6296CAFE7006F55CA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 097229CD296CAFE7006F55CA;
+			remoteInfo = HyroxFitnessApp;
+		};
+		097229E9296CAFEA006F55CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 097229C6296CAFE7006F55CA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 097229CD296CAFE7006F55CA;
+			remoteInfo = HyroxFitnessApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		097229CE296CAFE7006F55CA /* HyroxFitnessApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HyroxFitnessApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		097229D1296CAFE7006F55CA /* HyroxFitnessAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyroxFitnessAppApp.swift; sourceTree = "<group>"; };
+		097229D3296CAFE7006F55CA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		097229D5296CAFE9006F55CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		097229D8296CAFE9006F55CA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		097229DE296CAFEA006F55CA /* HyroxFitnessAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HyroxFitnessAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		097229E2296CAFEA006F55CA /* HyroxFitnessAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyroxFitnessAppTests.swift; sourceTree = "<group>"; };
+		097229E8296CAFEA006F55CA /* HyroxFitnessAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HyroxFitnessAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		097229EC296CAFEA006F55CA /* HyroxFitnessAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyroxFitnessAppUITests.swift; sourceTree = "<group>"; };
+		097229EE296CAFEA006F55CA /* HyroxFitnessAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyroxFitnessAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		09722A3E296F1A69006F55CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		09722A40296F28F7006F55CA /* WorkOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkOutView.swift; sourceTree = "<group>"; };
+		09722A42296F2B17006F55CA /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		09722A44296F6DCF006F55CA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		09722A84297320E7006F55CA /* CustomNavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBarView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		097229CB296CAFE7006F55CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09722A37296F02FB006F55CA /* FirebaseAuth in Frameworks */,
+				09722A39296F02FB006F55CA /* FirebaseFirestore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		097229DB296CAFEA006F55CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		097229E5296CAFEA006F55CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		097229C5296CAFE7006F55CA = {
+			isa = PBXGroup;
+			children = (
+				097229D0296CAFE7006F55CA /* HyroxFitnessApp */,
+				097229E1296CAFEA006F55CA /* HyroxFitnessAppTests */,
+				097229EB296CAFEA006F55CA /* HyroxFitnessAppUITests */,
+				097229CF296CAFE7006F55CA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		097229CF296CAFE7006F55CA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				097229CE296CAFE7006F55CA /* HyroxFitnessApp.app */,
+				097229DE296CAFEA006F55CA /* HyroxFitnessAppTests.xctest */,
+				097229E8296CAFEA006F55CA /* HyroxFitnessAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		097229D0296CAFE7006F55CA /* HyroxFitnessApp */ = {
+			isa = PBXGroup;
+			children = (
+				09722A8329732092006F55CA /* Custom Nav Bar */,
+				097229D1296CAFE7006F55CA /* HyroxFitnessAppApp.swift */,
+				097229D3296CAFE7006F55CA /* ContentView.swift */,
+				09722A40296F28F7006F55CA /* WorkOutView.swift */,
+				097229D5296CAFE9006F55CA /* Assets.xcassets */,
+				09722A3E296F1A69006F55CA /* GoogleService-Info.plist */,
+				097229D7296CAFE9006F55CA /* Preview Content */,
+				09722A42296F2B17006F55CA /* DataManager.swift */,
+				09722A44296F6DCF006F55CA /* User.swift */,
+			);
+			path = HyroxFitnessApp;
+			sourceTree = "<group>";
+		};
+		097229D7296CAFE9006F55CA /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				097229D8296CAFE9006F55CA /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		097229E1296CAFEA006F55CA /* HyroxFitnessAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				097229E2296CAFEA006F55CA /* HyroxFitnessAppTests.swift */,
+			);
+			path = HyroxFitnessAppTests;
+			sourceTree = "<group>";
+		};
+		097229EB296CAFEA006F55CA /* HyroxFitnessAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				097229EC296CAFEA006F55CA /* HyroxFitnessAppUITests.swift */,
+				097229EE296CAFEA006F55CA /* HyroxFitnessAppUITestsLaunchTests.swift */,
+			);
+			path = HyroxFitnessAppUITests;
+			sourceTree = "<group>";
+		};
+		09722A8329732092006F55CA /* Custom Nav Bar */ = {
+			isa = PBXGroup;
+			children = (
+				09722A84297320E7006F55CA /* CustomNavBarView.swift */,
+			);
+			path = "Custom Nav Bar";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		097229CD296CAFE7006F55CA /* HyroxFitnessApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 097229F2296CAFEA006F55CA /* Build configuration list for PBXNativeTarget "HyroxFitnessApp" */;
+			buildPhases = (
+				097229CA296CAFE7006F55CA /* Sources */,
+				097229CB296CAFE7006F55CA /* Frameworks */,
+				097229CC296CAFE7006F55CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HyroxFitnessApp;
+			packageProductDependencies = (
+				09722A36296F02FA006F55CA /* FirebaseAuth */,
+				09722A38296F02FB006F55CA /* FirebaseFirestore */,
+			);
+			productName = HyroxFitnessApp;
+			productReference = 097229CE296CAFE7006F55CA /* HyroxFitnessApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		097229DD296CAFEA006F55CA /* HyroxFitnessAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 097229F5296CAFEA006F55CA /* Build configuration list for PBXNativeTarget "HyroxFitnessAppTests" */;
+			buildPhases = (
+				097229DA296CAFEA006F55CA /* Sources */,
+				097229DB296CAFEA006F55CA /* Frameworks */,
+				097229DC296CAFEA006F55CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				097229E0296CAFEA006F55CA /* PBXTargetDependency */,
+			);
+			name = HyroxFitnessAppTests;
+			productName = HyroxFitnessAppTests;
+			productReference = 097229DE296CAFEA006F55CA /* HyroxFitnessAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		097229E7296CAFEA006F55CA /* HyroxFitnessAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 097229F8296CAFEA006F55CA /* Build configuration list for PBXNativeTarget "HyroxFitnessAppUITests" */;
+			buildPhases = (
+				097229E4296CAFEA006F55CA /* Sources */,
+				097229E5296CAFEA006F55CA /* Frameworks */,
+				097229E6296CAFEA006F55CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				097229EA296CAFEA006F55CA /* PBXTargetDependency */,
+			);
+			name = HyroxFitnessAppUITests;
+			productName = HyroxFitnessAppUITests;
+			productReference = 097229E8296CAFEA006F55CA /* HyroxFitnessAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		097229C6296CAFE7006F55CA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1410;
+				TargetAttributes = {
+					097229CD296CAFE7006F55CA = {
+						CreatedOnToolsVersion = 14.1;
+					};
+					097229DD296CAFEA006F55CA = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = 097229CD296CAFE7006F55CA;
+					};
+					097229E7296CAFEA006F55CA = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = 097229CD296CAFE7006F55CA;
+					};
+				};
+			};
+			buildConfigurationList = 097229C9296CAFE7006F55CA /* Build configuration list for PBXProject "HyroxFitnessApp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 097229C5296CAFE7006F55CA;
+			packageReferences = (
+				09722A35296F02FA006F55CA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
+			productRefGroup = 097229CF296CAFE7006F55CA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				097229CD296CAFE7006F55CA /* HyroxFitnessApp */,
+				097229DD296CAFEA006F55CA /* HyroxFitnessAppTests */,
+				097229E7296CAFEA006F55CA /* HyroxFitnessAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		097229CC296CAFE7006F55CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				097229D9296CAFE9006F55CA /* Preview Assets.xcassets in Resources */,
+				097229D6296CAFE9006F55CA /* Assets.xcassets in Resources */,
+				09722A3F296F1A69006F55CA /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		097229DC296CAFEA006F55CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		097229E6296CAFEA006F55CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		097229CA296CAFE7006F55CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				097229D4296CAFE7006F55CA /* ContentView.swift in Sources */,
+				09722A43296F2B17006F55CA /* DataManager.swift in Sources */,
+				097229D2296CAFE7006F55CA /* HyroxFitnessAppApp.swift in Sources */,
+				09722A85297320E7006F55CA /* CustomNavBarView.swift in Sources */,
+				09722A45296F6DCF006F55CA /* User.swift in Sources */,
+				09722A41296F28F7006F55CA /* WorkOutView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		097229DA296CAFEA006F55CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				097229E3296CAFEA006F55CA /* HyroxFitnessAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		097229E4296CAFEA006F55CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				097229EF296CAFEA006F55CA /* HyroxFitnessAppUITestsLaunchTests.swift in Sources */,
+				097229ED296CAFEA006F55CA /* HyroxFitnessAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		097229E0296CAFEA006F55CA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 097229CD296CAFE7006F55CA /* HyroxFitnessApp */;
+			targetProxy = 097229DF296CAFEA006F55CA /* PBXContainerItemProxy */;
+		};
+		097229EA296CAFEA006F55CA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 097229CD296CAFE7006F55CA /* HyroxFitnessApp */;
+			targetProxy = 097229E9296CAFEA006F55CA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		097229F0296CAFEA006F55CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		097229F1296CAFEA006F55CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		097229F3296CAFEA006F55CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HyroxFitnessApp/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xcodetest.HyroxFitnessApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		097229F4296CAFEA006F55CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HyroxFitnessApp/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xcodetest.HyroxFitnessApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		097229F6296CAFEA006F55CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xcodetest.HyroxFitnessAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HyroxFitnessApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HyroxFitnessApp";
+			};
+			name = Debug;
+		};
+		097229F7296CAFEA006F55CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xcodetest.HyroxFitnessAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HyroxFitnessApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HyroxFitnessApp";
+			};
+			name = Release;
+		};
+		097229F9296CAFEA006F55CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xcodetest.HyroxFitnessAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HyroxFitnessApp;
+			};
+			name = Debug;
+		};
+		097229FA296CAFEA006F55CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xcodetest.HyroxFitnessAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HyroxFitnessApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		097229C9296CAFE7006F55CA /* Build configuration list for PBXProject "HyroxFitnessApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				097229F0296CAFEA006F55CA /* Debug */,
+				097229F1296CAFEA006F55CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		097229F2296CAFEA006F55CA /* Build configuration list for PBXNativeTarget "HyroxFitnessApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				097229F3296CAFEA006F55CA /* Debug */,
+				097229F4296CAFEA006F55CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		097229F5296CAFEA006F55CA /* Build configuration list for PBXNativeTarget "HyroxFitnessAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				097229F6296CAFEA006F55CA /* Debug */,
+				097229F7296CAFEA006F55CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		097229F8296CAFEA006F55CA /* Build configuration list for PBXNativeTarget "HyroxFitnessAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				097229F9296CAFEA006F55CA /* Debug */,
+				097229FA296CAFEA006F55CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		09722A35296F02FA006F55CA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		09722A36296F02FA006F55CA /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 09722A35296F02FA006F55CA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		09722A38296F02FB006F55CA /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 09722A35296F02FA006F55CA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 097229C6296CAFE7006F55CA /* Project object */;
+}
