@@ -8,6 +8,8 @@
 import Foundation
 
 struct User : Identifiable {
-    var id : String
+    
+    var id : String?
     var fitnesslevel : String
+    
 }

@@ -17,10 +17,12 @@
 		09722A37296F02FB006F55CA /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 09722A36296F02FA006F55CA /* FirebaseAuth */; };
 		09722A39296F02FB006F55CA /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 09722A38296F02FB006F55CA /* FirebaseFirestore */; };
 		09722A3F296F1A69006F55CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09722A3E296F1A69006F55CA /* GoogleService-Info.plist */; };
-		09722A41296F28F7006F55CA /* WorkOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09722A40296F28F7006F55CA /* WorkOutView.swift */; };
-		09722A43296F2B17006F55CA /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09722A42296F2B17006F55CA /* DataManager.swift */; };
+		09722A41296F28F7006F55CA /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09722A40296F28F7006F55CA /* WorkoutView.swift */; };
 		09722A45296F6DCF006F55CA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09722A44296F6DCF006F55CA /* User.swift */; };
-		09722A85297320E7006F55CA /* CustomNavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09722A84297320E7006F55CA /* CustomNavBarView.swift */; };
+		09722A8729804554006F55CA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09722A8629804553006F55CA /* SettingsView.swift */; };
+		09722A8B29809E21006F55CA /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09722A8A29809E21006F55CA /* ProgressView.swift */; };
+		09722A9329829EAA006F55CA /* SignInRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09722A9229829EAA006F55CA /* SignInRegister.swift */; };
+		09722A952982A34C006F55CA /* TabControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09722A942982A34C006F55CA /* TabControllerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,10 +54,12 @@
 		097229EC296CAFEA006F55CA /* HyroxFitnessAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyroxFitnessAppUITests.swift; sourceTree = "<group>"; };
 		097229EE296CAFEA006F55CA /* HyroxFitnessAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyroxFitnessAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		09722A3E296F1A69006F55CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		09722A40296F28F7006F55CA /* WorkOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkOutView.swift; sourceTree = "<group>"; };
-		09722A42296F2B17006F55CA /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		09722A40296F28F7006F55CA /* WorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
 		09722A44296F6DCF006F55CA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		09722A84297320E7006F55CA /* CustomNavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBarView.swift; sourceTree = "<group>"; };
+		09722A8629804553006F55CA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		09722A8A29809E21006F55CA /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		09722A9229829EAA006F55CA /* SignInRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRegister.swift; sourceTree = "<group>"; };
+		09722A942982A34C006F55CA /* TabControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabControllerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,15 +112,17 @@
 		097229D0296CAFE7006F55CA /* HyroxFitnessApp */ = {
 			isa = PBXGroup;
 			children = (
-				09722A8329732092006F55CA /* Custom Nav Bar */,
 				097229D1296CAFE7006F55CA /* HyroxFitnessAppApp.swift */,
 				097229D3296CAFE7006F55CA /* ContentView.swift */,
-				09722A40296F28F7006F55CA /* WorkOutView.swift */,
+				09722A40296F28F7006F55CA /* WorkoutView.swift */,
+				09722A8629804553006F55CA /* SettingsView.swift */,
+				09722A8A29809E21006F55CA /* ProgressView.swift */,
 				097229D5296CAFE9006F55CA /* Assets.xcassets */,
 				09722A3E296F1A69006F55CA /* GoogleService-Info.plist */,
 				097229D7296CAFE9006F55CA /* Preview Content */,
-				09722A42296F2B17006F55CA /* DataManager.swift */,
 				09722A44296F6DCF006F55CA /* User.swift */,
+				09722A9229829EAA006F55CA /* SignInRegister.swift */,
+				09722A942982A34C006F55CA /* TabControllerView.swift */,
 			);
 			path = HyroxFitnessApp;
 			sourceTree = "<group>";
@@ -144,14 +150,6 @@
 				097229EE296CAFEA006F55CA /* HyroxFitnessAppUITestsLaunchTests.swift */,
 			);
 			path = HyroxFitnessAppUITests;
-			sourceTree = "<group>";
-		};
-		09722A8329732092006F55CA /* Custom Nav Bar */ = {
-			isa = PBXGroup;
-			children = (
-				09722A84297320E7006F55CA /* CustomNavBarView.swift */,
-			);
-			path = "Custom Nav Bar";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,12 +290,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09722A8729804554006F55CA /* SettingsView.swift in Sources */,
+				09722A9329829EAA006F55CA /* SignInRegister.swift in Sources */,
+				09722A952982A34C006F55CA /* TabControllerView.swift in Sources */,
 				097229D4296CAFE7006F55CA /* ContentView.swift in Sources */,
-				09722A43296F2B17006F55CA /* DataManager.swift in Sources */,
 				097229D2296CAFE7006F55CA /* HyroxFitnessAppApp.swift in Sources */,
-				09722A85297320E7006F55CA /* CustomNavBarView.swift in Sources */,
 				09722A45296F6DCF006F55CA /* User.swift in Sources */,
-				09722A41296F28F7006F55CA /* WorkOutView.swift in Sources */,
+				09722A8B29809E21006F55CA /* ProgressView.swift in Sources */,
+				09722A41296F28F7006F55CA /* WorkoutView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

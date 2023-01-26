@@ -10,7 +10,8 @@ import Firebase
 
 @main
 struct HyroxFitnessAppApp: App {
-    @StateObject var dataManager = DataManager()
+   // @StateObject var dataManager = DataManager()
+
     
     init() {
         FirebaseApp.configure()
@@ -18,8 +19,10 @@ struct HyroxFitnessAppApp: App {
     
     var body: some Scene {
         WindowGroup {
+            let signInRegister = SignInRegister()
             ContentView()
-                .environmentObject(dataManager)
+                //.environmentObject(dataManager)
+                .environmentObject(signInRegister)
         }
     }
 }
