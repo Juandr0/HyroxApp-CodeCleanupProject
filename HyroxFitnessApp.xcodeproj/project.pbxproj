@@ -92,6 +92,8 @@
 		097229C5296CAFE7006F55CA = {
 			isa = PBXGroup;
 			children = (
+				09722A9B298419CB006F55CA /* Tab-Views */,
+				09722A9A298418EC006F55CA /* Swift-Files */,
 				097229D0296CAFE7006F55CA /* HyroxFitnessApp */,
 				097229E1296CAFEA006F55CA /* HyroxFitnessAppTests */,
 				097229EB296CAFEA006F55CA /* HyroxFitnessAppUITests */,
@@ -114,15 +116,9 @@
 			children = (
 				097229D1296CAFE7006F55CA /* HyroxFitnessAppApp.swift */,
 				097229D3296CAFE7006F55CA /* ContentView.swift */,
-				09722A40296F28F7006F55CA /* WorkoutView.swift */,
-				09722A8629804553006F55CA /* SettingsView.swift */,
-				09722A8A29809E21006F55CA /* ProgressView.swift */,
 				097229D5296CAFE9006F55CA /* Assets.xcassets */,
 				09722A3E296F1A69006F55CA /* GoogleService-Info.plist */,
 				097229D7296CAFE9006F55CA /* Preview Content */,
-				09722A44296F6DCF006F55CA /* User.swift */,
-				09722A9229829EAA006F55CA /* SignInRegister.swift */,
-				09722A942982A34C006F55CA /* TabControllerView.swift */,
 			);
 			path = HyroxFitnessApp;
 			sourceTree = "<group>";
@@ -150,6 +146,26 @@
 				097229EE296CAFEA006F55CA /* HyroxFitnessAppUITestsLaunchTests.swift */,
 			);
 			path = HyroxFitnessAppUITests;
+			sourceTree = "<group>";
+		};
+		09722A9A298418EC006F55CA /* Swift-Files */ = {
+			isa = PBXGroup;
+			children = (
+				09722A44296F6DCF006F55CA /* User.swift */,
+				09722A9229829EAA006F55CA /* SignInRegister.swift */,
+			);
+			path = "Swift-Files";
+			sourceTree = "<group>";
+		};
+		09722A9B298419CB006F55CA /* Tab-Views */ = {
+			isa = PBXGroup;
+			children = (
+				09722A942982A34C006F55CA /* TabControllerView.swift */,
+				09722A8629804553006F55CA /* SettingsView.swift */,
+				09722A40296F28F7006F55CA /* WorkoutView.swift */,
+				09722A8A29809E21006F55CA /* ProgressView.swift */,
+			);
+			path = "Tab-Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

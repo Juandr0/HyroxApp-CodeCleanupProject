@@ -22,7 +22,6 @@ struct ContentView: View {
                 SignInView()
             }
     }
-        
     
     struct SignInView: View {
         
@@ -34,6 +33,7 @@ struct ContentView: View {
         var body: some View {
             
             VStack {
+                
                 Text("Prepare for...")
                     .padding(.top, 100)
                     .font(.body)
@@ -45,8 +45,7 @@ struct ContentView: View {
                     .scaledToFit()
                     .frame(width: 150, height: 150)
                     .foregroundColor(Color(.yellow))
-
-                Spacer()
+                    .padding(.vertical)
                 
                 VStack {
                     TextField("Email Address", text: $email)
@@ -54,14 +53,12 @@ struct ContentView: View {
                         .background(Color(.secondarySystemBackground))
                     TextField("Password", text: $password)
                         .padding()
-                        .padding(.bottom, 200)
                         .background(Color(.secondarySystemBackground))
                         
                 }
                 
                 HStack {
                     Button(action: {
-                        
                         guard !email.isEmpty, !password.isEmpty else {
                             return
                         }
@@ -69,24 +66,23 @@ struct ContentView: View {
                         signInRegister.signIn(email: email, password: password)
                     }) {
                         Text("Sign In")
-                            .frame(width: 200, height: 50)
-                            .cornerRadius(8)
+                            .frame(width: 100, height: 50)
+                            .ignoresSafeArea()
                             .background(Color.black)
                             .foregroundColor(Color(.white))
-                            
+                            .padding()
                     }
                     
                     Button(action: {
-                        
                         guard !email.isEmpty, !password.isEmpty else {
                             return
                         }
                         signInRegister.register(email: email, password: password)
                     }) {
                         Text("Register")
-                            .frame(width: 200, height: 50)
-                            .cornerRadius(8)
-                            .background(Color.black)
+                            .frame(width: 100, height: 50)
+                            .ignoresSafeArea()
+                            .background(Color.red)
                             .foregroundColor(Color(.white))
                     }
 
@@ -100,9 +96,9 @@ struct ContentView: View {
     
     
     
-    struct ContentView_Previews: PreviewProvider {
+    struct SignInView_Previews: PreviewProvider {
         static var previews: some View {
-            ContentView()
+            SignInView()
         }
     }
     
