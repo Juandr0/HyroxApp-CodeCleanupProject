@@ -9,7 +9,7 @@ import SwiftUI
 import Firebase
 import FirebaseAuth
 
-// Fixa så att vald workout är kopplad till ett visst schema 
+// Fixa så att vald workout är kopplad till ett visst schema
 
 struct WorkoutView: View {
     
@@ -42,8 +42,8 @@ struct WorkoutView: View {
                     title: {Text("\(choiceMade)")},
                     icon: {Image(systemName: "plus")}
                     )
-                .padding(.top, -150)
             }
+            .padding(.top, -150)
             
             
             Button(action: {
