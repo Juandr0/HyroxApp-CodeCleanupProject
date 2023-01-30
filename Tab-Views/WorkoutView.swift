@@ -9,46 +9,64 @@ import SwiftUI
 import Firebase
 import FirebaseAuth
 
+// Fixa så att vald workout är kopplad till ett visst schema 
+
 struct WorkoutView: View {
     
-    
-    @State var count = 0
-    @State var start = false
-    @State var time = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    @State var choiceMade = "Workouts"
+    @State var isShowingWorkoutSheet = false
     
     var body: some View {
         
         VStack {
             
-            Text("\(count)")
-                .padding()
-                .font(.largeTitle)
+            Menu {
+                Button(action: {
+                    choiceMade = "Novice Workout"
+                }, label: {
+                    Text("Novice")
+                })
+                Button(action: {
+                    choiceMade = "Intermediate Workout"
+                }, label: {
+                    Text("Intermediate")
+                })
+                Button(action: {
+                    choiceMade = "Advanced Workout"
+                }, label: {
+                    Text("Advanced")
+                })
+                
+            } label: {
+                Label(
+                    title: {Text("\(choiceMade)")},
+                    icon: {Image(systemName: "plus")}
+                    )
+                .padding(.top, -150)
+            }
+            
             
             Button(action: {
-                self.start.toggle()
-            }, label: {
-                Text("RUN")
+                isShowingWorkoutSheet.toggle()
+            }){
+                Text("GO TO WORKOUT")
                     .foregroundColor(Color .black)
                     .font(.headline)
-            })
-            
-        }
-        .onReceive(time) { (_) in
-            
-            if self.start {
-                self.count += 1
+            }
+            .sheet(isPresented: $isShowingWorkoutSheet) {
+                InsideWorkOutView()
             }
             
         }
         
-        }
-        
     }
     
-    struct WorkoutView_Previews: PreviewProvider {
-        static var previews: some View {
-            WorkoutView()
-        }
+}
+
+struct WorkoutView_Previews: PreviewProvider {
+    static var previews: some View {
+        WorkoutView()
     }
-    
-    
+}
+
+

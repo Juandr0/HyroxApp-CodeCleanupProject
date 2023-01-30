@@ -23,6 +23,9 @@
 		09722A8B29809E21006F55CA /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09722A8A29809E21006F55CA /* ProgressView.swift */; };
 		09722A9329829EAA006F55CA /* SignInRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09722A9229829EAA006F55CA /* SignInRegister.swift */; };
 		09722A952982A34C006F55CA /* TabControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09722A942982A34C006F55CA /* TabControllerView.swift */; };
+		09722A9F2986E081006F55CA /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09722A9E2986E081006F55CA /* MapView.swift */; };
+		09722AA12986ECEB006F55CA /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09722AA02986ECEA006F55CA /* MapViewModel.swift */; };
+		09B12C262987F4EA00116CA9 /* InsideWorkOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B12C252987F4EA00116CA9 /* InsideWorkOutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +63,9 @@
 		09722A8A29809E21006F55CA /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		09722A9229829EAA006F55CA /* SignInRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRegister.swift; sourceTree = "<group>"; };
 		09722A942982A34C006F55CA /* TabControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabControllerView.swift; sourceTree = "<group>"; };
+		09722A9E2986E081006F55CA /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		09722AA02986ECEA006F55CA /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		09B12C252987F4EA00116CA9 /* InsideWorkOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideWorkOutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +98,7 @@
 		097229C5296CAFE7006F55CA = {
 			isa = PBXGroup;
 			children = (
+				09B12C252987F4EA00116CA9 /* InsideWorkOutView.swift */,
 				09722A9B298419CB006F55CA /* Tab-Views */,
 				09722A9A298418EC006F55CA /* Swift-Files */,
 				097229D0296CAFE7006F55CA /* HyroxFitnessApp */,
@@ -151,6 +158,7 @@
 		09722A9A298418EC006F55CA /* Swift-Files */ = {
 			isa = PBXGroup;
 			children = (
+				09722AA02986ECEA006F55CA /* MapViewModel.swift */,
 				09722A44296F6DCF006F55CA /* User.swift */,
 				09722A9229829EAA006F55CA /* SignInRegister.swift */,
 			);
@@ -164,6 +172,7 @@
 				09722A8629804553006F55CA /* SettingsView.swift */,
 				09722A40296F28F7006F55CA /* WorkoutView.swift */,
 				09722A8A29809E21006F55CA /* ProgressView.swift */,
+				09722A9E2986E081006F55CA /* MapView.swift */,
 			);
 			path = "Tab-Views";
 			sourceTree = "<group>";
@@ -307,12 +316,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				09722A8729804554006F55CA /* SettingsView.swift in Sources */,
+				09722AA12986ECEB006F55CA /* MapViewModel.swift in Sources */,
 				09722A9329829EAA006F55CA /* SignInRegister.swift in Sources */,
 				09722A952982A34C006F55CA /* TabControllerView.swift in Sources */,
 				097229D4296CAFE7006F55CA /* ContentView.swift in Sources */,
 				097229D2296CAFE7006F55CA /* HyroxFitnessAppApp.swift in Sources */,
+				09B12C262987F4EA00116CA9 /* InsideWorkOutView.swift in Sources */,
 				09722A45296F6DCF006F55CA /* User.swift in Sources */,
 				09722A8B29809E21006F55CA /* ProgressView.swift in Sources */,
+				09722A9F2986E081006F55CA /* MapView.swift in Sources */,
 				09722A41296F28F7006F55CA /* WorkoutView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -474,6 +486,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"HyroxFitnessApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "In order to use this app you need to accept ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -502,6 +515,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"HyroxFitnessApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "In order to use this app you need to accept ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
