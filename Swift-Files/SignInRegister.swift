@@ -16,25 +16,31 @@ class SignInRegister: ObservableObject {
     
     func signIn(email: String, password: String) {
         auth.signIn(withEmail: email, password: password) { result, error in
-            guard result != nil , error == nil else {
+            if let error = error {
+                print(error)
                 return
             }
-            // Success
-            print("User signed in")
-            self.isSignedIn.toggle()
+
+            if let result = result {
+                print("User \(result.user.uid) signed in")
+                self.isSignedIn.toggle()
+            }
+            
         }
     }
     
     func register(email: String, password: String) {
         auth.createUser(withEmail: email, password: password) { result, error in
-            guard result != nil, error == nil else {
+            if let error = error {
+                print(error)
                 return
             }
             
-            //Success
-            print("Registration successful")
-            self.isSignedIn.toggle()
-        
+            if let result = result {
+                ("User \(result.user.uid) registered")
+                self.isSignedIn.toggle()
+            }
+            
         }
     }
     

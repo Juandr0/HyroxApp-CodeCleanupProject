@@ -9,12 +9,14 @@ import SwiftUI
 
 struct TabControllerView: View {
     var body: some View {
+        
         TabView {
             
                 WorkoutView()
                     .tabItem {
                         Label("WorkOut", systemImage: "trophy")
                     }
+            
                 ProgressView()
                     .tabItem {
                         Label("Progress", systemImage: "flowchart")
@@ -24,9 +26,10 @@ struct TabControllerView: View {
                         Label("Settings", systemImage: "gearshape")
                     }
             
-            
         }
-        .accentColor(Color .red)
+        .accentColor(Color .white)
+        
+
     }
 }
 

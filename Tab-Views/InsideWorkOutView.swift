@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+//Add save button that saves distance, time and date to Firebase
+
 struct InsideWorkOutView: View {
     
     @State var mapOn = false
@@ -21,22 +23,28 @@ struct InsideWorkOutView: View {
             MapView()
         }
         
-        VStack {
+        ZStack {
+            Color.gray
+            .ignoresSafeArea()
             
-            Text("\(count)")
-                .padding()
-                .font(.largeTitle)
-            
-            Button(action: {
-                self.start.toggle()
-                mapOn.toggle()
-        
-            }){
-                Text("START WORKOUT")
-                    .foregroundColor(Color .black)
-                    .font(.headline)
+            VStack {
+                
+                Text("\(count)")
+                    .padding()
+                    .font(.largeTitle)
+                    .foregroundColor(Color .white)
+                
+                Button(action: {
+                    self.start.toggle()
+                    mapOn.toggle()
+                    
+                }){
+                    Text("START WORKOUT")
+                        .foregroundColor(Color .black)
+                        .font(.headline)
+                }
+                
             }
-            
             
         }
         .onReceive(time) { (_) in

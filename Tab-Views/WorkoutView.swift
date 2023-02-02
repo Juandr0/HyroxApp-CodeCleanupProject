@@ -9,52 +9,58 @@ import SwiftUI
 import Firebase
 import FirebaseAuth
 
-// Fixa så att vald workout är kopplad till ett visst schema
+// Fixa så att vald workout är kopplad till ett visst schema som syns i insidework-sheet
 
 struct WorkoutView: View {
     
-    @State var choiceMade = "Workouts"
+    @State var choiceMade = ""
     @State var isShowingWorkoutSheet = false
     
     var body: some View {
         
+        ZStack {
+            Color .black
+                .ignoresSafeArea()
+        
         VStack {
-            
-            Menu {
-                Button(action: {
-                    choiceMade = "Novice Workout"
-                }, label: {
-                    Text("Novice")
-                })
-                Button(action: {
-                    choiceMade = "Intermediate Workout"
-                }, label: {
-                    Text("Intermediate")
-                })
-                Button(action: {
-                    choiceMade = "Advanced Workout"
-                }, label: {
-                    Text("Advanced")
-                })
-                
-            } label: {
-                Label(
-                    title: {Text("\(choiceMade)")},
-                    icon: {Image(systemName: "plus")}
+                Menu {
+                    Button(action: {
+                        choiceMade = "Novice"
+                    }, label: {
+                        Text("Novice")
+                    })
+                    Button(action: {
+                        choiceMade = "Intermediate"
+                    }, label: {
+                        Text("Intermediate")
+                    })
+                    Button(action: {
+                        choiceMade = "Advanced"
+                    }, label: {
+                        Text("Advanced")
+                    })
+                    
+                } label: {
+                    Label(
+                        title: {Text("Fitness-level: \(choiceMade)")},
+                        icon: {Image(systemName: "text.badge.plus")}
                     )
-            }
-            .padding(.top, -150)
-            
-            
-            Button(action: {
-                isShowingWorkoutSheet.toggle()
-            }){
-                Text("GO TO WORKOUT")
-                    .foregroundColor(Color .black)
-                    .font(.headline)
-            }
-            .sheet(isPresented: $isShowingWorkoutSheet) {
-                InsideWorkOutView()
+                }
+                .padding(.top, -75)
+                .foregroundColor(Color .green)
+                .fontWeight(.semibold)
+                Button(action: {
+                    isShowingWorkoutSheet.toggle()
+                }){
+                    Text("GO TO WORKOUT")
+                        .foregroundColor(Color .white)
+                        .font(.headline)
+                        .fontWeight(.bold)
+                }
+                .sheet(isPresented: $isShowingWorkoutSheet) {
+                    InsideWorkOutView()
+                }
+                
             }
             
         }

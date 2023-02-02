@@ -18,14 +18,15 @@
 		09722A39296F02FB006F55CA /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 09722A38296F02FB006F55CA /* FirebaseFirestore */; };
 		09722A3F296F1A69006F55CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09722A3E296F1A69006F55CA /* GoogleService-Info.plist */; };
 		09722A41296F28F7006F55CA /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09722A40296F28F7006F55CA /* WorkoutView.swift */; };
-		09722A45296F6DCF006F55CA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09722A44296F6DCF006F55CA /* User.swift */; };
 		09722A8729804554006F55CA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09722A8629804553006F55CA /* SettingsView.swift */; };
 		09722A8B29809E21006F55CA /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09722A8A29809E21006F55CA /* ProgressView.swift */; };
 		09722A9329829EAA006F55CA /* SignInRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09722A9229829EAA006F55CA /* SignInRegister.swift */; };
 		09722A952982A34C006F55CA /* TabControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09722A942982A34C006F55CA /* TabControllerView.swift */; };
 		09722A9F2986E081006F55CA /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09722A9E2986E081006F55CA /* MapView.swift */; };
-		09722AA12986ECEB006F55CA /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09722AA02986ECEA006F55CA /* MapViewModel.swift */; };
+		09722AA12986ECEB006F55CA /* MapViewLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09722AA02986ECEA006F55CA /* MapViewLogic.swift */; };
 		09B12C262987F4EA00116CA9 /* InsideWorkOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B12C252987F4EA00116CA9 /* InsideWorkOutView.swift */; };
+		09B12C28298A708900116CA9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B12C27298A708900116CA9 /* User.swift */; };
+		09B12C2A298A8F3700116CA9 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B12C29298A8F3700116CA9 /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,14 +59,15 @@
 		097229EE296CAFEA006F55CA /* HyroxFitnessAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyroxFitnessAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		09722A3E296F1A69006F55CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		09722A40296F28F7006F55CA /* WorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
-		09722A44296F6DCF006F55CA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		09722A8629804553006F55CA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		09722A8A29809E21006F55CA /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		09722A9229829EAA006F55CA /* SignInRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRegister.swift; sourceTree = "<group>"; };
 		09722A942982A34C006F55CA /* TabControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabControllerView.swift; sourceTree = "<group>"; };
 		09722A9E2986E081006F55CA /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		09722AA02986ECEA006F55CA /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		09722AA02986ECEA006F55CA /* MapViewLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewLogic.swift; sourceTree = "<group>"; };
 		09B12C252987F4EA00116CA9 /* InsideWorkOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideWorkOutView.swift; sourceTree = "<group>"; };
+		09B12C27298A708900116CA9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		09B12C29298A8F3700116CA9 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +100,7 @@
 		097229C5296CAFE7006F55CA = {
 			isa = PBXGroup;
 			children = (
-				09B12C252987F4EA00116CA9 /* InsideWorkOutView.swift */,
+				09B12C29298A8F3700116CA9 /* ViewModel.swift */,
 				09722A9B298419CB006F55CA /* Tab-Views */,
 				09722A9A298418EC006F55CA /* Swift-Files */,
 				097229D0296CAFE7006F55CA /* HyroxFitnessApp */,
@@ -158,8 +160,8 @@
 		09722A9A298418EC006F55CA /* Swift-Files */ = {
 			isa = PBXGroup;
 			children = (
-				09722AA02986ECEA006F55CA /* MapViewModel.swift */,
-				09722A44296F6DCF006F55CA /* User.swift */,
+				09B12C27298A708900116CA9 /* User.swift */,
+				09722AA02986ECEA006F55CA /* MapViewLogic.swift */,
 				09722A9229829EAA006F55CA /* SignInRegister.swift */,
 			);
 			path = "Swift-Files";
@@ -171,6 +173,7 @@
 				09722A942982A34C006F55CA /* TabControllerView.swift */,
 				09722A8629804553006F55CA /* SettingsView.swift */,
 				09722A40296F28F7006F55CA /* WorkoutView.swift */,
+				09B12C252987F4EA00116CA9 /* InsideWorkOutView.swift */,
 				09722A8A29809E21006F55CA /* ProgressView.swift */,
 				09722A9E2986E081006F55CA /* MapView.swift */,
 			);
@@ -315,14 +318,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09B12C28298A708900116CA9 /* User.swift in Sources */,
 				09722A8729804554006F55CA /* SettingsView.swift in Sources */,
-				09722AA12986ECEB006F55CA /* MapViewModel.swift in Sources */,
+				09722AA12986ECEB006F55CA /* MapViewLogic.swift in Sources */,
 				09722A9329829EAA006F55CA /* SignInRegister.swift in Sources */,
 				09722A952982A34C006F55CA /* TabControllerView.swift in Sources */,
 				097229D4296CAFE7006F55CA /* ContentView.swift in Sources */,
+				09B12C2A298A8F3700116CA9 /* ViewModel.swift in Sources */,
 				097229D2296CAFE7006F55CA /* HyroxFitnessAppApp.swift in Sources */,
 				09B12C262987F4EA00116CA9 /* InsideWorkOutView.swift in Sources */,
-				09722A45296F6DCF006F55CA /* User.swift in Sources */,
 				09722A8B29809E21006F55CA /* ProgressView.swift in Sources */,
 				09722A9F2986E081006F55CA /* MapView.swift in Sources */,
 				09722A41296F28F7006F55CA /* WorkoutView.swift in Sources */,

@@ -16,46 +16,64 @@ struct ContentView: View {
     
     var body: some View {
         
-            if signInRegister.isSignedIn {
-                TabControllerView()
-            } else {
-                SignInView()
-            }
+        if signInRegister.isSignedIn {
+            TabControllerView()
+        } else {
+            SignInRegisterView()
+        }
     }
     
-    struct SignInView: View {
+    struct SignInRegisterView: View {
         
         @EnvironmentObject var signInRegister: SignInRegister
         
         @State var email = ""
         @State var password = ""
-    
+        
         var body: some View {
             
+            ZStack {
+                Color.white.edgesIgnoringSafeArea(.all)
+                
             VStack {
-                
-                Text("Prepare for...")
-                    .padding(.top, 100)
-                    .font(.body)
-                Text("HYROX")
-                    .font(.largeTitle)
-                    .padding()
-                Image(systemName: "trophy")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 150, height: 150)
-                    .foregroundColor(Color(.yellow))
-                    .padding(.vertical)
-                
-                VStack {
-                    TextField("Email Address", text: $email)
-                        .padding()
-                        .background(Color(.secondarySystemBackground))
-                    TextField("Password", text: $password)
-                        .padding()
-                        .background(Color(.secondarySystemBackground))
-                        
+                HStack {
+                    Text("Prepare for Hyrox!")
+                        .font(.largeTitle)
+                        .bold()
+                        .foregroundColor(.green)
+                    
+                    Spacer()
                 }
+                .padding()
+                .padding(.top, 50)
+                
+                Spacer()
+                
+                TextField("Email Address", text: $email)
+                    .padding()
+                    .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(lineWidth: 2)
+                        .foregroundColor(.black)
+                    
+                    )
+                
+                    .padding()
+                
+                TextField("Password", text: $password)
+                    .padding()
+                    .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(lineWidth: 2)
+                        .foregroundColor(.black)
+                    
+                    )
+                
+                    .padding()
+                Spacer()
+                Spacer()
+                
+                
                 
                 HStack {
                     Button(action: {
@@ -66,12 +84,21 @@ struct ContentView: View {
                         signInRegister.signIn(email: email, password: password)
                     }) {
                         Text("Sign In")
-                            .frame(width: 100, height: 50)
-                            .ignoresSafeArea()
-                            .background(Color.black)
-                            .foregroundColor(Color(.white))
+                            .foregroundColor(.white)
+                            .font(.title3)
+                            .bold()
+                        
+                            .frame(maxWidth: .infinity)
                             .padding()
+                        
+                            .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(Color.green)
+                            )
+                            .padding(.horizontal)
+                  
                     }
+                    
                     
                     Button(action: {
                         guard !email.isEmpty, !password.isEmpty else {
@@ -80,27 +107,35 @@ struct ContentView: View {
                         signInRegister.register(email: email, password: password)
                     }) {
                         Text("Register")
-                            .frame(width: 100, height: 50)
-                            .ignoresSafeArea()
-                            .background(Color.red)
-                            .foregroundColor(Color(.white))
+                            .foregroundColor(.white)
+                            .font(.title3)
+                            .bold()
+                        
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                        
+                            .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(Color.black)
+                            )
+                            .padding(.horizontal)
                     }
-
-                }
-                .padding()
-
+                    
+                    
+                } // HStack End
                 
-            }
-            .padding(.bottom, 100)
+                
+            } // VStack End
         }
     }
+}
     
     
     
     
     struct SignInView_Previews: PreviewProvider {
         static var previews: some View {
-            SignInView()
+            SignInRegisterView()
         }
     }
     

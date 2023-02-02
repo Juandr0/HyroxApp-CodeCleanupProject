@@ -11,15 +11,54 @@ import FirebaseAuth
 
 struct SettingsView: View {
     
+   // @State var choiceMade = ""
     @EnvironmentObject var signInRegister: SignInRegister
     
     var body: some View {
-
-        Button(action: {
-            signInRegister.signOut()
+        
+        ZStack {
+            Color .black
+                .ignoresSafeArea()
             
-        }) {
-            Text("Sign Out")
+            VStack{
+               // Menu {
+               //     Button(action: {
+               //         choiceMade = "Novice"
+               //     }, label: {
+               //         Text("Novice")
+               //     })
+               //     Button(action: {
+               //         choiceMade = "Intermediate"
+               //     }, label: {
+               //         Text("Intermediate")
+               //     })
+               //     Button(action: {
+               //         choiceMade = "Advanced"
+               //     }, label: {
+               //         Text("Advanced")
+               //     })
+                    
+               // } label: {
+               //     Label(
+               //         title: {Text("Fitness-level: \(choiceMade)")},
+               //         icon: {Image(systemName: "text.badge.plus")}
+               //     )
+               // }
+               // .padding(.top, 200)
+               // .foregroundColor(Color .green)
+                
+                Button(action: {
+                    signInRegister.signOut()
+                    
+                }) {
+                    Text("Sign Out")
+                }
+                .foregroundColor(Color .red)
+                .font(.headline)
+                .fontWeight(.bold)
+                .padding(.top, 500)
+            }
+            
         }
   }
     
