@@ -17,46 +17,29 @@ struct SettingsView: View {
     var body: some View {
         
         ZStack {
-            Color .black
-                .ignoresSafeArea()
+            Color.white
+                .edgesIgnoringSafeArea(.all)
             
             VStack{
-               // Menu {
-               //     Button(action: {
-               //         choiceMade = "Novice"
-               //     }, label: {
-               //         Text("Novice")
-               //     })
-               //     Button(action: {
-               //         choiceMade = "Intermediate"
-               //     }, label: {
-               //         Text("Intermediate")
-               //     })
-               //     Button(action: {
-               //         choiceMade = "Advanced"
-               //     }, label: {
-               //         Text("Advanced")
-               //     })
-                    
-               // } label: {
-               //     Label(
-               //         title: {Text("Fitness-level: \(choiceMade)")},
-               //         icon: {Image(systemName: "text.badge.plus")}
-               //     )
-               // }
-               // .padding(.top, 200)
-               // .foregroundColor(Color .green)
-                
+                Spacer()
                 Button(action: {
                     signInRegister.signOut()
                     
                 }) {
                     Text("Sign Out")
                 }
-                .foregroundColor(Color .red)
-                .font(.headline)
-                .fontWeight(.bold)
-                .padding(.top, 500)
+                .foregroundColor(.white)
+                .font(.title3)
+                .bold()
+            
+                .frame(maxWidth: .infinity)
+                .padding()
+            
+                .background(
+                RoundedRectangle(cornerRadius: 10)
+                    .fill(Color.red)
+                )
+                .padding(.horizontal)
             }
             
         }

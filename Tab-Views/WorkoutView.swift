@@ -19,8 +19,8 @@ struct WorkoutView: View {
     var body: some View {
         
         ZStack {
-            Color .black
-                .ignoresSafeArea()
+            Color.white
+                .edgesIgnoringSafeArea(.all)
         
         VStack {
                 Menu {
@@ -47,15 +47,25 @@ struct WorkoutView: View {
                     )
                 }
                 .padding(.top, -75)
-                .foregroundColor(Color .green)
-                .fontWeight(.semibold)
+                .foregroundColor(.green)
+                .font(.title3)
+                .bold()
                 Button(action: {
                     isShowingWorkoutSheet.toggle()
                 }){
                     Text("GO TO WORKOUT")
-                        .foregroundColor(Color .white)
-                        .font(.headline)
-                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .font(.title3)
+                        .bold()
+                    
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                    
+                        .background(
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(Color.black)
+                        )
+                        .padding(.horizontal, 50)
                 }
                 .sheet(isPresented: $isShowingWorkoutSheet) {
                     InsideWorkOutView()
