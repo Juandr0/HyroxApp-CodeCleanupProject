@@ -21,7 +21,6 @@ struct HyroxFitnessAppApp: App {
         WindowGroup {
             let signInRegister = SignInRegister()
             ContentView()
-                //.environmentObject(dataManager)
                 .environmentObject(signInRegister)
         }
     }

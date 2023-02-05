@@ -7,28 +7,16 @@
 
 import Foundation
 import Firebase
+import FirebaseFirestore
 
 class ViewModel: ObservableObject {
     
-    @Published var list = [User]()
+    let db = Firestore.firestore()
     
-    func deleteData(userDelete: User) {
-        
-        let db = Firestore.firestore()
-        
-        db.collection("Users").document(userDelete.id).delete { error in
-            
-            if error == nil {
-                self.list.removeAll { user in
-                    return user.id == userDelete.id
-                }
-            }
-            else {
-                
-            }
-            
-        }
-        
+    @Published var users = [User]()
+    
+    init() {
+        fetchData()
     }
     
     func addData(date: String,
@@ -36,49 +24,44 @@ class ViewModel: ObservableObject {
                  time: String,
                  fitnessLevel: String) {
         
-        let db = Firestore.firestore()
-        
-        db.collection("Users").addDocument(data: ["date":date,
-                                                  "distance":distance,
-                                                  "time":time,
-                                                  "fitnessLevel":fitnessLevel]) { error in
-            if error == nil {
-                
-                self.getData()
-                
-            }
-            else {
-                
-            }
-        }
-        
-    }
-    
-    
-    func getData() {
-        
-        let db = Firestore.firestore()
-        
-        db.collection("Users").getDocuments { snapshot, error in
+        let users = User(date: date, distance: distance, time: time, fitnessLevel: fitnessLevel)
             
-            if error == nil {
-                
-                if let snapshot = snapshot {
-                    self.list = snapshot.documents.map { d in
-                        
-                        return User(id: d.documentID,
-                                    date: d["date"] as? String ?? "",
-                                    distance: d["distance"] as? String ?? "",
-                                    time: d["time"] as? String ?? "",
-                                    fitnessLevel: d["fitnessLevel"] as? String ?? "")
-                    }
+                do {
+                    _ = try db.collection("Users").addDocument(from: users)
+                } catch {
+                    print("Error saving to DB")
                 }
-            } else {
-                
-            }
-            
-        }
         
     }
     
+    func delete(user: User) {
+            db.collection("Users").document(user.id!).delete() { error in
+                if let error = error {
+                    print("Error deleting user: \(error)")
+                    return
+                }
+                print("User successfully deleted")
+            }
+        }
+    
+    func fetchData() {
+            db.collection("Users").addSnapshotListener { (snapshot, error) in
+                if let error = error {
+                    print("Error fetching data from Firestore: \(error)")
+                    return
+                }
+                
+                self.users = snapshot!.documents.compactMap { document in
+                    let data = document.data()
+                    let date = data["date"] as! String
+                    let distance = data["distance"] as! String
+                    let time = data["time"] as! String
+                    let fitnessLevel = data["fitnessLevel"] as! String
+                    
+                    return User(id: document.documentID, date: date, distance: distance, time: time, fitnessLevel: fitnessLevel)
+            }
+        }
+    }
 }
+    
+

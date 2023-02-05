@@ -27,6 +27,7 @@
 		09B12C262987F4EA00116CA9 /* InsideWorkOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B12C252987F4EA00116CA9 /* InsideWorkOutView.swift */; };
 		09B12C28298A708900116CA9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B12C27298A708900116CA9 /* User.swift */; };
 		09B12C2A298A8F3700116CA9 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B12C29298A8F3700116CA9 /* ViewModel.swift */; };
+		09B12C2E298FE14300116CA9 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 09B12C2D298FE14300116CA9 /* FirebaseFirestoreSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 			files = (
 				09722A37296F02FB006F55CA /* FirebaseAuth in Frameworks */,
 				09722A39296F02FB006F55CA /* FirebaseFirestore in Frameworks */,
+				09B12C2E298FE14300116CA9 /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +109,7 @@
 				097229E1296CAFEA006F55CA /* HyroxFitnessAppTests */,
 				097229EB296CAFEA006F55CA /* HyroxFitnessAppUITests */,
 				097229CF296CAFE7006F55CA /* Products */,
+				09B12C2C298FE14300116CA9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -180,6 +183,13 @@
 			path = "Tab-Views";
 			sourceTree = "<group>";
 		};
+		09B12C2C298FE14300116CA9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -199,6 +209,7 @@
 			packageProductDependencies = (
 				09722A36296F02FA006F55CA /* FirebaseAuth */,
 				09722A38296F02FB006F55CA /* FirebaseFirestore */,
+				09B12C2D298FE14300116CA9 /* FirebaseFirestoreSwift */,
 			);
 			productName = HyroxFitnessApp;
 			productReference = 097229CE296CAFE7006F55CA /* HyroxFitnessApp.app */;
@@ -672,6 +683,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 09722A35296F02FA006F55CA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
+		};
+		09B12C2D298FE14300116CA9 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 09722A35296F02FA006F55CA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -14,7 +14,7 @@ import Firebase
 
 struct ProgressView: View {
     
-    @ObservedObject var model = ViewModel()
+    @ObservedObject var userData = ViewModel()
     
     @State var date = ""
     @State var distance = ""
@@ -33,16 +33,25 @@ struct ProgressView: View {
                     .bold()
                     .foregroundColor(.black)
                 
-                    List(model.list) { item in
+                List {
+                    ForEach(userData.users) { user in
                         HStack {
-                            Text(item.date)
-                            Text(item.time)
-                            Text(item.distance)
-                            Text(item.fitnessLevel)
+                            Text(user.date)
+                            Text(user.time)
+                            Text(user.distance)
+                            Text(user.fitnessLevel)
+                            
+                            Button(action: {
+                                self.userData.delete(user: user)
+                                               }) {
+                                                   Image(systemName: "trash")
+                                               }
+
                         }
                         .foregroundColor(.black)
                         .bold()
                     }
+            }
                 
                 
                 TextField("Date", text: $date)
@@ -53,8 +62,9 @@ struct ProgressView: View {
                         .foregroundColor(.black)
                     
                     )
-                
+
                     .padding()
+                
                 TextField("Distance", text: $distance)
                     .padding()
                     .overlay(
@@ -87,7 +97,7 @@ struct ProgressView: View {
                     .padding()
                 
                 Button {
-                    model.addData(date: date, distance: distance, time: time, fitnessLevel: fitnessLevel)
+                    userData.addData(date: date, distance: distance, time: time, fitnessLevel: fitnessLevel)
                     
                     //Clear the textfields
                     
@@ -115,10 +125,8 @@ struct ProgressView: View {
                 
             }
             .onAppear() {
-                model.getData()
+                userData.fetchData()
             }
-            
-            
             
         }
         
