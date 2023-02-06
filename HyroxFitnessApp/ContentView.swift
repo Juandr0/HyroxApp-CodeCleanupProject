@@ -12,6 +12,9 @@ import FirebaseAuth
 
 struct ContentView: View {
     
+    
+    
+    
     @EnvironmentObject var signInRegister: SignInRegister
     
     var body: some View {
@@ -57,7 +60,6 @@ struct ContentView: View {
                         .foregroundColor(.black)
                     
                     )
-                
                     .padding()
                 
                 TextField("Password", text: $password)
@@ -68,12 +70,9 @@ struct ContentView: View {
                         .foregroundColor(.black)
                     
                     )
-                
                     .padding()
                 Spacer()
                 Spacer()
-                
-                
                 
                 HStack {
                     Button(action: {
@@ -98,7 +97,6 @@ struct ContentView: View {
                             .padding(.horizontal)
                   
                     }
-                    
                     
                     Button(action: {
                         guard !email.isEmpty, !password.isEmpty else {

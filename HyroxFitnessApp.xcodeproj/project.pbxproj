@@ -28,6 +28,15 @@
 		09B12C28298A708900116CA9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B12C27298A708900116CA9 /* User.swift */; };
 		09B12C2A298A8F3700116CA9 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B12C29298A8F3700116CA9 /* ViewModel.swift */; };
 		09B12C2E298FE14300116CA9 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 09B12C2D298FE14300116CA9 /* FirebaseFirestoreSwift */; };
+		09B12C3229913E4100116CA9 /* Inter-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09B12C3029913E4100116CA9 /* Inter-Medium.otf */; };
+		09B12C3329913E4100116CA9 /* Inter-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09B12C3029913E4100116CA9 /* Inter-Medium.otf */; };
+		09B12C3429913E4100116CA9 /* Inter-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09B12C3029913E4100116CA9 /* Inter-Medium.otf */; };
+		09B12C3529913E4100116CA9 /* Inter-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09B12C3129913E4100116CA9 /* Inter-Thin.otf */; };
+		09B12C3629913E4100116CA9 /* Inter-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09B12C3129913E4100116CA9 /* Inter-Thin.otf */; };
+		09B12C3729913E4100116CA9 /* Inter-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09B12C3129913E4100116CA9 /* Inter-Thin.otf */; };
+		09B12C3A29913F1B00116CA9 /* FontStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B12C3929913F1B00116CA9 /* FontStyles.swift */; };
+		09B12C3B29913F1B00116CA9 /* FontStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B12C3929913F1B00116CA9 /* FontStyles.swift */; };
+		09B12C3C29913F1B00116CA9 /* FontStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B12C3929913F1B00116CA9 /* FontStyles.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +78,10 @@
 		09B12C252987F4EA00116CA9 /* InsideWorkOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideWorkOutView.swift; sourceTree = "<group>"; };
 		09B12C27298A708900116CA9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		09B12C29298A8F3700116CA9 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		09B12C3029913E4100116CA9 /* Inter-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.otf"; sourceTree = "<group>"; };
+		09B12C3129913E4100116CA9 /* Inter-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Thin.otf"; sourceTree = "<group>"; };
+		09B12C3829913E9900116CA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		09B12C3929913F1B00116CA9 /* FontStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontStyles.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,11 +139,14 @@
 		097229D0296CAFE7006F55CA /* HyroxFitnessApp */ = {
 			isa = PBXGroup;
 			children = (
+				09B12C3829913E9900116CA9 /* Info.plist */,
 				097229D1296CAFE7006F55CA /* HyroxFitnessAppApp.swift */,
 				097229D3296CAFE7006F55CA /* ContentView.swift */,
+				09B12C2F29913DA900116CA9 /* Fonts */,
 				097229D5296CAFE9006F55CA /* Assets.xcassets */,
 				09722A3E296F1A69006F55CA /* GoogleService-Info.plist */,
 				097229D7296CAFE9006F55CA /* Preview Content */,
+				09B12C3929913F1B00116CA9 /* FontStyles.swift */,
 			);
 			path = HyroxFitnessApp;
 			sourceTree = "<group>";
@@ -188,6 +204,15 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		09B12C2F29913DA900116CA9 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				09B12C3029913E4100116CA9 /* Inter-Medium.otf */,
+				09B12C3129913E4100116CA9 /* Inter-Thin.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,6 +330,8 @@
 				097229D9296CAFE9006F55CA /* Preview Assets.xcassets in Resources */,
 				097229D6296CAFE9006F55CA /* Assets.xcassets in Resources */,
 				09722A3F296F1A69006F55CA /* GoogleService-Info.plist in Resources */,
+				09B12C3529913E4100116CA9 /* Inter-Thin.otf in Resources */,
+				09B12C3229913E4100116CA9 /* Inter-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +339,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09B12C3329913E4100116CA9 /* Inter-Medium.otf in Resources */,
+				09B12C3629913E4100116CA9 /* Inter-Thin.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +348,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09B12C3429913E4100116CA9 /* Inter-Medium.otf in Resources */,
+				09B12C3729913E4100116CA9 /* Inter-Thin.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,6 +366,7 @@
 				09722A9329829EAA006F55CA /* SignInRegister.swift in Sources */,
 				09722A952982A34C006F55CA /* TabControllerView.swift in Sources */,
 				097229D4296CAFE7006F55CA /* ContentView.swift in Sources */,
+				09B12C3A29913F1B00116CA9 /* FontStyles.swift in Sources */,
 				09B12C2A298A8F3700116CA9 /* ViewModel.swift in Sources */,
 				097229D2296CAFE7006F55CA /* HyroxFitnessAppApp.swift in Sources */,
 				09B12C262987F4EA00116CA9 /* InsideWorkOutView.swift in Sources */,
@@ -348,6 +380,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09B12C3B29913F1B00116CA9 /* FontStyles.swift in Sources */,
 				097229E3296CAFEA006F55CA /* HyroxFitnessAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,6 +391,7 @@
 			files = (
 				097229EF296CAFEA006F55CA /* HyroxFitnessAppUITestsLaunchTests.swift in Sources */,
 				097229ED296CAFEA006F55CA /* HyroxFitnessAppUITests.swift in Sources */,
+				09B12C3C29913F1B00116CA9 /* FontStyles.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,6 +535,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"HyroxFitnessApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HyroxFitnessApp/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "In order to use this app you need to accept ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -530,6 +565,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"HyroxFitnessApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HyroxFitnessApp/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "In order to use this app you need to accept ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

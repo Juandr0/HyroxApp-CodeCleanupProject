@@ -37,10 +37,10 @@ class ViewModel: ObservableObject {
     func delete(user: User) {
             db.collection("Users").document(user.id!).delete() { error in
                 if let error = error {
-                    print("Error deleting user: \(error)")
+                    print("Error deleting workout: \(error)")
                     return
                 }
-                print("User successfully deleted")
+                print("Workout successfully deleted")
             }
         }
     

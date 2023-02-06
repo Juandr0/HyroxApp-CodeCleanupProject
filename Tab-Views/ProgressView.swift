@@ -37,64 +37,71 @@ struct ProgressView: View {
                     ForEach(userData.users) { user in
                         HStack {
                             Text(user.date)
-                            Text(user.time)
                             Text(user.distance)
+                            Text(user.time)
                             Text(user.fitnessLevel)
                             
                             Button(action: {
                                 self.userData.delete(user: user)
-                                               }) {
-                                                   Image(systemName: "trash")
-                                               }
-
+                            }) {
+                                Image(systemName: "trash")
+                                    .foregroundColor(.red)
+                            }
+                            
                         }
-                        .foregroundColor(.black)
+                        .foregroundColor(.gray)
                         .bold()
                     }
-            }
+                }
                 
                 
                 TextField("Date", text: $date)
+                    .frame(width: 200, height: 5)
                     .padding()
                     .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(lineWidth: 2)
-                        .foregroundColor(.black)
-                    
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(lineWidth: 2)
+                            .foregroundColor(.black)
+                        
                     )
-
-                    .padding()
+                
+                  //  .padding()
                 
                 TextField("Distance", text: $distance)
+                    .frame(width: 200, height: 5)
                     .padding()
                     .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(lineWidth: 2)
-                        .foregroundColor(.black)
-                    
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(lineWidth: 2)
+                            .foregroundColor(.black)
+                        
                     )
                 
-                    .padding()
+              //      .padding()
+                
                 TextField("Time", text: $time)
+                    .frame(width: 200, height: 5)
                     .padding()
                     .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(lineWidth: 2)
-                        .foregroundColor(.black)
-                    
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(lineWidth: 2)
+                            .foregroundColor(.black)
+                        
                     )
                 
-                    .padding()
+                //    .padding()
+                
                 TextField("Fitness Level", text: $fitnessLevel)
+                    .frame(width: 200, height: 5)
                     .padding()
                     .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(lineWidth: 2)
-                        .foregroundColor(.black)
-                    
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(lineWidth: 2)
+                            .foregroundColor(.black)
+                        
                     )
                 
-                    .padding()
+             //       .padding()
                 
                 Button {
                     userData.addData(date: date, distance: distance, time: time, fitnessLevel: fitnessLevel)
@@ -116,8 +123,8 @@ struct ProgressView: View {
                         .padding()
                     
                         .background(
-                        RoundedRectangle(cornerRadius: 10)
-                            .fill(Color.green)
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(Color.green)
                         )
                         .padding(.horizontal)
                 }
