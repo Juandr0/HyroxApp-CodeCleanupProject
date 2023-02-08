@@ -10,10 +10,7 @@ import Firebase
 import FirebaseAuth
 
 
-struct ContentView: View {
-    
-    
-    
+struct HomeScreenView: View {
     
     @EnvironmentObject var signInRegister: SignInRegister
     
@@ -36,14 +33,16 @@ struct ContentView: View {
         var body: some View {
             
             ZStack {
-                Color.white.edgesIgnoringSafeArea(.all)
+                Color("AccentColor")
+                    .ignoresSafeArea()
                 
             VStack {
                 HStack {
+
                     Text("Prepare for Hyrox!")
-                        .font(.largeTitle)
+                        .font(.navTitle)
                         .bold()
-                        .foregroundColor(.green)
+                        .foregroundColor(Color("DetailGreen"))
                     
                     Spacer()
                 }
@@ -57,7 +56,7 @@ struct ContentView: View {
                     .overlay(
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(lineWidth: 2)
-                        .foregroundColor(.black)
+                        .foregroundColor(Color("DetailGray"))
                     
                     )
                     .padding()
@@ -67,7 +66,7 @@ struct ContentView: View {
                     .overlay(
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(lineWidth: 2)
-                        .foregroundColor(.black)
+                        .foregroundColor(Color("DetailGray"))
                     
                     )
                     .padding()
@@ -92,11 +91,13 @@ struct ContentView: View {
                         
                             .background(
                             RoundedRectangle(cornerRadius: 10)
-                                .fill(Color.green)
+                                .fill(Color("DetailGreen"))
+                                
                             )
                             .padding(.horizontal)
                   
                     }
+                    
                     
                     Button(action: {
                         guard !email.isEmpty, !password.isEmpty else {
@@ -127,8 +128,6 @@ struct ContentView: View {
         }
     }
 }
-    
-    
     
     
     struct SignInView_Previews: PreviewProvider {

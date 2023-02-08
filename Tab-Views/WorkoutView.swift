@@ -14,9 +14,12 @@ import FirebaseAuth
 struct WorkoutView: View {
     
     @State var choiceMade = ""
-    @State var isShowingWorkoutSheet = false
+    @State var isShowingNoviceWorkoutSheet = false
+    @State var isShowingIntermediateWorkoutSheet = false
+    @State var isShowingAdvancedWorkoutSheet = false
     
     var body: some View {
+        
         
         ZStack {
             Color.white
@@ -51,7 +54,27 @@ struct WorkoutView: View {
                 .font(.title3)
                 .bold()
                 Button(action: {
-                    isShowingWorkoutSheet.toggle()
+                    
+                    if choiceMade == "Novice" {
+                        
+                        isShowingNoviceWorkoutSheet.toggle()
+                        
+                        
+                    }
+                    
+                    if choiceMade == "Intermediate" {
+                        
+                        isShowingIntermediateWorkoutSheet.toggle()
+                
+                    }
+                    
+                    if choiceMade == "Advanced" {
+                        
+                        isShowingAdvancedWorkoutSheet.toggle()
+                        
+                    }
+                    
+                    
                 }){
                     Text("GO TO WORKOUT")
                         .foregroundColor(.white)
@@ -67,8 +90,14 @@ struct WorkoutView: View {
                         )
                         .padding(.horizontal, 50)
                 }
-                .sheet(isPresented: $isShowingWorkoutSheet) {
-                    InsideWorkOutView()
+                .sheet(isPresented: $isShowingNoviceWorkoutSheet) {
+                   NoviceWorkoutView()
+                }
+                .sheet(isPresented: $isShowingIntermediateWorkoutSheet) {
+                    IntermediateWorkoutView()
+                }
+                .sheet(isPresented: $isShowingAdvancedWorkoutSheet) {
+                    AdvancedWorkoutView()
                 }
                 
             }

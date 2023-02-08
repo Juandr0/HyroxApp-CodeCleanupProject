@@ -20,7 +20,7 @@ struct HyroxFitnessAppApp: App {
     var body: some Scene {
         WindowGroup {
             let signInRegister = SignInRegister()
-            ContentView()
+            HomeScreenView()
                 .environmentObject(signInRegister)
         }
     }
