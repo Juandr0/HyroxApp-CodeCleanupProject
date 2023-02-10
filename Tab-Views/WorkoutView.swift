@@ -9,8 +9,6 @@ import SwiftUI
 import Firebase
 import FirebaseAuth
 
-// Fixa så att vald workout är kopplad till ett visst schema som syns i insidework-sheet
-
 struct WorkoutView: View {
     
     @State var choiceMade = ""
@@ -49,7 +47,8 @@ struct WorkoutView: View {
                         icon: {Image(systemName: "text.badge.plus")}
                     )
                 }
-                .padding(.top, -75)
+                .padding(.horizontal)
+                .padding(.top, 60)
                 .foregroundColor(.green)
                 .font(.title3)
                 .bold()
@@ -58,7 +57,6 @@ struct WorkoutView: View {
                     if choiceMade == "Novice" {
                         
                         isShowingNoviceWorkoutSheet.toggle()
-                        
                         
                     }
                     
@@ -76,7 +74,7 @@ struct WorkoutView: View {
                     
                     
                 }){
-                    Text("GO TO WORKOUT")
+                    Text("NEXT")
                         .foregroundColor(.white)
                         .font(.title3)
                         .bold()
@@ -88,7 +86,9 @@ struct WorkoutView: View {
                         RoundedRectangle(cornerRadius: 10)
                             .fill(Color.black)
                         )
-                        .padding(.horizontal, 50)
+                        .padding(.horizontal)
+                        .padding(.top, 300)
+                       // .frame(width: 200, height: 20)
                 }
                 .sheet(isPresented: $isShowingNoviceWorkoutSheet) {
                    NoviceWorkoutView()

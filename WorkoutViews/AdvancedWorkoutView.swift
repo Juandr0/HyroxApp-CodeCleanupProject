@@ -13,6 +13,7 @@ struct AdvancedWorkoutView: View {
     @State var start = false
     @State var count = 0
     @State var time = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    var locationManager = LocationManager()
     
     
     var body: some View {
@@ -45,6 +46,7 @@ struct AdvancedWorkoutView: View {
                 Button(action: {
                     self.start.toggle()
                     mapOn.toggle()
+                    locationManager.startLocationUpdates()
                     
                 }){
                     Text("START ADVANCED WORKOUT")

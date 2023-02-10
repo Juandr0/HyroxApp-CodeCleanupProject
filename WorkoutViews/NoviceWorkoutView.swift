@@ -15,6 +15,7 @@ struct NoviceWorkoutView: View {
     @State var start = false
     @State var count = 0
     @State var time = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    var locationManager = LocationManager()
     
     
     var body: some View {
@@ -46,6 +47,7 @@ struct NoviceWorkoutView: View {
                 Button(action: {
                     self.start.toggle()
                     mapOn.toggle()
+                    locationManager.startLocationUpdates()
                     
                 }){
                     Text("START NOVICE WORKOUT")

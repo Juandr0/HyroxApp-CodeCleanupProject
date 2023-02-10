@@ -16,7 +16,6 @@ struct TabControllerView: View {
                     .tabItem {
                         Label("WorkOut", systemImage: "trophy")
                     }
-            
                 ProgressView()
                     .tabItem {
                         Label("Progress", systemImage: "flowchart")

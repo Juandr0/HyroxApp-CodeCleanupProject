@@ -10,15 +10,18 @@ import MapKit
 
 struct MapView: View {
     
-    @StateObject var viewModel = MapViewModel()
+    var viewModel = LocationManager()
+    
+    @State var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 37.3323341, longitude: -122.0312186), span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
     
     var body: some View {
-        Map(coordinateRegion: $viewModel.region, showsUserLocation: true)
-            .ignoresSafeArea()
-            .onAppear {
-                viewModel.checkIfLocationServicesIsEnabled()
-            }
-    }
+        Map(coordinateRegion: $region,
+                        interactionModes: [.all],
+                        showsUserLocation: true,
+                        userTrackingMode: .constant(.follow)
+            
+        )}
+        
 }
 
 struct MapView_Previews: PreviewProvider {

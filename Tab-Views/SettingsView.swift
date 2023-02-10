@@ -39,7 +39,9 @@ struct SettingsView: View {
                 RoundedRectangle(cornerRadius: 10)
                     .fill(Color.red)
                 )
+                .frame(width: 200, height: 30)
                 .padding(.horizontal)
+                .padding(.bottom, 50)
             }
             
         }
