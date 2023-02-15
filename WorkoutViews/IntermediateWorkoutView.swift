@@ -39,33 +39,39 @@ struct IntermediateWorkoutView: View {
                 
                 Spacer()
                 intermediateWorkout()
-                intermediateText()
+                    .padding()
+              //  intermediateText()
+                    .padding(.bottom, 40)
                 
-                
-                
-                Button(action: {
-                    mapOn.toggle()
-                    locationManager.startLocationUpdates()
-                    timeManager.start()
+                HStack {
                     
-                }){
-                    Text("START INTERMEDIATE WORKOUT")
-                        .foregroundColor(Color .white)
-                        .font(.headline)
-                }
-                
-                Button(action: {
-                    mapOn.toggle()
-                    locationManager.stopLocationUpdates()
-                    timeManager.stop()
-                    let newUser = User(fitnessLevel: "Intermediate", date: Date(), elapsedTime: timeManager.elapsedTime)
-                    db.addData(user: newUser)
+                    Button(action: {
+                        mapOn.toggle()
+                        locationManager.startLocationUpdates()
+                        timeManager.start()
+                        
+                    }){
+                        Text("START INTERMEDIATE WORKOUT")
+                            .foregroundColor(Color .white)
+                            .font(.headline)
+                    }
                     
-                }){
-                    Text("STOP INTERMEDIATE WORKOUT")
-                        .foregroundColor(Color .red)
-                        .font(.headline)
+                    Button(action: {
+                        mapOn.toggle()
+                        locationManager.stopLocationUpdates()
+                        timeManager.stop()
+                        let newUser = User(fitnessLevel: "Intermediate", date: Date(), elapsedTime: timeManager.elapsedTime)
+                        db.addData(user: newUser)
+                        
+                        
+                    }){
+                        Text("STOP INTERMEDIATE WORKOUT")
+                            .foregroundColor(Color .red)
+                            .font(.headline)
+                    }
+                    
                 }
+                .padding(.bottom, 30)
             }
         }
     }
@@ -80,10 +86,10 @@ struct IntermediateWorkoutView_Previews: PreviewProvider {
 struct intermediateWorkout: View {
     var body: some View {
         Text("8 Rounds of: 1 Km Run, 20 Walking Lunges")
-            .padding(.top, -200)
+            .padding(.horizontal)
             .foregroundColor(Color("DetailGreen"))
             .fontWeight(.bold)
-            .font(.largeTitle)
+            .font(.title)
     }
 }
 

@@ -40,33 +40,40 @@ struct NoviceWorkoutView: View {
                 Spacer()
                 
                 noviceWorkout()
-                noviceText()
+                    .padding()
+               // noviceText()
+                    .padding(.bottom, 40)
                 
-                Button(action: {
-                    mapOn.toggle()
-                    locationManager.startLocationUpdates()
-                    timeManager.start()
+                HStack {
                     
-                }){
-                    Text("START NOVICE WORKOUT")
-                        .foregroundColor(Color .white)
-                        .font(.headline)
+                    Button(action: {
+                        mapOn.toggle()
+                        locationManager.startLocationUpdates()
+                        timeManager.start()
+                        
+                    }){
+                        Text("START NOVICE WORKOUT")
+                            .foregroundColor(Color .white)
+                            .font(.headline)
+                    }
+                    
+                    Button(action: {
+                        mapOn.toggle()
+                        locationManager.stopLocationUpdates()
+                        timeManager.stop()
+                        let newUser = User(fitnessLevel: "Novice", date: Date(), elapsedTime: timeManager.elapsedTime)
+                        db.addData(user: newUser)
+                        
+                        
+                    }){
+                        Text("STOP NOVICE WORKOUT")
+                            .foregroundColor(Color .red)
+                            .font(.headline)
+                    }
+                    
                 }
-                
-                Button(action: {
-                    mapOn.toggle()
-                    locationManager.stopLocationUpdates()
-                    timeManager.stop()
-                    let newUser = User(fitnessLevel: "Novice", date: Date(), elapsedTime: timeManager.elapsedTime)
-                    db.addData(user: newUser)
-                    
-                    
-                }){
-                    Text("STOP NOVICE WORKOUT")
-                        .foregroundColor(Color .red)
-                        .font(.headline)
-                }
-                
+                .padding(.bottom, 30)
+
             }
             
         }
@@ -83,10 +90,10 @@ struct InsideWorkOutView_Previews: PreviewProvider {
 struct noviceWorkout: View {
     var body: some View {
         Text("4 Rounds of: 1 Km Run, 20 Walking Lunges")
-            .padding(.top, -200)
+            .padding(.horizontal)
             .foregroundColor(Color("DetailGreen"))
             .fontWeight(.bold)
-            .font(.largeTitle)
+            .font(.title)
     }
 }
 

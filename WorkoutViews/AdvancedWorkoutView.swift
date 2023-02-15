@@ -40,34 +40,42 @@ struct AdvancedWorkoutView: View {
                 Spacer()
                 
                 advancedWorkout()
-                advancedText()
+                    .padding()
+             //   advancedText()
+                    .padding(.bottom, 40)
                 
         
-                
-                Button(action: {
-                    mapOn.toggle()
-                    locationManager.startLocationUpdates()
-                    timeManager.start()
+                HStack {
                     
-                }){
-                    Text("START ADVANCED WORKOUT")
-                        .foregroundColor(Color .white)
-                        .font(.headline)
+                    Button(action: {
+                        mapOn.toggle()
+                        locationManager.startLocationUpdates()
+                        timeManager.start()
+                        
+                    }){
+                        Text("START ADVANCED WORKOUT")
+                            .foregroundColor(Color .white)
+                            .font(.headline)
+                    }
+                    
+                    Button(action: {
+                        mapOn.toggle()
+                        locationManager.stopLocationUpdates()
+                        timeManager.stop()
+                        let newUser = User(fitnessLevel: "Advanced", date: Date(), elapsedTime: timeManager.elapsedTime)
+                        db.addData(user: newUser)
+                        
+                        
+                    }){
+                        Text("STOP ADVANCED WORKOUT")
+                            .foregroundColor(Color .red)
+                            .font(.headline)
+                    }
+                    
                 }
+                .padding(.bottom, 30)
                 
-                Button(action: {
-                    mapOn.toggle()
-                    locationManager.stopLocationUpdates()
-                    timeManager.stop()
-                    let newUser = User(fitnessLevel: "Advanced", date: Date(), elapsedTime: timeManager.elapsedTime)
-                    db.addData(user: newUser)
-                    
-                    
-                }){
-                    Text("STOP ADVANCED WORKOUT")
-                        .foregroundColor(Color .red)
-                        .font(.headline)
-                }
+                
             }
         }
     }
@@ -76,20 +84,20 @@ struct AdvancedWorkoutView: View {
 struct advancedWorkout: View {
     var body: some View {
         Text("8 Rounds of: 1 Km Run, 40 Walking Lunges")
-            .padding(.top, -200)
+            .padding(.horizontal)
             .foregroundColor(Color("DetailGreen"))
             .fontWeight(.bold)
-            .font(.largeTitle)
+            .font(.title)
     }
 }
 
 struct advancedText: View {
     var body: some View {
-        Text("Finish in under an hour to have a great chance of top 3")
-            .padding(.top, -100)
-            .foregroundColor(Color("DetailGray"))
+        Text("Finish in under 60 minutes to have a chance at placing top 3!")
+            .foregroundColor(.white)
             .padding(.horizontal)
             .fontWeight(.bold)
+            .font(.headline)
     }
 }
 struct AdvancedWorkoutView_Previews: PreviewProvider {
