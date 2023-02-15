@@ -14,8 +14,11 @@ struct NoviceWorkoutView: View {
     @State var mapOn = false
     @State var start = false
     @State var count = 0
-    @State var time = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+   // @State var time = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     var locationManager = LocationManager()
+    var db = ViewModel()
+    
+    @ObservedObject var timeManager = TimeManager()
     
     
     var body: some View {
@@ -30,16 +33,10 @@ struct NoviceWorkoutView: View {
             
             VStack {
                 
-                Text("4 Rounds of: 1 Km Run, 1:30 min Burpees")
-                    .padding(.top, -200)
-                    .foregroundColor(.white)
-                    .fontWeight(.bold)
-                Text("Finish in 25 minutes or under to move to Intermediate.")
-                    .padding(.top, -100)
-                    .foregroundColor(.white)
-                    .padding(.horizontal)
+                noviceWorkout()
+                noviceText()
                 
-                Text("\(count)")
+                Text(String(format: "%1.f", timeManager.secondsElapsed))
                     .padding()
                     .font(.largeTitle)
                     .foregroundColor(Color .white)
@@ -48,6 +45,7 @@ struct NoviceWorkoutView: View {
                     self.start.toggle()
                     mapOn.toggle()
                     locationManager.startLocationUpdates()
+                    timeManager.start()
                     
                 }){
                     Text("START NOVICE WORKOUT")
@@ -55,13 +53,20 @@ struct NoviceWorkoutView: View {
                         .font(.headline)
                 }
                 
-            }
-            
-        }
-        .onReceive(time) { (_) in
-            
-            if self.start {
-                self.count += 1
+                Button(action: {
+                    self.start.toggle()
+                    mapOn.toggle()
+                    locationManager.stopLocationUpdates()
+                    timeManager.stop()
+                    db.addData(date: Date(),/*distance: , time: timeManager.secondsElapsed,*/ fitnessLevel: "Novice")
+                    
+                    
+                }){
+                    Text("STOP NOVICE WORKOUT")
+                        .foregroundColor(Color .red)
+                        .font(.headline)
+                }
+                
             }
             
         }
@@ -72,5 +77,25 @@ struct NoviceWorkoutView: View {
 struct InsideWorkOutView_Previews: PreviewProvider {
     static var previews: some View {
         NoviceWorkoutView()
+    }
+}
+
+struct noviceWorkout: View {
+    var body: some View {
+        Text("4 Rounds of: 1 Km Run, 20 Walking Lunges")
+            .padding(.top, -200)
+            .foregroundColor(.green)
+            .fontWeight(.bold)
+            .font(.largeTitle)
+    }
+}
+
+struct noviceText: View {
+    var body: some View {
+        Text("Finish in 25 minutes or under to move to Intermediate.")
+            .padding(.top, -100)
+            .foregroundColor(.red)
+            .padding(.horizontal)
+            .fontWeight(.bold)
     }
 }

@@ -43,6 +43,9 @@
 		09B12C452994274C00116CA9 /* AdvancedWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B12C442994274B00116CA9 /* AdvancedWorkoutView.swift */; };
 		09B12C462994274C00116CA9 /* AdvancedWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B12C442994274B00116CA9 /* AdvancedWorkoutView.swift */; };
 		09B12C472994274C00116CA9 /* AdvancedWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B12C442994274B00116CA9 /* AdvancedWorkoutView.swift */; };
+		09B12C49299BCAD300116CA9 /* TimerClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B12C48299BCAD200116CA9 /* TimerClass.swift */; };
+		09B12C4A299BCAD300116CA9 /* TimerClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B12C48299BCAD200116CA9 /* TimerClass.swift */; };
+		09B12C4B299BCAD300116CA9 /* TimerClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B12C48299BCAD200116CA9 /* TimerClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +93,7 @@
 		09B12C3929913F1B00116CA9 /* FontStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontStyles.swift; sourceTree = "<group>"; };
 		09B12C40299426E700116CA9 /* IntermediateWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntermediateWorkoutView.swift; sourceTree = "<group>"; };
 		09B12C442994274B00116CA9 /* AdvancedWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedWorkoutView.swift; sourceTree = "<group>"; };
+		09B12C48299BCAD200116CA9 /* TimerClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +160,7 @@
 				09722A3E296F1A69006F55CA /* GoogleService-Info.plist */,
 				097229D7296CAFE9006F55CA /* Preview Content */,
 				09B12C3929913F1B00116CA9 /* FontStyles.swift */,
+				09B12C48299BCAD200116CA9 /* TimerClass.swift */,
 			);
 			path = HyroxFitnessApp;
 			sourceTree = "<group>";
@@ -380,6 +385,7 @@
 			files = (
 				09B12C28298A708900116CA9 /* User.swift in Sources */,
 				09722A8729804554006F55CA /* SettingsView.swift in Sources */,
+				09B12C49299BCAD300116CA9 /* TimerClass.swift in Sources */,
 				09722AA12986ECEB006F55CA /* LocationManager.swift in Sources */,
 				09722A9329829EAA006F55CA /* SignInRegister.swift in Sources */,
 				09722A952982A34C006F55CA /* TabControllerView.swift in Sources */,
@@ -403,6 +409,7 @@
 				09B12C462994274C00116CA9 /* AdvancedWorkoutView.swift in Sources */,
 				09B12C3B29913F1B00116CA9 /* FontStyles.swift in Sources */,
 				097229E3296CAFEA006F55CA /* HyroxFitnessAppTests.swift in Sources */,
+				09B12C4A299BCAD300116CA9 /* TimerClass.swift in Sources */,
 				09B12C42299426E700116CA9 /* IntermediateWorkoutView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,6 +422,7 @@
 				097229EF296CAFEA006F55CA /* HyroxFitnessAppUITestsLaunchTests.swift in Sources */,
 				09B12C43299426E700116CA9 /* IntermediateWorkoutView.swift in Sources */,
 				097229ED296CAFEA006F55CA /* HyroxFitnessAppUITests.swift in Sources */,
+				09B12C4B299BCAD300116CA9 /* TimerClass.swift in Sources */,
 				09B12C3C29913F1B00116CA9 /* FontStyles.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

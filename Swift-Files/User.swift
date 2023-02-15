@@ -7,13 +7,18 @@
 
 import Foundation
 import FirebaseFirestoreSwift
+import FirebaseFirestore
 
-struct User : Codable, Identifiable {
+struct User: Codable, Identifiable {
+    @DocumentID var id: String?
+   // var time: TimeInterval
+    var fitnessLevel: String
+    var date: Date
+    var dateString: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEEE, dd 'of' MMMM"
+        return formatter.string(from: date)
+    }
     
-    @DocumentID var id : String?
-    var date : String
-    var distance : String
-    var time : String
-    var fitnessLevel : String
     
 }

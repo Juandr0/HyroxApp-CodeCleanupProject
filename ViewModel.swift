@@ -19,49 +19,92 @@ class ViewModel: ObservableObject {
         fetchData()
     }
     
-    func addData(date: String,
-                 distance: String,
-                 time: String,
-                 fitnessLevel: String) {
+    func addData(date: Date, fitnessLevel: String) {
+          //  let data = User(name: itemName)
         
-        let users = User(date: date, distance: distance, time: time, fitnessLevel: fitnessLevel)
-            
-                do {
-                    _ = try db.collection("Users").addDocument(from: users)
-                } catch {
-                    print("Error saving to DB")
-                }
-        
-    }
-    
-    func delete(user: User) {
-            db.collection("Users").document(user.id!).delete() { error in
-                if let error = error {
-                    print("Error deleting workout: \(error)")
-                    return
-                }
-                print("Workout successfully deleted")
+            do {
+                _ = try db.collection("Users").addDocument(from: users)
+            } catch {
+                print("Error saving to DB")
             }
         }
+    
+//    func addData(date: Date, fitnessLevel: String) {
+//        let data: [String: Any] = [
+//            "date": Timestamp(date: date),
+//            "fitnessLevel": fitnessLevel
+//        ]
+//        do {
+//            let docRef = try db.collection("Users").document()
+//            let user = User(id: docRef.documentID, fitnessLevel: fitnessLevel, date: date)
+//            self.users.append(user)
+//            try docRef.setData(data)
+//        } catch {
+//            print("Error saving to DB: \(error)")
+//        }
+//    }
+    
+    func delete(users: User) {
+        guard let id = users.id else {
+            print("Error: User ID is nil.")
+            return
+        }
+        db.collection("Users").document(id).delete() { error in
+            if let error = error {
+                print("Error deleting workout: \(error)")
+                return
+            }
+            print("Workout successfully deleted")
+        }
+    }
     
     func fetchData() {
-            db.collection("Users").addSnapshotListener { (snapshot, error) in
-                if let error = error {
-                    print("Error fetching data from Firestore: \(error)")
-                    return
-                }
+            db.collection("Users").addSnapshotListener { snapshot, err in
+                guard let snapshot = snapshot else {return}
                 
-                self.users = snapshot!.documents.compactMap { document in
-                    let data = document.data()
-                    let date = data["date"] as! String
-                    let distance = data["distance"] as! String
-                    let time = data["time"] as! String
-                    let fitnessLevel = data["fitnessLevel"] as! String
-                    
-                    return User(id: document.documentID, date: date, distance: distance, time: time, fitnessLevel: fitnessLevel)
+                if let err = err {
+                    print("Error getting document \(err)")
+                } else {
+                    self.users.removeAll()
+                    for document in snapshot.documents {
+
+                        let result = Result {
+                            try document.data(as: User.self)
+                        }
+                        switch result  {
+                        case .success(let item)  :
+                            self.users.append(item)
+                        case .failure(let error) :
+                            print("Error decoding item: \(error)")
+                        }
+                    }
+                }
             }
         }
-    }
+
+    
+ //   func fetchData() {
+//        db.collection("Users").addSnapshotListener { (snapshot, error) in
+ //           guard let documents = snapshot?.documents else {
+ //               print("No documents")
+  //              return
+  //
+  //          }
+  //          self.users = documents.map { (queryDocumentSnapshot) -> User in
+  //              let data = queryDocumentSnapshot.data()
+  //              let fitnessLevel = data["fitnessLevel"] as? String ?? ""
+  //              let date = (data["date"] as? Timestamp)?.dateValue() ?? Date()
+  //
+ //               return User(fitnessLevel: fitnessLevel, date: date)
+ //
+//            }
+//        }
+//
+//    }
+    
 }
+
+    
+
     
 

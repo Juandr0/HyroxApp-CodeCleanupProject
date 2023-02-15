@@ -7,49 +7,47 @@
 
 import Foundation
 import CoreLocation
+import MapKit
 
-class LocationManager : NSObject, CLLocationManagerDelegate {
+class LocationManager: NSObject, CLLocationManagerDelegate {
     
     let manager = CLLocationManager()
-    var location : CLLocationCoordinate2D?
-    var startLocation : CLLocationCoordinate2D?
+    var location: CLLocationCoordinate2D?
+    var startLocation: CLLocationCoordinate2D?
     
-    
-        override init() {
+    override init() {
         super.init()
         manager.delegate = self
     }
     
     func startLocationUpdates() {
-        startLocation = location
+      //  if let location = location {
+       //     startLocation = location
+       // }
         manager.requestWhenInUseAuthorization()
         manager.startUpdatingLocation()
-        
     }
     
-    func getDistance() -> CLLocationDistance{
-        if startLocation != nil {
-            return (location?.distance(to: startLocation!))!
-        }
-        return 0.0
-        
+    func stopLocationUpdates() {
+        manager.stopUpdatingLocation()
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         location = locations.first?.coordinate
-       // print("Current location updated \(location)")
-        var distance = getDistance()
-    
-        print("Current Distance: \(distance)")
-    }
-    
-
-}
-
-import MapKit
-
-extension CLLocationCoordinate2D{
-    func distance(to: CLLocationCoordinate2D) -> CLLocationDistance{
-        MKMapPoint(self).distance(to: MKMapPoint(to))
-    }
-}
+        
+        if startLocation == nil {
+                startLocation = location
+            }
+            
+            let distance = getDistance()
+            print("Current Distance: \(distance) kilometers")
+        
+        }
+        
+        func getDistance() -> Double {
+            if let startLocation = startLocation, let location = location {
+                let distance = MKMapPoint(startLocation).distance(to: MKMapPoint(location)) / 1000
+                return distance
+            }
+            return 0.0
+        }}
