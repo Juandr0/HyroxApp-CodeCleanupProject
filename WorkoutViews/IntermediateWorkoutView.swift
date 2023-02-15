@@ -56,7 +56,9 @@ struct IntermediateWorkoutView: View {
                     mapOn.toggle()
                     locationManager.stopLocationUpdates()
                     timeManager.stop()
-                    db.addData(date: Date(),/*distance: , time: timeManager.secondsElapsed,*/ fitnessLevel: "Intermediate")
+                    let newUser = User(fitnessLevel: "Intermediate", date: Date())
+                    db.addData(user: newUser)
+
                     
                     
                 }){

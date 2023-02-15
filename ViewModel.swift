@@ -19,30 +19,14 @@ class ViewModel: ObservableObject {
         fetchData()
     }
     
-    func addData(date: Date, fitnessLevel: String) {
-          //  let data = User(name: itemName)
-        
-            do {
-                _ = try db.collection("Users").addDocument(from: users)
-            } catch {
-                print("Error saving to DB")
-            }
+    func addData(user: User) {
+        let db = Firestore.firestore()
+        do {
+            let _ = try db.collection("users").addDocument(from: user)
+        } catch let error {
+            print("Error writing user to Firestore: \(error.localizedDescription)")
         }
-    
-//    func addData(date: Date, fitnessLevel: String) {
-//        let data: [String: Any] = [
-//            "date": Timestamp(date: date),
-//            "fitnessLevel": fitnessLevel
-//        ]
-//        do {
-//            let docRef = try db.collection("Users").document()
-//            let user = User(id: docRef.documentID, fitnessLevel: fitnessLevel, date: date)
-//            self.users.append(user)
-//            try docRef.setData(data)
-//        } catch {
-//            print("Error saving to DB: \(error)")
-//        }
-//    }
+    }
     
     func delete(users: User) {
         guard let id = users.id else {
@@ -82,25 +66,6 @@ class ViewModel: ObservableObject {
             }
         }
 
-    
- //   func fetchData() {
-//        db.collection("Users").addSnapshotListener { (snapshot, error) in
- //           guard let documents = snapshot?.documents else {
- //               print("No documents")
-  //              return
-  //
-  //          }
-  //          self.users = documents.map { (queryDocumentSnapshot) -> User in
-  //              let data = queryDocumentSnapshot.data()
-  //              let fitnessLevel = data["fitnessLevel"] as? String ?? ""
-  //              let date = (data["date"] as? Timestamp)?.dateValue() ?? Date()
-  //
- //               return User(fitnessLevel: fitnessLevel, date: date)
- //
-//            }
-//        }
-//
-//    }
     
 }
 

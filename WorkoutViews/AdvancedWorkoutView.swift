@@ -56,7 +56,8 @@ struct AdvancedWorkoutView: View {
                     mapOn.toggle()
                     locationManager.stopLocationUpdates()
                     timeManager.stop()
-                    db.addData(date: Date(),/*distance: , time: timeManager.secondsElapsed,*/ fitnessLevel: "Advanced")
+                    let newUser = User(fitnessLevel: "Advanced", date: Date())
+                    db.addData(user: newUser)
                     
                     
                 }){
