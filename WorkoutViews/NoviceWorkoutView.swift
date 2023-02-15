@@ -7,13 +7,10 @@
 
 import SwiftUI
 
-//Add save button that saves distance, time and date to Firebase
-
 struct NoviceWorkoutView: View {
     
     @State var mapOn = false
-    @State var start = false
-    @State var count = 0
+    
     var locationManager = LocationManager()
     var db = ViewModel()
     
@@ -32,17 +29,20 @@ struct NoviceWorkoutView: View {
             
             VStack {
                 
-                noviceWorkout()
-                noviceText()
-                
                 Text(String(format: "%02d:%02d:%02d", Int(timeManager.elapsedTime / 3600), Int(timeManager.elapsedTime.truncatingRemainder(dividingBy: 3600) / 60), Int(timeManager.elapsedTime.truncatingRemainder(dividingBy: 60))))
-
                     .padding()
                     .font(.largeTitle)
                     .foregroundColor(Color .white)
                 
+                Text("Distance: \(locationManager.getDistance())")
+                    .foregroundColor(.white)
+                
+                Spacer()
+                
+                noviceWorkout()
+                noviceText()
+                
                 Button(action: {
-                    self.start.toggle()
                     mapOn.toggle()
                     locationManager.startLocationUpdates()
                     timeManager.start()
@@ -54,7 +54,6 @@ struct NoviceWorkoutView: View {
                 }
                 
                 Button(action: {
-                    self.start.toggle()
                     mapOn.toggle()
                     locationManager.stopLocationUpdates()
                     timeManager.stop()
@@ -85,7 +84,7 @@ struct noviceWorkout: View {
     var body: some View {
         Text("4 Rounds of: 1 Km Run, 20 Walking Lunges")
             .padding(.top, -200)
-            .foregroundColor(.green)
+            .foregroundColor(Color("DetailGreen"))
             .fontWeight(.bold)
             .font(.largeTitle)
     }
@@ -95,7 +94,7 @@ struct noviceText: View {
     var body: some View {
         Text("Finish in 25 minutes or under to move to Intermediate.")
             .padding(.top, -100)
-            .foregroundColor(.red)
+            .foregroundColor(Color("DetailGray"))
             .padding(.horizontal)
             .fontWeight(.bold)
     }

@@ -8,8 +8,6 @@
 import SwiftUI
 import Firebase
 
-//List of workouts from firebase
-
 // Logged on users data should be showing only for that user
 
 struct ProgressView: View {

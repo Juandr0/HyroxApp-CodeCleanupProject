@@ -10,8 +10,6 @@ import SwiftUI
 struct IntermediateWorkoutView: View {
 
     @State var mapOn = false
-    @State var start = false
-    @State var count = 0
 
     var locationManager = LocationManager()
     var db = ViewModel()
@@ -31,16 +29,21 @@ struct IntermediateWorkoutView: View {
             
             VStack {
                 
-                intermediateWorkout()
-                intermediateText()
-                
                 Text(String(format: "%02d:%02d:%02d", Int(timeManager.elapsedTime / 3600), Int(timeManager.elapsedTime.truncatingRemainder(dividingBy: 3600) / 60), Int(timeManager.elapsedTime.truncatingRemainder(dividingBy: 60))))
                     .padding()
                     .font(.largeTitle)
                     .foregroundColor(Color .white)
                 
+                Text("Distance: \(locationManager.getDistance())")
+                    .foregroundColor(.white)
+                
+                Spacer()
+                intermediateWorkout()
+                intermediateText()
+                
+                
+                
                 Button(action: {
-                    self.start.toggle()
                     mapOn.toggle()
                     locationManager.startLocationUpdates()
                     timeManager.start()
@@ -52,14 +55,11 @@ struct IntermediateWorkoutView: View {
                 }
                 
                 Button(action: {
-                    self.start.toggle()
                     mapOn.toggle()
                     locationManager.stopLocationUpdates()
                     timeManager.stop()
-                    let newUser = User(fitnessLevel: "Novice", date: Date(), elapsedTime: timeManager.elapsedTime)
+                    let newUser = User(fitnessLevel: "Intermediate", date: Date(), elapsedTime: timeManager.elapsedTime)
                     db.addData(user: newUser)
-
-                    
                     
                 }){
                     Text("STOP INTERMEDIATE WORKOUT")
@@ -81,7 +81,7 @@ struct intermediateWorkout: View {
     var body: some View {
         Text("8 Rounds of: 1 Km Run, 20 Walking Lunges")
             .padding(.top, -200)
-            .foregroundColor(.green)
+            .foregroundColor(Color("DetailGreen"))
             .fontWeight(.bold)
             .font(.largeTitle)
     }
@@ -91,7 +91,7 @@ struct intermediateText: View {
     var body: some View {
         Text("Finish in 25 minutes or under to move to Advanced.")
             .padding(.top, -100)
-            .foregroundColor(.red)
+            .foregroundColor(Color("DetailGray"))
             .padding(.horizontal)
             .fontWeight(.bold)
     }
