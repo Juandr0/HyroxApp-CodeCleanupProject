@@ -34,8 +34,9 @@ struct IntermediateWorkoutView: View {
                     .font(.largeTitle)
                     .foregroundColor(Color .white)
                 
-                Text("Distance: \(locationManager.getDistance())")
+                Text("Kilometers: \(locationManager.getDistance())")
                     .foregroundColor(.white)
+                    .fontWeight(.bold)
                 
                 Spacer()
                 intermediateWorkout()
@@ -51,10 +52,12 @@ struct IntermediateWorkoutView: View {
                         timeManager.start()
                         
                     }){
-                        Text("START INTERMEDIATE WORKOUT")
-                            .foregroundColor(Color .white)
-                            .font(.headline)
+                        Image(systemName: "play.circle")
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                            .foregroundColor(.green)
                     }
+                    .padding()
                     
                     Button(action: {
                         mapOn.toggle()
@@ -65,10 +68,12 @@ struct IntermediateWorkoutView: View {
                         
                         
                     }){
-                        Text("STOP INTERMEDIATE WORKOUT")
-                            .foregroundColor(Color .red)
-                            .font(.headline)
+                        Image(systemName: "stop.circle")
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                            .foregroundColor(.red)
                     }
+                    .padding()
                     
                 }
                 .padding(.bottom, 30)
@@ -85,9 +90,9 @@ struct IntermediateWorkoutView_Previews: PreviewProvider {
 
 struct intermediateWorkout: View {
     var body: some View {
-        Text("8 Rounds of: 1 Km Run, 20 Walking Lunges")
+        Text("6 Rounds of: 1 Km Run, 20 Walking Lunges")
             .padding(.horizontal)
-            .foregroundColor(Color("DetailGreen"))
+            .foregroundColor(Color("DetailGray"))
             .fontWeight(.bold)
             .font(.title)
     }

@@ -34,8 +34,9 @@ struct NoviceWorkoutView: View {
                     .font(.largeTitle)
                     .foregroundColor(Color .white)
                 
-                Text("Distance: \(locationManager.getDistance())")
+                Text("Kilometers: \(locationManager.getDistance())")
                     .foregroundColor(.white)
+                    .fontWeight(.bold)
                 
                 Spacer()
                 
@@ -52,10 +53,12 @@ struct NoviceWorkoutView: View {
                         timeManager.start()
                         
                     }){
-                        Text("START NOVICE WORKOUT")
-                            .foregroundColor(Color .white)
-                            .font(.headline)
+                        Image(systemName: "play.circle")
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                            .foregroundColor(.green)
                     }
+                    .padding()
                     
                     Button(action: {
                         mapOn.toggle()
@@ -66,10 +69,12 @@ struct NoviceWorkoutView: View {
                         
                         
                     }){
-                        Text("STOP NOVICE WORKOUT")
-                            .foregroundColor(Color .red)
-                            .font(.headline)
+                        Image(systemName: "stop.circle")
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                            .foregroundColor(.red)
                     }
+                    .padding()
                     
                 }
                 .padding(.bottom, 30)
@@ -91,7 +96,7 @@ struct noviceWorkout: View {
     var body: some View {
         Text("4 Rounds of: 1 Km Run, 20 Walking Lunges")
             .padding(.horizontal)
-            .foregroundColor(Color("DetailGreen"))
+            .foregroundColor(Color("DetailGray"))
             .fontWeight(.bold)
             .font(.title)
     }

@@ -34,8 +34,9 @@ struct AdvancedWorkoutView: View {
                     .font(.largeTitle)
                     .foregroundColor(Color .white)
                 
-                Text("Distance: \(locationManager.getDistance())")
+                Text("Kilometers: \(locationManager.getDistance())")
                     .foregroundColor(.white)
+                    .fontWeight(.bold)
                 
                 Spacer()
                 
@@ -53,10 +54,12 @@ struct AdvancedWorkoutView: View {
                         timeManager.start()
                         
                     }){
-                        Text("START ADVANCED WORKOUT")
-                            .foregroundColor(Color .white)
-                            .font(.headline)
+                        Image(systemName: "play.circle")
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                            .foregroundColor(.green)
                     }
+                    .padding()
                     
                     Button(action: {
                         mapOn.toggle()
@@ -67,10 +70,12 @@ struct AdvancedWorkoutView: View {
                         
                         
                     }){
-                        Text("STOP ADVANCED WORKOUT")
-                            .foregroundColor(Color .red)
-                            .font(.headline)
+                        Image(systemName: "stop.circle")
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                            .foregroundColor(.red)
                     }
+                    .padding()
                     
                 }
                 .padding(.bottom, 30)
@@ -85,7 +90,7 @@ struct advancedWorkout: View {
     var body: some View {
         Text("8 Rounds of: 1 Km Run, 40 Walking Lunges")
             .padding(.horizontal)
-            .foregroundColor(Color("DetailGreen"))
+            .foregroundColor(Color("DetailGray"))
             .fontWeight(.bold)
             .font(.title)
     }
