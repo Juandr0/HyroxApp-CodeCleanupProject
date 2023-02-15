@@ -14,11 +14,10 @@ struct NoviceWorkoutView: View {
     @State var mapOn = false
     @State var start = false
     @State var count = 0
-   // @State var time = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     var locationManager = LocationManager()
     var db = ViewModel()
     
-    @ObservedObject var timeManager = TimeManager()
+    @ObservedObject var timeManager = TimerManager()
     
     
     var body: some View {
@@ -36,7 +35,8 @@ struct NoviceWorkoutView: View {
                 noviceWorkout()
                 noviceText()
                 
-                Text(String(format: "%1.f", timeManager.secondsElapsed))
+                Text(String(format: "%02d:%02d:%02d", Int(timeManager.elapsedTime / 3600), Int(timeManager.elapsedTime.truncatingRemainder(dividingBy: 3600) / 60), Int(timeManager.elapsedTime.truncatingRemainder(dividingBy: 60))))
+
                     .padding()
                     .font(.largeTitle)
                     .foregroundColor(Color .white)
@@ -58,7 +58,7 @@ struct NoviceWorkoutView: View {
                     mapOn.toggle()
                     locationManager.stopLocationUpdates()
                     timeManager.stop()
-                    let newUser = User(fitnessLevel: "Novice", date: Date())
+                    let newUser = User(fitnessLevel: "Novice", date: Date(), elapsedTime: timeManager.elapsedTime)
                     db.addData(user: newUser)
                     
                     

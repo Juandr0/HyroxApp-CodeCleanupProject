@@ -16,7 +16,7 @@ struct AdvancedWorkoutView: View {
     var locationManager = LocationManager()
     var db = ViewModel()
     
-    @ObservedObject var timeManager = TimeManager()
+    @ObservedObject var timeManager = TimerManager()
     
     
     var body: some View {
@@ -34,7 +34,7 @@ struct AdvancedWorkoutView: View {
                 advancedWorkout()
                 advancedText()
                 
-                Text(String(format: "%1.f", timeManager.secondsElapsed))
+                Text(String(format: "%02d:%02d:%02d", Int(timeManager.elapsedTime / 3600), Int(timeManager.elapsedTime.truncatingRemainder(dividingBy: 3600) / 60), Int(timeManager.elapsedTime.truncatingRemainder(dividingBy: 60))))
                     .padding()
                     .font(.largeTitle)
                     .foregroundColor(Color .white)
@@ -56,7 +56,7 @@ struct AdvancedWorkoutView: View {
                     mapOn.toggle()
                     locationManager.stopLocationUpdates()
                     timeManager.stop()
-                    let newUser = User(fitnessLevel: "Advanced", date: Date())
+                    let newUser = User(fitnessLevel: "Novice", date: Date(), elapsedTime: timeManager.elapsedTime)
                     db.addData(user: newUser)
                     
                     

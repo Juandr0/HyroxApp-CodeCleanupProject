@@ -8,36 +8,29 @@
 import Foundation
 import SwiftUI
 
-class TimeManager : ObservableObject {
+class TimerManager: ObservableObject {
     
- //   enum timeMode {
- //       case running
- //       case stopped
- //       case paused
- //   }
-    
- //   @Published var mode: timeMode = .stopped
-    
-    @Published var secondsElapsed = 0.0
-    var timer = Timer()
+    @Published var elapsedTime: TimeInterval = 0
+    var timer: Timer?
+    var startTime: Date?
     
     func start() {
-       // mode = .running
+        timer?.invalidate()
+        startTime = Date()
         timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { timer in
-            self.secondsElapsed += 0.1
+            if let startTime = self.startTime {
+                self.elapsedTime = -startTime.timeIntervalSinceNow
+            }
         }
     }
     
-    func pause() {
-        timer.invalidate()
-     //   mode = .paused
-    }
-    
     func stop() {
-        timer.invalidate()
-        secondsElapsed = 0
-       // mode = .stopped
+        timer?.invalidate()
+        if let startTime = startTime {
+            let elapsedTime = -startTime.timeIntervalSinceNow
+            self.elapsedTime = elapsedTime
+            self.startTime = nil
+        }
     }
-    
-    
 }
+

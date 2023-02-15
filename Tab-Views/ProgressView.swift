@@ -16,11 +16,6 @@ struct ProgressView: View {
     
     @ObservedObject var userData = ViewModel()
     
-   // @State var date = ""
-   // @State var distance = ""
-   // @State var time = ""
-   // @State var fitnessLevel = ""
-    
     var body: some View {
         
         ZStack {
@@ -37,9 +32,8 @@ struct ProgressView: View {
                     ForEach(userData.users) { user in
                         HStack {
                             Text(user.dateString)
-                         //   Text(user.distance)
-                         //   Text(user.time.description)
                             Text(user.fitnessLevel)
+                            Text(user.elapsedTimeString)
                             
                             Button(action: {
                                 self.userData.delete(users: user)

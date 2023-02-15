@@ -22,7 +22,7 @@ class ViewModel: ObservableObject {
     func addData(user: User) {
         let db = Firestore.firestore()
         do {
-            let _ = try db.collection("users").addDocument(from: user)
+            let _ = try db.collection("Users").addDocument(from: user)
         } catch let error {
             print("Error writing user to Firestore: \(error.localizedDescription)")
         }
