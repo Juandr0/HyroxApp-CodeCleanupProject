@@ -17,7 +17,7 @@ struct SettingsView: View {
     var body: some View {
         
         ZStack {
-            Color.white
+            Color(.white)
                 .edgesIgnoringSafeArea(.all)
             
             VStack{
@@ -37,7 +37,7 @@ struct SettingsView: View {
             
                 .background(
                 RoundedRectangle(cornerRadius: 10)
-                    .fill(Color.red)
+                    .fill(Color.black)
                 )
                 .frame(width: 200, height: 30)
                 .padding(.horizontal)

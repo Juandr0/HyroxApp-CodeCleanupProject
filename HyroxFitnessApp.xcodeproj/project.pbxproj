@@ -565,6 +565,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HyroxFitnessApp/Preview Content\"";
+				DEVELOPMENT_TEAM = Y38HYLB33F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HyroxFitnessApp/Info.plist;
@@ -595,6 +596,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HyroxFitnessApp/Preview Content\"";
+				DEVELOPMENT_TEAM = Y38HYLB33F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HyroxFitnessApp/Info.plist;

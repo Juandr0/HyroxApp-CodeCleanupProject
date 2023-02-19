@@ -9,13 +9,15 @@ import SwiftUI
 
 struct NoviceWorkoutView: View {
     
+    
+    @State private var showingAlert = false
+    
     @State var mapOn = false
     
     var locationManager = LocationManager()
     var db = ViewModel()
     
     @ObservedObject var timeManager = TimerManager()
-    
     
     var body: some View {
         
@@ -25,7 +27,7 @@ struct NoviceWorkoutView: View {
         
         ZStack {
             Color.black
-            .ignoresSafeArea()
+                .ignoresSafeArea()
             
             VStack {
                 
@@ -34,22 +36,22 @@ struct NoviceWorkoutView: View {
                     .font(.largeTitle)
                     .foregroundColor(Color .white)
                 
-                Text("Kilometers: \(locationManager.getDistance())")
+                Text("Meters: \(String(format: "%.2f", locationManager.distance))")
                     .foregroundColor(.white)
                     .fontWeight(.bold)
                 
                 Spacer()
-                
                 noviceWorkout()
                     .padding()
-               // noviceText()
                     .padding(.bottom, 40)
                 
                 HStack {
                     
                     Button(action: {
                         mapOn.toggle()
+                        
                         locationManager.startLocationUpdates()
+                        
                         timeManager.start()
                         
                     }){
@@ -78,11 +80,33 @@ struct NoviceWorkoutView: View {
                     
                 }
                 .padding(.bottom, 30)
-
+                
             }
-            
         }
+        
+        if locationManager.distance >= 1000 {
+            Button("1 kilometer reached!") {
+                showingAlert = true
+            }
+            .alert("Do the workout!", isPresented: $showingAlert) {
+                Button("OK", role: .cancel) { }
+            }
+        }
+    }
+}
 
+
+struct noviceWorkout: View {
+    var body: some View {
+        Text("4 Rounds of: 1 Km Run, 20 Walking Lunges")
+            .padding(.horizontal)
+            .foregroundColor(.white)
+            .fontWeight(.bold)
+            .font(.title)
+            .background(
+            RoundedRectangle(cornerRadius: 10)
+                .fill(Color("DetailGreen"))
+            )
     }
 }
 
@@ -92,22 +116,3 @@ struct InsideWorkOutView_Previews: PreviewProvider {
     }
 }
 
-struct noviceWorkout: View {
-    var body: some View {
-        Text("4 Rounds of: 1 Km Run, 20 Walking Lunges")
-            .padding(.horizontal)
-            .foregroundColor(Color("DetailGray"))
-            .fontWeight(.bold)
-            .font(.title)
-    }
-}
-
-struct noviceText: View {
-    var body: some View {
-        Text("Finish in 25 minutes or under to move to Intermediate.")
-            .padding(.top, -100)
-            .foregroundColor(Color("DetailGray"))
-            .padding(.horizontal)
-            .fontWeight(.bold)
-    }
-}

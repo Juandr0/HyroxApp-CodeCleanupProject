@@ -11,11 +11,13 @@ struct AdvancedWorkoutView: View {
    
     @State var mapOn = false
     
+    @State private var showingAlert = false
+    
     var locationManager = LocationManager()
     var db = ViewModel()
     
     @ObservedObject var timeManager = TimerManager()
-    
+    @State var distance = 0.0
     
     var body: some View {
         
@@ -25,7 +27,7 @@ struct AdvancedWorkoutView: View {
         
         ZStack {
             Color.black
-            .ignoresSafeArea()
+                .ignoresSafeArea()
             
             VStack {
                 
@@ -34,7 +36,7 @@ struct AdvancedWorkoutView: View {
                     .font(.largeTitle)
                     .foregroundColor(Color .white)
                 
-                Text("Kilometers: \(locationManager.getDistance())")
+                Text("Meters: \(String(format: "%.2f", locationManager.distance))")
                     .foregroundColor(.white)
                     .fontWeight(.bold)
                 
@@ -42,15 +44,16 @@ struct AdvancedWorkoutView: View {
                 
                 advancedWorkout()
                     .padding()
-             //   advancedText()
+                   
                     .padding(.bottom, 40)
                 
-        
                 HStack {
                     
                     Button(action: {
                         mapOn.toggle()
+                        
                         locationManager.startLocationUpdates()
+                        
                         timeManager.start()
                         
                     }){
@@ -79,10 +82,22 @@ struct AdvancedWorkoutView: View {
                     
                 }
                 .padding(.bottom, 30)
-                
-                
+
             }
+            
         }
+        
+        if locationManager.distance >= 1000 {
+            Button("1 kilometer reached!") {
+                        showingAlert = true
+                    }
+            .fontWeight(.bold)
+            .foregroundColor(.black)
+                    .alert("Do the workout!", isPresented: $showingAlert) {
+                        Button("OK", role: .cancel) { }
+                    }
+        }
+
     }
 }
 
@@ -90,19 +105,13 @@ struct advancedWorkout: View {
     var body: some View {
         Text("8 Rounds of: 1 Km Run, 40 Walking Lunges")
             .padding(.horizontal)
-            .foregroundColor(Color("DetailGray"))
+            .foregroundColor(.white)
             .fontWeight(.bold)
             .font(.title)
-    }
-}
-
-struct advancedText: View {
-    var body: some View {
-        Text("Finish in under 60 minutes to have a chance at placing top 3!")
-            .foregroundColor(.white)
-            .padding(.horizontal)
-            .fontWeight(.bold)
-            .font(.headline)
+            .background(
+            RoundedRectangle(cornerRadius: 10)
+                .fill(Color("DetailGreen"))
+            )
     }
 }
 struct AdvancedWorkoutView_Previews: PreviewProvider {

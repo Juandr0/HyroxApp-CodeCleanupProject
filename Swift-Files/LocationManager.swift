@@ -12,8 +12,8 @@ import MapKit
 class LocationManager: NSObject, CLLocationManagerDelegate {
     
     let manager = CLLocationManager()
-    var location: CLLocationCoordinate2D?
-    var startLocation: CLLocationCoordinate2D?
+    var lastLocation: CLLocation?
+    @Published var distance: CLLocationDistance = 0
     
     override init() {
         super.init()
@@ -21,9 +21,6 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     }
     
     func startLocationUpdates() {
-      //  if let location = location {
-       //     startLocation = location
-       // }
         manager.requestWhenInUseAuthorization()
         manager.startUpdatingLocation()
     }
@@ -33,21 +30,27 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        location = locations.first?.coordinate
-        
-        if startLocation == nil {
-                startLocation = location
-            }
-            
-            let distance = getDistance()
-            print("Current Distance: \(distance) kilometers")
-        
+        guard let currentLocation = locations.last else {
+            return
         }
         
-        func getDistance() -> Double {
-            if let startLocation = startLocation, let location = location {
-                let distance = MKMapPoint(startLocation).distance(to: MKMapPoint(location)) / 1000
-                return distance
-            }
-            return 0.0
-        }}
+        if lastLocation == nil {
+            lastLocation = currentLocation
+        }
+        
+        distance += currentLocation.distance(from: lastLocation!)
+        lastLocation = currentLocation
+        
+        if distance >= 1000 {
+            distance = 0
+        }
+            
+        let distanceInKm = distance / 1000.0
+        print("Distance: \(distanceInKm) kilometers")
+    }
+}
+
+
+
+
+

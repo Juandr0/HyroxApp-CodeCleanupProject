@@ -20,7 +20,7 @@ struct WorkoutView: View {
         
         
         ZStack {
-            Color.white
+            Color(.white)
                 .edgesIgnoringSafeArea(.all)
         
         VStack {
