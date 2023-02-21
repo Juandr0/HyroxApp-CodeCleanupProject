@@ -20,10 +20,11 @@ struct WorkOutManagerView: View {
     var body: some View {
         
         ZStack {
-            Color("AccentColor")
+            Color.white
                 .edgesIgnoringSafeArea(.all)
         
         VStack {
+            Spacer()
                 Menu {
                     Button(action: {
                         choiceMade = "Novice"
@@ -56,7 +57,7 @@ struct WorkOutManagerView: View {
                     
                     if choiceMade == "Novice" {
                         workOut = "10 PUSHUPS"
-                        workOutText = "4 ROUNDS. 1 KM RUN - 10 PUSHUPS"
+                        workOutText = "4 ROUNDS: 1 KM RUN - 10 PUSHUPS"
                         fitnessLevelString = "Novice"
                         isShowingNoviceWorkoutSheet.toggle()
                         
@@ -64,7 +65,7 @@ struct WorkOutManagerView: View {
                     
                     if choiceMade == "Intermediate" {
                         workOut = "25 SQUATS"
-                        workOutText = "8 ROUNDS. 1KM RUN - 25 SQUATS"
+                        workOutText = "8 ROUNDS: 1KM RUN - 25 SQUATS"
                         fitnessLevelString = "Intermediate"
                         isShowingNoviceWorkoutSheet.toggle()
                 
@@ -72,7 +73,7 @@ struct WorkOutManagerView: View {
                     
                     if choiceMade == "Advanced" {
                         workOut = "20 LUNGES, 15 PUSHUPS"
-                        workOutText = "10 ROUNDS. 1KM RUN - 20 LUNGES, 15 PUSHUPS"
+                        workOutText = "10 ROUNDS: 1KM RUN - 20 LUNGES, 15 PUSHUPS"
                         fitnessLevelString = "Advanced"
                         isShowingNoviceWorkoutSheet.toggle()
                         
@@ -80,6 +81,7 @@ struct WorkOutManagerView: View {
                     
                 }){
                     GoToWorkoutTextView()
+                        .padding(.bottom, 100)
                 }
                 .sheet(isPresented: $isShowingNoviceWorkoutSheet) {
                     

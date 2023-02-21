@@ -34,17 +34,18 @@ struct WorkOutView: View {
             VStack {
                 
                 if locationManager.finished == true {
-                    Button("1 kilometer reached!") {
+                    Button("STOP RUNNING!") {
                         showingAlert = true
                     }
                     .fontWeight(.bold)
                     .foregroundColor(.white)
+                    .font(.largeTitle)
                     .alert("Do \(workOut)!", isPresented: $showingAlert) {
                         Button(action:{
                             locationManager.finished.toggle()
                             
                         }){
-                            Text("OK")
+                            Text("I'm ready for the next lap!")
                         }
                     }
                 
@@ -108,14 +109,17 @@ struct noviceWorkout: View {
     @Binding var workOutText : String
     
     var body: some View {
-        Text("\(workOutText)!")
-            .padding(.horizontal)
-            .foregroundColor(.white)
+        Text("\(workOutText)")
+          //  .padding(.horizontal)
+            .foregroundColor(.green)
             .fontWeight(.bold)
-            .font(.title)
+            .font(.largeTitle)
+            .scaledToFit()
+            .minimumScaleFactor(0.01)
             .background(
-            RoundedRectangle(cornerRadius: 20)
-                .fill(Color("DetailGreen"))
+            RoundedRectangle(cornerRadius: 5)
+                .stroke(Color("DetailGreen"), lineWidth: 2)
+        
             )
     }
 }

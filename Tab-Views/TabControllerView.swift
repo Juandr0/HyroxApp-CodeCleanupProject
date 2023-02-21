@@ -11,36 +11,25 @@ struct TabControllerView: View {
     var body: some View {
             
             TabView {
-                
+                    
                     WorkOutManagerView()
                         .tabItem {
                             Label("WorkOut", systemImage: "trophy")
                         }
-                            .toolbarBackground(
-                                Color.black,
-                                for: .tabBar)
-                
+            
                     ProgressView()
                         .tabItem {
                             Label("Progress", systemImage: "flowchart")
                         }
-
-                            .toolbarBackground(
-                                Color.black,
-                                for: .tabBar)
                 
                     SettingsView()
                         .tabItem {
                             Label("Settings", systemImage: "gearshape")
                         }
                 
-                            .toolbarBackground(
-                                Color.black,
-                                for: .tabBar)
-                
-            }
-            .accentColor(.white)
-
+                }
+            .accentColor(Color("DetailGray"))
+            
     }
 }
 

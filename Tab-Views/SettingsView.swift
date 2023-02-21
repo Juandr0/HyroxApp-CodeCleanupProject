@@ -16,7 +16,7 @@ struct SettingsView: View {
     var body: some View {
         
         ZStack {
-            Color("AccentColor")
+            Color.white
                 .edgesIgnoringSafeArea(.all)
             
             VStack{
