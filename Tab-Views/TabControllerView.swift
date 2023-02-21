@@ -28,7 +28,7 @@ struct TabControllerView: View {
                         }
                 
                 }
-            .accentColor(Color("DetailGray"))
+            .accentColor(Color("AccentColor"))
             
     }
 }

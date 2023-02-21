@@ -117,7 +117,7 @@ struct GoToWorkoutTextView: View {
         
             .background(
                 RoundedRectangle(cornerRadius: 10)
-                    .fill(.black)
+                    .fill(Color("AccentColor"))
             )
             .padding(.horizontal)
             .padding(.top, 300)
