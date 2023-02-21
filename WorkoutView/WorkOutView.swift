@@ -7,12 +7,14 @@
 
 import SwiftUI
 
-struct NoviceWorkoutView: View {
+struct WorkOutView: View {
     
-    
+  
     @State private var showingAlert = false
-    
     @State var mapOn = false
+    @Binding var workOut : String
+    @Binding var workOutText : String
+    @Binding var fitnessLevelString : String
     
     var locationManager = LocationManager()
     var db = ViewModel()
@@ -31,6 +33,23 @@ struct NoviceWorkoutView: View {
             
             VStack {
                 
+                if locationManager.finished == true {
+                    Button("1 kilometer reached!") {
+                        showingAlert = true
+                    }
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                    .alert("Do \(workOut)!", isPresented: $showingAlert) {
+                        Button(action:{
+                            locationManager.finished.toggle()
+                            
+                        }){
+                            Text("OK")
+                        }
+                    }
+                
+                }
+                               
                 Text(String(format: "%02d:%02d:%02d", Int(timeManager.elapsedTime / 3600), Int(timeManager.elapsedTime.truncatingRemainder(dividingBy: 3600) / 60), Int(timeManager.elapsedTime.truncatingRemainder(dividingBy: 60))))
                     .padding()
                     .font(.largeTitle)
@@ -41,7 +60,7 @@ struct NoviceWorkoutView: View {
                     .fontWeight(.bold)
                 
                 Spacer()
-                noviceWorkout()
+                noviceWorkout(workOutText: $workOutText)
                     .padding()
                     .padding(.bottom, 40)
                 
@@ -49,9 +68,7 @@ struct NoviceWorkoutView: View {
                     
                     Button(action: {
                         mapOn.toggle()
-                        
                         locationManager.startLocationUpdates()
-                        
                         timeManager.start()
                         
                     }){
@@ -66,7 +83,7 @@ struct NoviceWorkoutView: View {
                         mapOn.toggle()
                         locationManager.stopLocationUpdates()
                         timeManager.stop()
-                        let newUser = User(fitnessLevel: "Novice", date: Date(), elapsedTime: timeManager.elapsedTime)
+                        let newUser = User(fitnessLevel: "\(fitnessLevelString)", date: Date(), elapsedTime: timeManager.elapsedTime)
                         db.addData(user: newUser)
                         
                         
@@ -83,36 +100,25 @@ struct NoviceWorkoutView: View {
                 
             }
         }
-        
-        if locationManager.distance >= 1000 {
-            Button("1 kilometer reached!") {
-                showingAlert = true
-            }
-            .alert("Do the workout!", isPresented: $showingAlert) {
-                Button("OK", role: .cancel) { }
-            }
-        }
     }
 }
 
-
 struct noviceWorkout: View {
+    
+    @Binding var workOutText : String
+    
     var body: some View {
-        Text("4 Rounds of: 1 Km Run, 20 Walking Lunges")
+        Text("\(workOutText)!")
             .padding(.horizontal)
             .foregroundColor(.white)
             .fontWeight(.bold)
             .font(.title)
             .background(
-            RoundedRectangle(cornerRadius: 10)
+            RoundedRectangle(cornerRadius: 20)
                 .fill(Color("DetailGreen"))
             )
     }
 }
 
-struct InsideWorkOutView_Previews: PreviewProvider {
-    static var previews: some View {
-        NoviceWorkoutView()
-    }
-}
+
 

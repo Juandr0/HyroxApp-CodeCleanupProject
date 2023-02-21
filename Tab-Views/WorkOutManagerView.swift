@@ -9,18 +9,18 @@ import SwiftUI
 import Firebase
 import FirebaseAuth
 
-struct WorkoutView: View {
+struct WorkOutManagerView: View {
     
     @State var choiceMade = ""
     @State var isShowingNoviceWorkoutSheet = false
-    @State var isShowingIntermediateWorkoutSheet = false
-    @State var isShowingAdvancedWorkoutSheet = false
+    @State var workOut : String = ""
+    @State var workOutText : String = ""
+    @State var fitnessLevelString : String = ""
     
     var body: some View {
         
-        
         ZStack {
-            Color(.white)
+            Color("AccentColor")
                 .edgesIgnoringSafeArea(.all)
         
         VStack {
@@ -48,56 +48,43 @@ struct WorkoutView: View {
                     )
                 }
                 .padding(.horizontal)
-                .padding(.top, 60)
+                .padding(.top, -100)
                 .foregroundColor(.green)
                 .font(.title3)
                 .bold()
                 Button(action: {
                     
                     if choiceMade == "Novice" {
-                        
+                        workOut = "10 PUSHUPS"
+                        workOutText = "4 ROUNDS. 1 KM RUN - 10 PUSHUPS"
+                        fitnessLevelString = "Novice"
                         isShowingNoviceWorkoutSheet.toggle()
                         
                     }
                     
                     if choiceMade == "Intermediate" {
-                        
-                        isShowingIntermediateWorkoutSheet.toggle()
+                        workOut = "25 SQUATS"
+                        workOutText = "8 ROUNDS. 1KM RUN - 25 SQUATS"
+                        fitnessLevelString = "Intermediate"
+                        isShowingNoviceWorkoutSheet.toggle()
                 
                     }
                     
                     if choiceMade == "Advanced" {
-                        
-                        isShowingAdvancedWorkoutSheet.toggle()
+                        workOut = "20 LUNGES, 15 PUSHUPS"
+                        workOutText = "10 ROUNDS. 1KM RUN - 20 LUNGES, 15 PUSHUPS"
+                        fitnessLevelString = "Advanced"
+                        isShowingNoviceWorkoutSheet.toggle()
                         
                     }
                     
-                    
                 }){
-                    Text("NEXT")
-                        .foregroundColor(.white)
-                        .font(.title3)
-                        .bold()
-                    
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                    
-                        .background(
-                        RoundedRectangle(cornerRadius: 10)
-                            .fill(Color.black)
-                        )
-                        .padding(.horizontal)
-                        .padding(.top, 300)
-                       // .frame(width: 200, height: 20)
+                    GoToWorkoutTextView()
                 }
                 .sheet(isPresented: $isShowingNoviceWorkoutSheet) {
-                   NoviceWorkoutView()
-                }
-                .sheet(isPresented: $isShowingIntermediateWorkoutSheet) {
-                    IntermediateWorkoutView()
-                }
-                .sheet(isPresented: $isShowingAdvancedWorkoutSheet) {
-                    AdvancedWorkoutView()
+                    
+                    WorkOutView(workOut: $workOut, workOutText: $workOutText, fitnessLevelString: $fitnessLevelString)
+                    
                 }
                 
             }
@@ -110,8 +97,27 @@ struct WorkoutView: View {
 
 struct WorkoutView_Previews: PreviewProvider {
     static var previews: some View {
-        WorkoutView()
+        WorkOutManagerView()
     }
 }
 
 
+
+struct GoToWorkoutTextView: View {
+    var body: some View {
+        Text("GO TO WORKOUT")
+            .foregroundColor(.white)
+            .font(.title3)
+            .bold()
+        
+            .frame(maxWidth: .infinity)
+            .padding()
+        
+            .background(
+                RoundedRectangle(cornerRadius: 10)
+                    .fill(.black)
+            )
+            .padding(.horizontal)
+            .padding(.top, 300)
+    }
+}

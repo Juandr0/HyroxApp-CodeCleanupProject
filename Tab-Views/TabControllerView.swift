@@ -9,25 +9,37 @@ import SwiftUI
 
 struct TabControllerView: View {
     var body: some View {
-        
-        TabView {
             
-                WorkoutView()
-                    .tabItem {
-                        Label("WorkOut", systemImage: "trophy")
-                    }
-                ProgressView()
-                    .tabItem {
-                        Label("Progress", systemImage: "flowchart")
-                    }
-                SettingsView()
-                    .tabItem {
-                        Label("Settings", systemImage: "gearshape")
-                    }
-            
-        }
-        .accentColor(Color .black)
-        
+            TabView {
+                
+                    WorkOutManagerView()
+                        .tabItem {
+                            Label("WorkOut", systemImage: "trophy")
+                        }
+                            .toolbarBackground(
+                                Color.black,
+                                for: .tabBar)
+                
+                    ProgressView()
+                        .tabItem {
+                            Label("Progress", systemImage: "flowchart")
+                        }
+
+                            .toolbarBackground(
+                                Color.black,
+                                for: .tabBar)
+                
+                    SettingsView()
+                        .tabItem {
+                            Label("Settings", systemImage: "gearshape")
+                        }
+                
+                            .toolbarBackground(
+                                Color.black,
+                                for: .tabBar)
+                
+            }
+            .accentColor(.white)
 
     }
 }

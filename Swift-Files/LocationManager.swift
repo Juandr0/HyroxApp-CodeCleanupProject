@@ -14,15 +14,18 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     let manager = CLLocationManager()
     var lastLocation: CLLocation?
     @Published var distance: CLLocationDistance = 0
+    @Published var finished: Bool = false
     
     override init() {
         super.init()
+        manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.delegate = self
     }
     
     func startLocationUpdates() {
         manager.requestWhenInUseAuthorization()
         manager.startUpdatingLocation()
+        
     }
     
     func stopLocationUpdates() {
@@ -38,15 +41,23 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
             lastLocation = currentLocation
         }
         
-        distance += currentLocation.distance(from: lastLocation!)
+        let delta = currentLocation.distance(from: lastLocation!)
+        print("delta: \(delta)")
+        if delta < 100 {
+            distance += delta
+        }
         lastLocation = currentLocation
         
+        print("Distance: \(distance) m")
         if distance >= 1000 {
+            print("1km")
+            finished = true
             distance = 0
+    
         }
             
         let distanceInKm = distance / 1000.0
-        print("Distance: \(distanceInKm) kilometers")
+        
     }
 }
 

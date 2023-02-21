@@ -39,10 +39,7 @@ struct HomeScreenView: View {
             VStack {
                 HStack {
 
-                    Text("Prepare for Hyrox!")
-                        .font(.navTitle)
-                        .bold()
-                        .foregroundColor(Color("DetailGreen"))
+                    TitleView()
                     
                     Spacer()
                 }
@@ -51,7 +48,7 @@ struct HomeScreenView: View {
                 
                 Spacer()
                 
-                TextField("Email Address", text: $email)
+                TextField("Enter email...", text: $email, prompt: Text("Enter email...").foregroundColor(.white.opacity(0.5)))
                     .padding()
                     .overlay(
                     RoundedRectangle(cornerRadius: 10)
@@ -61,7 +58,7 @@ struct HomeScreenView: View {
                     )
                     .padding()
                 
-                TextField("Password", text: $password)
+                TextField("Enter password...", text: $password, prompt: Text("Enter password...").foregroundColor(.white.opacity(0.5)))
                     .padding()
                     .overlay(
                     RoundedRectangle(cornerRadius: 10)
@@ -70,6 +67,7 @@ struct HomeScreenView: View {
                     
                     )
                     .padding()
+                
                 Spacer()
                 Spacer()
                 
@@ -81,23 +79,9 @@ struct HomeScreenView: View {
                         
                         signInRegister.signIn(email: email, password: password)
                     }) {
-                        Text("Sign In")
-                            .foregroundColor(.white)
-                            .font(.title3)
-                            .bold()
-                        
-                            .frame(maxWidth: .infinity)
-                            .padding()
-                        
-                            .background(
-                            RoundedRectangle(cornerRadius: 10)
-                                .fill(Color("DetailGreen"))
-                                
-                            )
-                            .padding(.horizontal)
+                        SignInView()
                   
                     }
-                    
                     
                     Button(action: {
                         guard !email.isEmpty, !password.isEmpty else {
@@ -105,26 +89,11 @@ struct HomeScreenView: View {
                         }
                         signInRegister.register(email: email, password: password)
                     }) {
-                        Text("Register")
-                            .foregroundColor(.white)
-                            .font(.title3)
-                            .bold()
-                        
-                            .frame(maxWidth: .infinity)
-                            .padding()
-                        
-                            .background(
-                            RoundedRectangle(cornerRadius: 10)
-                                .fill(Color.black)
-                            )
-                            .padding(.horizontal)
+                        RegisterView()
                     }
                     
-                    
-                } // HStack End
-                
-                
-            } // VStack End
+                }
+            }
         }
     }
 }
@@ -137,4 +106,52 @@ struct HomeScreenView: View {
     }
     
     
+}
+
+struct TitleView: View {
+    var body: some View {
+        Text("Prepare for Hyrox!")
+            .font(.navTitle)
+            .bold()
+            .foregroundColor(Color("DetailGreen"))
+        
+    }
+}
+
+struct SignInView: View {
+    var body: some View {
+        Text("Sign In")
+            .foregroundColor(.white)
+            .font(.title3)
+            .bold()
+        
+            .frame(maxWidth: .infinity)
+            .padding()
+        
+            .background(
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(Color("DetailGreen"), lineWidth: 2)
+                   // .fill(Color("DetailGreen"))
+                
+            )
+            .padding(.horizontal)
+    }
+}
+
+struct RegisterView: View {
+    var body: some View {
+        Text("Register")
+            .foregroundColor(.white)
+            .font(.title3)
+            .bold()
+        
+            .frame(maxWidth: .infinity)
+            .padding()
+        
+            .background(
+                RoundedRectangle(cornerRadius: 10)
+                    .fill(Color.red)
+            )
+            .padding(.horizontal)
+    }
 }

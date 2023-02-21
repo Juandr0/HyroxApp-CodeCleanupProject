@@ -11,13 +11,12 @@ import FirebaseAuth
 
 struct SettingsView: View {
     
-   // @State var choiceMade = ""
     @EnvironmentObject var signInRegister: SignInRegister
     
     var body: some View {
         
         ZStack {
-            Color(.white)
+            Color("AccentColor")
                 .edgesIgnoringSafeArea(.all)
             
             VStack{

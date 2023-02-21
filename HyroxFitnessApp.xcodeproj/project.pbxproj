@@ -17,14 +17,14 @@
 		09722A37296F02FB006F55CA /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 09722A36296F02FA006F55CA /* FirebaseAuth */; };
 		09722A39296F02FB006F55CA /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 09722A38296F02FB006F55CA /* FirebaseFirestore */; };
 		09722A3F296F1A69006F55CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09722A3E296F1A69006F55CA /* GoogleService-Info.plist */; };
-		09722A41296F28F7006F55CA /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09722A40296F28F7006F55CA /* WorkoutView.swift */; };
+		09722A41296F28F7006F55CA /* WorkOutManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09722A40296F28F7006F55CA /* WorkOutManagerView.swift */; };
 		09722A8729804554006F55CA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09722A8629804553006F55CA /* SettingsView.swift */; };
 		09722A8B29809E21006F55CA /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09722A8A29809E21006F55CA /* ProgressView.swift */; };
 		09722A9329829EAA006F55CA /* SignInRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09722A9229829EAA006F55CA /* SignInRegister.swift */; };
 		09722A952982A34C006F55CA /* TabControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09722A942982A34C006F55CA /* TabControllerView.swift */; };
 		09722A9F2986E081006F55CA /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09722A9E2986E081006F55CA /* MapView.swift */; };
 		09722AA12986ECEB006F55CA /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09722AA02986ECEA006F55CA /* LocationManager.swift */; };
-		09B12C262987F4EA00116CA9 /* NoviceWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B12C252987F4EA00116CA9 /* NoviceWorkoutView.swift */; };
+		09B12C262987F4EA00116CA9 /* WorkOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B12C252987F4EA00116CA9 /* WorkOutView.swift */; };
 		09B12C28298A708900116CA9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B12C27298A708900116CA9 /* User.swift */; };
 		09B12C2A298A8F3700116CA9 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B12C29298A8F3700116CA9 /* ViewModel.swift */; };
 		09B12C2E298FE14300116CA9 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 09B12C2D298FE14300116CA9 /* FirebaseFirestoreSwift */; };
@@ -37,15 +37,7 @@
 		09B12C3A29913F1B00116CA9 /* FontStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B12C3929913F1B00116CA9 /* FontStyles.swift */; };
 		09B12C3B29913F1B00116CA9 /* FontStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B12C3929913F1B00116CA9 /* FontStyles.swift */; };
 		09B12C3C29913F1B00116CA9 /* FontStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B12C3929913F1B00116CA9 /* FontStyles.swift */; };
-		09B12C41299426E700116CA9 /* IntermediateWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B12C40299426E700116CA9 /* IntermediateWorkoutView.swift */; };
-		09B12C42299426E700116CA9 /* IntermediateWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B12C40299426E700116CA9 /* IntermediateWorkoutView.swift */; };
-		09B12C43299426E700116CA9 /* IntermediateWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B12C40299426E700116CA9 /* IntermediateWorkoutView.swift */; };
-		09B12C452994274C00116CA9 /* AdvancedWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B12C442994274B00116CA9 /* AdvancedWorkoutView.swift */; };
-		09B12C462994274C00116CA9 /* AdvancedWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B12C442994274B00116CA9 /* AdvancedWorkoutView.swift */; };
-		09B12C472994274C00116CA9 /* AdvancedWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B12C442994274B00116CA9 /* AdvancedWorkoutView.swift */; };
 		09B12C49299BCAD300116CA9 /* TimerClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B12C48299BCAD200116CA9 /* TimerClass.swift */; };
-		09B12C4A299BCAD300116CA9 /* TimerClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B12C48299BCAD200116CA9 /* TimerClass.swift */; };
-		09B12C4B299BCAD300116CA9 /* TimerClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B12C48299BCAD200116CA9 /* TimerClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,22 +69,20 @@
 		097229EC296CAFEA006F55CA /* HyroxFitnessAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyroxFitnessAppUITests.swift; sourceTree = "<group>"; };
 		097229EE296CAFEA006F55CA /* HyroxFitnessAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyroxFitnessAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		09722A3E296F1A69006F55CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		09722A40296F28F7006F55CA /* WorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
+		09722A40296F28F7006F55CA /* WorkOutManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkOutManagerView.swift; sourceTree = "<group>"; };
 		09722A8629804553006F55CA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		09722A8A29809E21006F55CA /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		09722A9229829EAA006F55CA /* SignInRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRegister.swift; sourceTree = "<group>"; };
 		09722A942982A34C006F55CA /* TabControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabControllerView.swift; sourceTree = "<group>"; };
 		09722A9E2986E081006F55CA /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		09722AA02986ECEA006F55CA /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		09B12C252987F4EA00116CA9 /* NoviceWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoviceWorkoutView.swift; sourceTree = "<group>"; };
+		09B12C252987F4EA00116CA9 /* WorkOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkOutView.swift; sourceTree = "<group>"; };
 		09B12C27298A708900116CA9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		09B12C29298A8F3700116CA9 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		09B12C3029913E4100116CA9 /* Inter-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.otf"; sourceTree = "<group>"; };
 		09B12C3129913E4100116CA9 /* Inter-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Thin.otf"; sourceTree = "<group>"; };
 		09B12C3829913E9900116CA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		09B12C3929913F1B00116CA9 /* FontStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontStyles.swift; sourceTree = "<group>"; };
-		09B12C40299426E700116CA9 /* IntermediateWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntermediateWorkoutView.swift; sourceTree = "<group>"; };
-		09B12C442994274B00116CA9 /* AdvancedWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedWorkoutView.swift; sourceTree = "<group>"; };
 		09B12C48299BCAD200116CA9 /* TimerClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,8 +117,7 @@
 		097229C5296CAFE7006F55CA = {
 			isa = PBXGroup;
 			children = (
-				09B12C3F2994269400116CA9 /* WorkoutViews */,
-				09B12C29298A8F3700116CA9 /* ViewModel.swift */,
+				09B12C3F2994269400116CA9 /* WorkoutView */,
 				09722A9B298419CB006F55CA /* Tab-Views */,
 				09722A9A298418EC006F55CA /* Swift-Files */,
 				097229D0296CAFE7006F55CA /* HyroxFitnessApp */,
@@ -160,7 +149,6 @@
 				09722A3E296F1A69006F55CA /* GoogleService-Info.plist */,
 				097229D7296CAFE9006F55CA /* Preview Content */,
 				09B12C3929913F1B00116CA9 /* FontStyles.swift */,
-				09B12C48299BCAD200116CA9 /* TimerClass.swift */,
 			);
 			path = HyroxFitnessApp;
 			sourceTree = "<group>";
@@ -193,9 +181,11 @@
 		09722A9A298418EC006F55CA /* Swift-Files */ = {
 			isa = PBXGroup;
 			children = (
+				09B12C29298A8F3700116CA9 /* ViewModel.swift */,
 				09B12C27298A708900116CA9 /* User.swift */,
 				09722AA02986ECEA006F55CA /* LocationManager.swift */,
 				09722A9229829EAA006F55CA /* SignInRegister.swift */,
+				09B12C48299BCAD200116CA9 /* TimerClass.swift */,
 			);
 			path = "Swift-Files";
 			sourceTree = "<group>";
@@ -205,7 +195,7 @@
 			children = (
 				09722A942982A34C006F55CA /* TabControllerView.swift */,
 				09722A8629804553006F55CA /* SettingsView.swift */,
-				09722A40296F28F7006F55CA /* WorkoutView.swift */,
+				09722A40296F28F7006F55CA /* WorkOutManagerView.swift */,
 				09722A8A29809E21006F55CA /* ProgressView.swift */,
 				09722A9E2986E081006F55CA /* MapView.swift */,
 			);
@@ -228,14 +218,12 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		09B12C3F2994269400116CA9 /* WorkoutViews */ = {
+		09B12C3F2994269400116CA9 /* WorkoutView */ = {
 			isa = PBXGroup;
 			children = (
-				09B12C252987F4EA00116CA9 /* NoviceWorkoutView.swift */,
-				09B12C40299426E700116CA9 /* IntermediateWorkoutView.swift */,
-				09B12C442994274B00116CA9 /* AdvancedWorkoutView.swift */,
+				09B12C252987F4EA00116CA9 /* WorkOutView.swift */,
 			);
-			path = WorkoutViews;
+			path = WorkoutView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,12 +381,10 @@
 				09B12C3A29913F1B00116CA9 /* FontStyles.swift in Sources */,
 				09B12C2A298A8F3700116CA9 /* ViewModel.swift in Sources */,
 				097229D2296CAFE7006F55CA /* HyroxFitnessAppApp.swift in Sources */,
-				09B12C41299426E700116CA9 /* IntermediateWorkoutView.swift in Sources */,
-				09B12C452994274C00116CA9 /* AdvancedWorkoutView.swift in Sources */,
-				09B12C262987F4EA00116CA9 /* NoviceWorkoutView.swift in Sources */,
+				09B12C262987F4EA00116CA9 /* WorkOutView.swift in Sources */,
 				09722A8B29809E21006F55CA /* ProgressView.swift in Sources */,
 				09722A9F2986E081006F55CA /* MapView.swift in Sources */,
-				09722A41296F28F7006F55CA /* WorkoutView.swift in Sources */,
+				09722A41296F28F7006F55CA /* WorkOutManagerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,11 +392,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09B12C462994274C00116CA9 /* AdvancedWorkoutView.swift in Sources */,
 				09B12C3B29913F1B00116CA9 /* FontStyles.swift in Sources */,
 				097229E3296CAFEA006F55CA /* HyroxFitnessAppTests.swift in Sources */,
-				09B12C4A299BCAD300116CA9 /* TimerClass.swift in Sources */,
-				09B12C42299426E700116CA9 /* IntermediateWorkoutView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,11 +401,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09B12C472994274C00116CA9 /* AdvancedWorkoutView.swift in Sources */,
 				097229EF296CAFEA006F55CA /* HyroxFitnessAppUITestsLaunchTests.swift in Sources */,
-				09B12C43299426E700116CA9 /* IntermediateWorkoutView.swift in Sources */,
 				097229ED296CAFEA006F55CA /* HyroxFitnessAppUITests.swift in Sources */,
-				09B12C4B299BCAD300116CA9 /* TimerClass.swift in Sources */,
 				09B12C3C29913F1B00116CA9 /* FontStyles.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
