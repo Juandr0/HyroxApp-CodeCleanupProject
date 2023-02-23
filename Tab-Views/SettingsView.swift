@@ -13,7 +13,7 @@ struct SettingsView: View {
     
     @AppStorage("notificationsEnabled") var notificationsEnabled = false
     @AppStorage("waterReminderEnabled") var waterReminderEnabled = false
-    @AppStorage("standReminderEnabled") var standReminderEnabled = false
+    @AppStorage("workoutReminderEnabled") var workoutReminderEnabled = false
     
     @EnvironmentObject var signInRegister: SignInRegister
     
@@ -40,13 +40,14 @@ struct SettingsView: View {
                             Text("Water Reminder")
                         }
                         
-                        Toggle(isOn: $standReminderEnabled) {
-                            Text("Stand Reminder")
+                        Toggle(isOn: $workoutReminderEnabled) {
+                            Text("Workout Reminder")
                         }
                     }
                 }
             }
             .padding()
+            .padding(.top, -200)
             
             
             VStack{

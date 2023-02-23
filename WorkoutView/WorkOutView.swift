@@ -45,7 +45,7 @@ struct WorkOutView: View {
                             locationManager.finished.toggle()
                             
                         }){
-                            Text("I'm ready for the next lap!")
+                            Text("Ready for the next lap!")
                         }
                     }
                 

@@ -27,7 +27,7 @@ class ViewModel: ObservableObject {
         }
         
         do {
-            let _ = try db.collection("Users").document(uid).setData(from: user)
+            let _ = try db.collection("Users").document(uid).collection("Workouts").addDocument(from: user)
         } catch let error {
             print("Error writing user to Firestore: \(error.localizedDescription)")
         }
@@ -55,7 +55,7 @@ class ViewModel: ObservableObject {
     
     func fetchData() {
         guard let userId = Auth.auth().currentUser?.uid else { return }
-        db.collection("Users").whereField(FieldPath.documentID(), isEqualTo: userId)
+        db.collection("Users").document(userId).collection("Workouts")
             .addSnapshotListener { snapshot, err in
                 guard let snapshot = snapshot else {return}
                 

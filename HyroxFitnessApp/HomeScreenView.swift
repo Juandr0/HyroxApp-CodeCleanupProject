@@ -49,6 +49,8 @@ struct HomeScreenView: View {
                 Spacer()
                 
                 TextField("Enter email...", text: $email, prompt: Text("Enter email...").foregroundColor(.white.opacity(0.5)))
+                    .foregroundColor(.white)
+                    .bold()
                     .padding()
                     .overlay(
                     RoundedRectangle(cornerRadius: 10)
@@ -58,7 +60,9 @@ struct HomeScreenView: View {
                     )
                     .padding()
                 
-                TextField("Enter password...", text: $password, prompt: Text("Enter password...").foregroundColor(.white.opacity(0.5)))
+                SecureField("Enter password...", text: $password, prompt: Text("Enter password...").foregroundColor(.white.opacity(0.5)))
+                    .foregroundColor(.white)
+                    .bold()
                     .padding()
                     .overlay(
                     RoundedRectangle(cornerRadius: 10)
