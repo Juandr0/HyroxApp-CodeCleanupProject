@@ -17,10 +17,10 @@ class DatabaseHandler: ObservableObject {
     @Published var users = [User]()
     
     init() {
-        fetchUserData()
+        fetchData()
     }
     
-    
+    //Adds workout data to DB
     func addData(user: User) {
         guard let uid = currentUserID else {
             print("Error: User is not logged in.")
@@ -28,21 +28,20 @@ class DatabaseHandler: ObservableObject {
         }
         
         do {
-            let _ = try db.collection("Users").document(uid).collection("Workouts").addDocument(from: user)
+            let _ = try db.collection("Users").document(currentUserID!).collection("Workouts").addDocument(from: user)
         } catch let error {
             print("Error writing user to Firestore: \(error.localizedDescription)")
         }
     }
     
-    
-    //Deletes user from database
-    func deleteUser(users: User) {
+    //Deletes the user workout data from DB
+    func delete(users: User) {
         guard let uid = currentUserID, let id = users.id else {
             print("Error: User ID is nil or user is not logged in.")
             return
         }
         
-        if uid != id {
+        if currentUserID != id {
             print("Error: User can only delete their own data.")
             return
         }
@@ -56,10 +55,11 @@ class DatabaseHandler: ObservableObject {
         }
     }
     
+//    Resets the data if another user has been logged in, then fetches
+//    the current user data
     
-    //Fetches all the users workout data from DB
-    func fetchUserData() {
-        guard let userId = currentUserID else { return }
+    func fetchData() {
+        guard let userId = Auth.auth().currentUser?.uid else { return }
         db.collection("Users").document(userId).collection("Workouts")
             .addSnapshotListener { snapshot, err in
                 guard let snapshot = snapshot else {return}

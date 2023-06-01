@@ -50,8 +50,7 @@ struct ProgressView: View {
                 
             }
             .onAppear() {
-                //fetches again on appear
-                userData.fetchUserData()
+                userData.fetchData()
             }
             
         }
