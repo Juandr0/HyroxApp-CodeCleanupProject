@@ -12,7 +12,7 @@ import Firebase
 
 struct ProgressView: View {
     
-    @ObservedObject var userData = ViewModel()
+    @ObservedObject var userData = DatabaseHandler()
     
     var body: some View {
         
@@ -50,7 +50,8 @@ struct ProgressView: View {
                 
             }
             .onAppear() {
-                userData.fetchData()
+                //fetches again on appear
+                userData.fetchUserData()
             }
             
         }

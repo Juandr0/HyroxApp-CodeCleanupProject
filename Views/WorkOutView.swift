@@ -17,7 +17,7 @@ struct WorkOutView: View {
     @Binding var fitnessLevelString : String
     
     var locationManager = LocationManager()
-    var db = ViewModel()
+    var db = DatabaseHandler()
     
     @ObservedObject var timeManager = TimerManager()
     

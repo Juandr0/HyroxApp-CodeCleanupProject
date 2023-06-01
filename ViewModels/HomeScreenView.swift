@@ -12,12 +12,11 @@ import FirebaseAuth
 
 struct HomeScreenView: View {
     
-    @EnvironmentObject var signInRegister: SignInRegister
+    @EnvironmentObject var signInRegister: AuthenticationHandler
     
     var body: some View {
-        
         if signInRegister.isSignedIn {
-            TabControllerView()
+            NavbarHandler()
         } else {
             SignInRegisterView()
         }
@@ -25,8 +24,7 @@ struct HomeScreenView: View {
     
     struct SignInRegisterView: View {
         
-        @EnvironmentObject var signInRegister: SignInRegister
-        
+        @EnvironmentObject var signInRegister: AuthenticationHandler
         @State var email = ""
         @State var password = ""
         
@@ -38,9 +36,7 @@ struct HomeScreenView: View {
                 
             VStack {
                 HStack {
-
                     TitleView()
-                    
                     Spacer()
                 }
                 .padding()
@@ -48,29 +44,7 @@ struct HomeScreenView: View {
                 
                 Spacer()
                 
-                TextField("Enter email...", text: $email, prompt: Text("Enter email...").foregroundColor(.white.opacity(0.5)))
-                    .foregroundColor(.white)
-                    .bold()
-                    .padding()
-                    .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(lineWidth: 2)
-                        .foregroundColor(Color("DetailGray"))
-                    
-                    )
-                    .padding()
-                
-                SecureField("Enter password...", text: $password, prompt: Text("Enter password...").foregroundColor(.white.opacity(0.5)))
-                    .foregroundColor(.white)
-                    .bold()
-                    .padding()
-                    .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(lineWidth: 2)
-                        .foregroundColor(Color("DetailGray"))
-                    
-                    )
-                    .padding()
+                CredentialsView(email: $email, password: $password)
                 
                 Spacer()
                 Spacer()
@@ -103,6 +77,8 @@ struct HomeScreenView: View {
 }
     
     
+
+    
     struct SignInView_Previews: PreviewProvider {
         static var previews: some View {
             SignInRegisterView()
@@ -110,6 +86,40 @@ struct HomeScreenView: View {
     }
     
     
+}
+
+struct CredentialsView: View {
+    @Binding var email : String
+    @Binding var password: String
+    
+    
+    var body: some View {
+        VStack {
+            TextField("Enter email...", text: $email, prompt: Text("Enter email...").foregroundColor(.white.opacity(0.5)))
+                .foregroundColor(.white)
+                .bold()
+                .padding()
+                .overlay(
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(lineWidth: 2)
+                    .foregroundColor(Color("DetailGray"))
+                
+                )
+                .padding()
+            
+            SecureField("Enter password...", text: $password, prompt: Text("Enter password...").foregroundColor(.white.opacity(0.5)))
+                .foregroundColor(.white)
+                .bold()
+                .padding()
+                .overlay(
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(lineWidth: 2)
+                    .foregroundColor(Color("DetailGray"))
+                
+                )
+                .padding()
+        }
+    }
 }
 
 struct TitleView: View {
@@ -128,10 +138,8 @@ struct SignInView: View {
             .foregroundColor(.white)
             .font(.title3)
             .bold()
-        
             .frame(maxWidth: .infinity)
             .padding()
-        
             .background(
                 RoundedRectangle(cornerRadius: 10)
                     .stroke(Color("DetailGreen"), lineWidth: 2)

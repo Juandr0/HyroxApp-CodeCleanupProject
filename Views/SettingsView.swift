@@ -15,7 +15,7 @@ struct SettingsView: View {
     @AppStorage("waterReminderEnabled") var waterReminderEnabled = false
     @AppStorage("workoutReminderEnabled") var workoutReminderEnabled = false
     
-    @EnvironmentObject var signInRegister: SignInRegister
+    @EnvironmentObject var signInRegister: AuthenticationHandler
     
     var body: some View {
         

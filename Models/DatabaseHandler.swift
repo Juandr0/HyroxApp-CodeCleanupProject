@@ -9,19 +9,20 @@ import Foundation
 import Firebase
 import FirebaseFirestore
 
-class ViewModel: ObservableObject {
+class DatabaseHandler: ObservableObject {
     
     let db = Firestore.firestore()
-    let uid = Auth.auth().currentUser?.uid
+    let currentUserID = Auth.auth().currentUser?.uid
     
     @Published var users = [User]()
     
     init() {
-        fetchData()
+        fetchUserData()
     }
     
+    
     func addData(user: User) {
-        guard let uid = uid else {
+        guard let uid = currentUserID else {
             print("Error: User is not logged in.")
             return
         }
@@ -33,8 +34,10 @@ class ViewModel: ObservableObject {
         }
     }
     
-    func delete(users: User) {
-        guard let uid = uid, let id = users.id else {
+    
+    //Deletes user from database
+    func deleteUser(users: User) {
+        guard let uid = currentUserID, let id = users.id else {
             print("Error: User ID is nil or user is not logged in.")
             return
         }
@@ -53,8 +56,10 @@ class ViewModel: ObservableObject {
         }
     }
     
-    func fetchData() {
-        guard let userId = Auth.auth().currentUser?.uid else { return }
+    
+    //Fetches all the users workout data from DB
+    func fetchUserData() {
+        guard let userId = currentUserID else { return }
         db.collection("Users").document(userId).collection("Workouts")
             .addSnapshotListener { snapshot, err in
                 guard let snapshot = snapshot else {return}

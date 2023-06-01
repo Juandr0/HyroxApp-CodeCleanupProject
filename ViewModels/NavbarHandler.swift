@@ -7,9 +7,8 @@
 
 import SwiftUI
 
-struct TabControllerView: View {
-    var body: some View {
-            
+struct NavbarHandler: View {
+    var body: some View {            
             TabView {
                     
                     WorkOutManagerView()
@@ -35,6 +34,6 @@ struct TabControllerView: View {
 
 struct TabControllerView_Previews: PreviewProvider {
     static var previews: some View {
-        TabControllerView()
+        NavbarHandler()
     }
 }
