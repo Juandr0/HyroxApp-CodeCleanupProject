@@ -39,6 +39,7 @@
 		09B12C3C29913F1B00116CA9 /* FontStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B12C3929913F1B00116CA9 /* FontStyles.swift */; };
 		09B12C49299BCAD300116CA9 /* TimerHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B12C48299BCAD200116CA9 /* TimerHandler.swift */; };
 		11762AF82A2B5086005CB2AB /* UserLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11762AF72A2B5086005CB2AB /* UserLoginView.swift */; };
+		11762AFC2A2B58AD005CB2AB /* SignInErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11762AFB2A2B58AD005CB2AB /* SignInErrorHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		09B12C3929913F1B00116CA9 /* FontStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontStyles.swift; sourceTree = "<group>"; };
 		09B12C48299BCAD200116CA9 /* TimerHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerHandler.swift; sourceTree = "<group>"; };
 		11762AF72A2B5086005CB2AB /* UserLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginView.swift; sourceTree = "<group>"; };
+		11762AFB2A2B58AD005CB2AB /* SignInErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInErrorHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +224,7 @@
 				097229D3296CAFE7006F55CA /* HomeScreenView.swift */,
 				09722A9E2986E081006F55CA /* MapView.swift */,
 				09722A942982A34C006F55CA /* NavbarHandler.swift */,
+				11762AFB2A2B58AD005CB2AB /* SignInErrorHandler.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				11762AF82A2B5086005CB2AB /* UserLoginView.swift in Sources */,
 				09B12C28298A708900116CA9 /* User.swift in Sources */,
 				09722A8729804554006F55CA /* SettingsView.swift in Sources */,
+				11762AFC2A2B58AD005CB2AB /* SignInErrorHandler.swift in Sources */,
 				09B12C49299BCAD300116CA9 /* TimerHandler.swift in Sources */,
 				09722AA12986ECEB006F55CA /* LocationManager.swift in Sources */,
 				09722A9329829EAA006F55CA /* AuthenticationHandler.swift in Sources */,

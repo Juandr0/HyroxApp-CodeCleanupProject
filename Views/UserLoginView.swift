@@ -1,10 +1,3 @@
-//
-//  UserLoginView.swift
-//  HyroxFitnessApp
-//
-//  Created by Alexander on 2023-06-03.
-//
-
 import SwiftUI
 
 struct UserLoginView: View {
@@ -12,6 +5,7 @@ struct UserLoginView: View {
     @EnvironmentObject var signInRegister: AuthenticationHandler
     @State var email = ""
     @State var password = ""
+    @State var showErrorAlert = false
     
     var body: some View {
         
@@ -19,44 +13,38 @@ struct UserLoginView: View {
             Color("AccentColor")
                 .ignoresSafeArea()
             
-        VStack {
-            HStack {
-                TitleView()
+            VStack {
+                HStack {
+                    TitleView()
+                    Spacer()
+                }
+                .padding()
+                .padding(.top, 50)
+                
                 Spacer()
-            }
-            .padding()
-            .padding(.top, 50)
-            
-            Spacer()
-            
-            CredentialsView(email: $email, password: $password)
-            
-            Spacer()
-            Spacer()
-            
-            HStack {
-                Button(action: {
-                    guard !email.isEmpty, !password.isEmpty else {
-                        return
+                
+                CredentialsView(email: $email, password: $password)
+                
+                Spacer()
+                Spacer()
+                
+                HStack {
+                    Button(action: {
+                        signInRegister.signIn(email: email, password: password)
+                    }) {
+                        SignInView()
                     }
                     
-                    signInRegister.signIn(email: email, password: password)
-                }) {
-                    SignInView()
-              
-                }
-                
-                Button(action: {
-                    guard !email.isEmpty, !password.isEmpty else {
-                        return
+                    Button(action: {
+                        signInRegister.register(email: email, password: password)
+                    }) {
+                        RegisterView()
                     }
-                    signInRegister.register(email: email, password: password)
-                }) {
-                    RegisterView()
+                    
                 }
-                
             }
+            
+            SignInErrorHandler(authHandler: signInRegister, email: $email, password: $password, showAlert: $showErrorAlert)
         }
     }
-}
 }
