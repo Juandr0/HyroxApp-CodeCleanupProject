@@ -10,20 +10,20 @@ import SwiftUI
 struct WorkOutView: View {
     
   
-    @State private var showingAlert = false
-    @State var mapOn = false
-    @Binding var workOut : String
-    @Binding var workOutText : String
+    @State private var ShowAlert = false
+    @State var displayMap = false
+    @Binding var bodyExercise : String
+    @Binding var runExercise : String
     @Binding var fitnessLevelString : String
     
     var locationManager = LocationManager()
-    var db = DatabaseHandler()
+    var firebaseDB = DatabaseHandler()
     
     @ObservedObject var timeManager = TimerHandler()
     
     var body: some View {
         
-        if mapOn {
+        if displayMap {
             MapView()
         }
         
@@ -35,12 +35,12 @@ struct WorkOutView: View {
                 
                 if locationManager.finished == true {
                     Button("STOP RUNNING!") {
-                        showingAlert = true
+                        ShowAlert = true
                     }
                     .fontWeight(.bold)
                     .foregroundColor(.white)
                     .font(.largeTitle)
-                    .alert("Do \(workOut)!", isPresented: $showingAlert) {
+                    .alert("Do \(bodyExercise)!", isPresented: $ShowAlert) {
                         Button(action:{
                             locationManager.finished.toggle()
                             
@@ -61,14 +61,14 @@ struct WorkOutView: View {
                     .fontWeight(.bold)
                 
                 Spacer()
-                noviceWorkout(workOutText: $workOutText)
+                noviceWorkout(workOutText: $runExercise)
                     .padding()
                     .padding(.bottom, 40)
                 
                 HStack {
                     
                     Button(action: {
-                        mapOn.toggle()
+                        displayMap.toggle()
                         locationManager.startLocationUpdates()
                         timeManager.start()
                         
@@ -81,11 +81,11 @@ struct WorkOutView: View {
                     .padding()
                     
                     Button(action: {
-                        mapOn.toggle()
+                        displayMap.toggle()
                         locationManager.stopLocationUpdates()
                         timeManager.stop()
                         let newUser = User(fitnessLevel: "\(fitnessLevelString)", date: Date(), elapsedTime: timeManager.elapsedTime)
-                        db.addData(user: newUser)
+                        firebaseDB.addData(user: newUser)
                         
                         
                     }){

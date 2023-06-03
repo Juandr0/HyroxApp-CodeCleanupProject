@@ -11,10 +11,10 @@ import FirebaseAuth
 
 struct WorkOutManagerView: View {
     
-    @State var choiceMade = ""
-    @State var isShowingNoviceWorkoutSheet = false
-    @State var workOut : String = ""
-    @State var workOutText : String = ""
+    @State var workoutLevel = ""
+    @State var displayNoviceWorkoutSheet = false
+    @State var bodyExercise : String = ""
+    @State var runExercise : String = ""
     @State var fitnessLevelString : String = ""
     
     var body: some View {
@@ -27,24 +27,24 @@ struct WorkOutManagerView: View {
             Spacer()
                 Menu {
                     Button(action: {
-                        choiceMade = "Novice"
+                        workoutLevel = "Novice"
                     }, label: {
                         Text("Novice")
                     })
                     Button(action: {
-                        choiceMade = "Intermediate"
+                        workoutLevel = "Intermediate"
                     }, label: {
                         Text("Intermediate")
                     })
                     Button(action: {
-                        choiceMade = "Advanced"
+                        workoutLevel = "Advanced"
                     }, label: {
                         Text("Advanced")
                     })
                     
                 } label: {
                     Label(
-                        title: {Text("Fitness-level: \(choiceMade)")},
+                        title: {Text("Fitness-level: \(workoutLevel)")},
                         icon: {Image(systemName: "text.badge.plus")}
                     )
                 }
@@ -55,27 +55,27 @@ struct WorkOutManagerView: View {
                 .bold()
                 Button(action: {
                     
-                    if choiceMade == "Novice" {
-                        workOut = "10 PUSHUPS"
-                        workOutText = "4 ROUNDS: 1 KM RUN - 10 PUSHUPS"
+                    if workoutLevel == "Novice" {
+                        bodyExercise = "10 PUSHUPS"
+                        runExercise = "4 ROUNDS: 1 KM RUN - 10 PUSHUPS"
                         fitnessLevelString = "Novice"
-                        isShowingNoviceWorkoutSheet.toggle()
+                        displayNoviceWorkoutSheet.toggle()
                         
                     }
                     
-                    if choiceMade == "Intermediate" {
-                        workOut = "25 SQUATS"
-                        workOutText = "8 ROUNDS: 1KM RUN - 25 SQUATS"
+                    if workoutLevel == "Intermediate" {
+                        bodyExercise = "25 SQUATS"
+                        runExercise = "8 ROUNDS: 1KM RUN - 25 SQUATS"
                         fitnessLevelString = "Intermediate"
-                        isShowingNoviceWorkoutSheet.toggle()
+                        displayNoviceWorkoutSheet.toggle()
                 
                     }
                     
-                    if choiceMade == "Advanced" {
-                        workOut = "20 LUNGES, 15 PUSHUPS"
-                        workOutText = "10 ROUNDS: 1KM RUN - 20 LUNGES, 15 PUSHUPS"
+                    if workoutLevel == "Advanced" {
+                        bodyExercise = "20 LUNGES, 15 PUSHUPS"
+                        runExercise = "10 ROUNDS: 1KM RUN - 20 LUNGES, 15 PUSHUPS"
                         fitnessLevelString = "Advanced"
-                        isShowingNoviceWorkoutSheet.toggle()
+                        displayNoviceWorkoutSheet.toggle()
                         
                     }
                     
@@ -83,9 +83,9 @@ struct WorkOutManagerView: View {
                     GoToWorkoutTextView()
                         .padding(.bottom, 100)
                 }
-                .sheet(isPresented: $isShowingNoviceWorkoutSheet) {
+                .sheet(isPresented: $displayNoviceWorkoutSheet) {
                     
-                    WorkOutView(workOut: $workOut, workOutText: $workOutText, fitnessLevelString: $fitnessLevelString)
+                    WorkOutView(bodyExercise: $bodyExercise, runExercise: $runExercise, fitnessLevelString: $fitnessLevelString)
                     
                 }
                 

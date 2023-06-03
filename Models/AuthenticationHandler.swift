@@ -37,7 +37,6 @@ class AuthenticationHandler: ObservableObject {
             }
 
             if let result = result {
-                print("User \(result.user.uid) signed in")
                 self.isSignedIn.toggle()
             }
             

@@ -17,7 +17,7 @@ class DatabaseHandler: ObservableObject {
     @Published var users = [User]()
     
     init() {
-        fetchData()
+        fetchUserData()
     }
     
     //Adds workout data to DB
@@ -58,7 +58,7 @@ class DatabaseHandler: ObservableObject {
 //    Resets the data if another user has been logged in, then fetches
 //    the current user data
     
-    func fetchData() {
+    func fetchUserData() {
         guard let userId = Auth.auth().currentUser?.uid else { return }
         firestoreDB.collection("Users").document(userId).collection("Workouts")
             .addSnapshotListener { snapshot, err in

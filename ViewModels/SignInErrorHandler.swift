@@ -28,8 +28,6 @@ struct SignInErrorHandler: View {
         }
     }
 
-
-
     
     var body: some View {
         VStack {
@@ -39,7 +37,9 @@ struct SignInErrorHandler: View {
             Alert(
                 title: Text("Error"),
                 message: Text(errorMessage),
-                dismissButton: .default(Text("OK"))
+                dismissButton: .default(Text("OK")) {
+                    resetErrorMessage()
+                }
             )
         }
         .onChange(of: authHandler.errorMessage) { errorMessage in
@@ -47,4 +47,8 @@ struct SignInErrorHandler: View {
         }
     }
 
+    
+    private func resetErrorMessage() {
+        authHandler.errorMessage = ""
+    }
 }

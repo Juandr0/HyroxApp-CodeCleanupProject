@@ -11,6 +11,7 @@ import FirebaseAuth
 
 struct SettingsView: View {
     
+    //notifications
     @AppStorage("notificationsEnabled") var notificationsEnabled = false
     @AppStorage("waterReminderEnabled") var waterReminderEnabled = false
     @AppStorage("workoutReminderEnabled") var workoutReminderEnabled = false
