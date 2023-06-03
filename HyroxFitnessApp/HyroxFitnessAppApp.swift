@@ -10,7 +10,6 @@ import Firebase
 
 @main
 struct HyroxFitnessAppApp: App {
-   // @StateObject var dataManager = DataManager()
 
     
     init() {

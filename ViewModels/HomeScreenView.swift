@@ -13,75 +13,11 @@ import FirebaseAuth
 struct HomeScreenView: View {
     
     @EnvironmentObject var signInRegister: AuthenticationHandler
-    
     var body: some View {
         if signInRegister.isSignedIn {
             NavbarHandler()
         } else {
-            SignInRegisterView()
-        }
-    }
-    
-    struct SignInRegisterView: View {
-        
-        @EnvironmentObject var signInRegister: AuthenticationHandler
-        @State var email = ""
-        @State var password = ""
-        
-        var body: some View {
-            
-            ZStack {
-                Color("AccentColor")
-                    .ignoresSafeArea()
-                
-            VStack {
-                HStack {
-                    TitleView()
-                    Spacer()
-                }
-                .padding()
-                .padding(.top, 50)
-                
-                Spacer()
-                
-                CredentialsView(email: $email, password: $password)
-                
-                Spacer()
-                Spacer()
-                
-                HStack {
-                    Button(action: {
-                        guard !email.isEmpty, !password.isEmpty else {
-                            return
-                        }
-                        
-                        signInRegister.signIn(email: email, password: password)
-                    }) {
-                        SignInView()
-                  
-                    }
-                    
-                    Button(action: {
-                        guard !email.isEmpty, !password.isEmpty else {
-                            return
-                        }
-                        signInRegister.register(email: email, password: password)
-                    }) {
-                        RegisterView()
-                    }
-                    
-                }
-            }
-        }
-    }
-}
-    
-    
-
-    
-    struct SignInView_Previews: PreviewProvider {
-        static var previews: some View {
-            SignInRegisterView()
+            UserLoginView()
         }
     }
     

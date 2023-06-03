@@ -10,20 +10,19 @@ import FirebaseAuth
 
 class AuthenticationHandler: ObservableObject {
     
-    let auth = Auth.auth()
-    
+    @Published var errorMessage: String = ""
     @Published var isSignedIn = false
     
+    let authenticationHandler = Auth.auth()
     
     func register(email: String, password: String) {
-        auth.createUser(withEmail: email, password: password) { result, error in
+        authenticationHandler.createUser(withEmail: email, password: password) { result, error in
             if let error = error {
-                print(error)
+                self.errorMessage = error.localizedDescription
                 return
             }
             
             if let result = result {
-                ("User \(result.user.uid) registered")
                 self.isSignedIn.toggle()
             }
             
@@ -31,14 +30,13 @@ class AuthenticationHandler: ObservableObject {
     }
     
     func signIn(email: String, password: String) {
-        auth.signIn(withEmail: email, password: password) { result, error in
+        authenticationHandler.signIn(withEmail: email, password: password) { result, error in
             if let error = error {
-                print(error)
+                self.errorMessage = error.localizedDescription
                 return
             }
 
             if let result = result {
-                print("User \(result.user.uid) signed in")
                 self.isSignedIn.toggle()
             }
             
@@ -47,17 +45,18 @@ class AuthenticationHandler: ObservableObject {
 
     
     func signOut() {
-            let firebaseAuth = Auth.auth()
             do {
-              try firebaseAuth.signOut()
-                print("User is signed out")
+              try authenticationHandler.signOut()
                 self.isSignedIn.toggle()
-                
 
-            } catch let signOutError as NSError {
-              print("Error signing out: %@", signOutError)
-     
+            } catch let error as NSError {
+                self.errorMessage = error.localizedDescription
+
             }
         }
     
 }
+
+
+
+

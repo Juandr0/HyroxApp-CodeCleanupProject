@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class TimerManager: ObservableObject {
+class TimerHandler: ObservableObject {
     
     @Published var elapsedTime: TimeInterval = 0
     var timer: Timer?
