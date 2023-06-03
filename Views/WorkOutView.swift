@@ -19,7 +19,7 @@ struct WorkOutView: View {
     var locationManager = LocationManager()
     var db = DatabaseHandler()
     
-    @ObservedObject var timeManager = TimerManager()
+    @ObservedObject var timeManager = TimerHandler()
     
     var body: some View {
         

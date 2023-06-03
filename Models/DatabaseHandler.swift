@@ -11,7 +11,7 @@ import FirebaseFirestore
 
 class DatabaseHandler: ObservableObject {
     
-    let db = Firestore.firestore()
+    let firestoreDB = Firestore.firestore()
     let currentUserID = Auth.auth().currentUser?.uid
     
     @Published var users = [User]()
@@ -28,7 +28,7 @@ class DatabaseHandler: ObservableObject {
         }
         
         do {
-            let _ = try db.collection("Users").document(currentUserID!).collection("Workouts").addDocument(from: user)
+            let _ = try firestoreDB.collection("Users").document(currentUserID!).collection("Workouts").addDocument(from: user)
         } catch let error {
             print("Error writing user to Firestore: \(error.localizedDescription)")
         }
@@ -46,7 +46,7 @@ class DatabaseHandler: ObservableObject {
             return
         }
         
-        db.collection("Users").document(id).delete() { error in
+        firestoreDB.collection("Users").document(id).delete() { error in
             if let error = error {
                 print("Error deleting user: \(error)")
                 return
@@ -60,7 +60,7 @@ class DatabaseHandler: ObservableObject {
     
     func fetchData() {
         guard let userId = Auth.auth().currentUser?.uid else { return }
-        db.collection("Users").document(userId).collection("Workouts")
+        firestoreDB.collection("Users").document(userId).collection("Workouts")
             .addSnapshotListener { snapshot, err in
                 guard let snapshot = snapshot else {return}
                 

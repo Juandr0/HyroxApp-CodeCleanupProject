@@ -37,7 +37,8 @@
 		09B12C3A29913F1B00116CA9 /* FontStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B12C3929913F1B00116CA9 /* FontStyles.swift */; };
 		09B12C3B29913F1B00116CA9 /* FontStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B12C3929913F1B00116CA9 /* FontStyles.swift */; };
 		09B12C3C29913F1B00116CA9 /* FontStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B12C3929913F1B00116CA9 /* FontStyles.swift */; };
-		09B12C49299BCAD300116CA9 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B12C48299BCAD200116CA9 /* TimerManager.swift */; };
+		09B12C49299BCAD300116CA9 /* TimerHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B12C48299BCAD200116CA9 /* TimerHandler.swift */; };
+		11762AF82A2B5086005CB2AB /* UserLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11762AF72A2B5086005CB2AB /* UserLoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,7 +84,8 @@
 		09B12C3129913E4100116CA9 /* Inter-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Thin.otf"; sourceTree = "<group>"; };
 		09B12C3829913E9900116CA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		09B12C3929913F1B00116CA9 /* FontStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontStyles.swift; sourceTree = "<group>"; };
-		09B12C48299BCAD200116CA9 /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
+		09B12C48299BCAD200116CA9 /* TimerHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerHandler.swift; sourceTree = "<group>"; };
+		11762AF72A2B5086005CB2AB /* UserLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +195,7 @@
 				09722A8629804553006F55CA /* SettingsView.swift */,
 				09722A40296F28F7006F55CA /* WorkOutManagerView.swift */,
 				09B12C252987F4EA00116CA9 /* WorkOutView.swift */,
+				11762AF72A2B5086005CB2AB /* UserLoginView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -228,7 +231,7 @@
 			children = (
 				09722A9229829EAA006F55CA /* AuthenticationHandler.swift */,
 				09B12C29298A8F3700116CA9 /* DatabaseHandler.swift */,
-				09B12C48299BCAD200116CA9 /* TimerManager.swift */,
+				09B12C48299BCAD200116CA9 /* TimerHandler.swift */,
 				09B12C27298A708900116CA9 /* User.swift */,
 			);
 			path = Models;
@@ -379,9 +382,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11762AF82A2B5086005CB2AB /* UserLoginView.swift in Sources */,
 				09B12C28298A708900116CA9 /* User.swift in Sources */,
 				09722A8729804554006F55CA /* SettingsView.swift in Sources */,
-				09B12C49299BCAD300116CA9 /* TimerManager.swift in Sources */,
+				09B12C49299BCAD300116CA9 /* TimerHandler.swift in Sources */,
 				09722AA12986ECEB006F55CA /* LocationManager.swift in Sources */,
 				09722A9329829EAA006F55CA /* AuthenticationHandler.swift in Sources */,
 				09722A952982A34C006F55CA /* NavbarHandler.swift in Sources */,

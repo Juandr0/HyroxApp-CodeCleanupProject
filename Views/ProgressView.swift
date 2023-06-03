@@ -8,8 +8,7 @@
 import SwiftUI
 import Firebase
 
-// Logged on users data should be showing only for that user
-
+// Display user specific data only
 struct ProgressView: View {
     
     @ObservedObject var userData = DatabaseHandler()
@@ -19,7 +18,7 @@ struct ProgressView: View {
         ZStack {
             Color.white
                 .edgesIgnoringSafeArea(.all)
-            
+
             VStack{
                 Text("Progress")
                     .font(.largeTitle)
