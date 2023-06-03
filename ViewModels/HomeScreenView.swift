@@ -30,31 +30,7 @@ struct CredentialsView: View {
     
     
     var body: some View {
-        VStack {
-            TextField("Enter email...", text: $email, prompt: Text("Enter email...").foregroundColor(.white.opacity(0.5)))
-                .foregroundColor(.white)
-                .bold()
-                .padding()
-                .overlay(
-                RoundedRectangle(cornerRadius: 10)
-                    .stroke(lineWidth: 2)
-                    .foregroundColor(Color("DetailGray"))
-                
-                )
-                .padding()
-            
-            SecureField("Enter password...", text: $password, prompt: Text("Enter password...").foregroundColor(.white.opacity(0.5)))
-                .foregroundColor(.white)
-                .bold()
-                .padding()
-                .overlay(
-                RoundedRectangle(cornerRadius: 10)
-                    .stroke(lineWidth: 2)
-                    .foregroundColor(Color("DetailGray"))
-                
-                )
-                .padding()
-        }
+        inputFields(email: $email, password: $password)
     }
 }
 
@@ -68,6 +44,41 @@ struct TitleView: View {
     }
 }
 
+struct inputFields: View {
+    @Binding var email : String
+    @Binding var password : String
+    
+    var body: some View {
+        VStack {
+            TextField("Enter email...", text: $email, prompt: Text("Enter email...").foregroundColor(.white.opacity(0.5)))
+                .foregroundColor(.white)
+                .bold()
+                .padding()
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(lineWidth: 2)
+                        .foregroundColor(Color("DetailGray"))
+                    
+                )
+                .padding()
+            
+            SecureField("Enter password...", text: $password, prompt: Text("Enter password...").foregroundColor(.white.opacity(0.5)))
+                .foregroundColor(.white)
+                .bold()
+                .padding()
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(lineWidth: 2)
+                        .foregroundColor(Color("DetailGray"))
+                    
+                )
+                .padding()
+        }
+    }
+}
+
+
+
 struct SignInView: View {
     var body: some View {
         Text("Sign In")
@@ -79,7 +90,7 @@ struct SignInView: View {
             .background(
                 RoundedRectangle(cornerRadius: 10)
                     .stroke(Color("DetailGreen"), lineWidth: 2)
-                   // .fill(Color("DetailGreen"))
+                // .fill(Color("DetailGreen"))
                 
             )
             .padding(.horizontal)

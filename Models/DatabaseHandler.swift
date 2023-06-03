@@ -8,6 +8,7 @@
 import Foundation
 import Firebase
 import FirebaseFirestore
+import SwiftUI
 
 class DatabaseHandler: ObservableObject {
     
@@ -20,52 +21,57 @@ class DatabaseHandler: ObservableObject {
         fetchUserData()
     }
     
-    //Adds workout data to DB
+    // Adds workout data to DB
     func addData(user: User) {
         guard let uid = currentUserID else {
-            print("Error: User is not logged in.")
+            let errorMessage = "Error: User is not logged in."
+            showMessage(errorMessage)
             return
         }
         
         do {
             let _ = try firestoreDB.collection("Users").document(currentUserID!).collection("Workouts").addDocument(from: user)
         } catch let error {
-            print("Error writing user to Firestore: \(error.localizedDescription)")
+            let errorMessage = "Error writing user to Firestore: \(error.localizedDescription)"
+            showMessage(errorMessage)
         }
     }
     
-    //Deletes the user workout data from DB
+    // Deletes the user workout data from DB
     func delete(users: User) {
         guard let uid = currentUserID, let id = users.id else {
-            print("Error: User ID is nil or user is not logged in.")
+            let errorMessage = "Error: User ID is nil or user is not logged in."
+            showMessage(errorMessage)
             return
         }
         
         if currentUserID != id {
-            print("Error: User can only delete their own data.")
+            let errorMessage = "Error: User can only delete their own data."
+            showMessage(errorMessage)
             return
         }
         
         firestoreDB.collection("Users").document(id).delete() { error in
             if let error = error {
-                print("Error deleting user: \(error)")
+                let errorMessage = "Error deleting user: \(error)"
+                self.showMessage(errorMessage)
                 return
             }
-            print("User successfully deleted")
+            let message = "User successfully deleted"
+            self.showMessage(message)
         }
     }
     
-//    Resets the data if another user has been logged in, then fetches
-//    the current user data
-    
+    // Resets the data if another user has been logged in, then fetches the current user data
     func fetchUserData() {
         guard let userId = Auth.auth().currentUser?.uid else { return }
         firestoreDB.collection("Users").document(userId).collection("Workouts")
             .addSnapshotListener { snapshot, err in
-                guard let snapshot = snapshot else {return}
+                guard let snapshot = snapshot else { return }
                 
                 if let err = err {
-                    print("Error getting document \(err)")
+                    let message = "Error getting document \(err)"
+                    self.showMessage(message)
                 } else {
                     self.users.removeAll()
                     for document in snapshot.documents {
@@ -76,16 +82,36 @@ class DatabaseHandler: ObservableObject {
                         case .success(let item):
                             self.users.append(item)
                         case .failure(let error):
-                            print("Error decoding item: \(error)")
+                            let errorMessage = "Error decoding item: \(error)"
+                            self.showMessage(errorMessage)
                         }
                     }
                 }
             }
     }
-
+    
+    private func showMessage(_ message: String) {
+        let errorAlert = AlertHandler(errorMessage: message)
+        // Present the error alert using your preferred method (e.g., using SwiftUI's sheet)
+    }
+    
 }
 
-    
 
+struct AlertHandler: View {
+    let errorMessage: String
+    @State private var showAlert = true
     
-
+    var body: some View {
+        VStack {
+            EmptyView()
+        }
+        .alert(isPresented: $showAlert) {
+            Alert(
+                title: Text("Error"),
+                message: Text(errorMessage),
+                dismissButton: .default(Text("OK"))
+            )
+        }
+    }
+}

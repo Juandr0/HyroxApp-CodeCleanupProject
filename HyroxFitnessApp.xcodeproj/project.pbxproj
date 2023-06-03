@@ -195,7 +195,6 @@
 			children = (
 				09722A8A29809E21006F55CA /* ProgressView.swift */,
 				09722A8629804553006F55CA /* SettingsView.swift */,
-				09722A40296F28F7006F55CA /* WorkOutManagerView.swift */,
 				09B12C252987F4EA00116CA9 /* WorkOutView.swift */,
 				11762AF72A2B5086005CB2AB /* UserLoginView.swift */,
 			);
@@ -221,6 +220,7 @@
 		111125D72A28E6CF002C8603 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				09722A40296F28F7006F55CA /* WorkOutManagerView.swift */,
 				097229D3296CAFE7006F55CA /* HomeScreenView.swift */,
 				09722A9E2986E081006F55CA /* MapView.swift */,
 				09722A942982A34C006F55CA /* NavbarHandler.swift */,

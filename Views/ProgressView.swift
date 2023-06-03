@@ -18,7 +18,7 @@ struct ProgressView: View {
         ZStack {
             Color.white
                 .edgesIgnoringSafeArea(.all)
-
+            
             VStack{
                 Text("Progress")
                     .font(.largeTitle)

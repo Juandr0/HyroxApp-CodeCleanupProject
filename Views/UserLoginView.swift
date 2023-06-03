@@ -43,7 +43,6 @@ struct UserLoginView: View {
                     
                 }
             }
-            
             SignInErrorHandler(authHandler: signInRegister, email: $email, password: $password, showAlert: $showErrorAlert)
         }
     }

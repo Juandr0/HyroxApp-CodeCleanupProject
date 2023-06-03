@@ -27,7 +27,7 @@ struct SignInErrorHandler: View {
             return authHandler.errorMessage
         }
     }
-
+    
     
     var body: some View {
         VStack {
@@ -46,7 +46,7 @@ struct SignInErrorHandler: View {
             showAlert = !errorMessage.isEmpty
         }
     }
-
+    
     
     private func resetErrorMessage() {
         authHandler.errorMessage = ""

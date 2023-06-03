@@ -8,27 +8,27 @@
 import SwiftUI
 
 struct NavbarHandler: View {
-    var body: some View {            
-            TabView {
-                    
-                    WorkOutManagerView()
-                        .tabItem {
-                            Label("WorkOut", systemImage: "trophy")
-                        }
+    var body: some View {
+        TabView {
             
-                    ProgressView()
-                        .tabItem {
-                            Label("Progress", systemImage: "flowchart")
-                        }
-                
-                    SettingsView()
-                        .tabItem {
-                            Label("Settings", systemImage: "gearshape")
-                        }
-                
+            WorkOutManagerView()
+                .tabItem {
+                    Label("WorkOut", systemImage: "trophy")
                 }
-            .accentColor(Color("AccentColor"))
             
+            ProgressView()
+                .tabItem {
+                    Label("Progress", systemImage: "flowchart")
+                }
+            
+            SettingsView()
+                .tabItem {
+                    Label("Settings", systemImage: "gearshape")
+                }
+            
+        }
+        .accentColor(Color("AccentColor"))
+        
     }
 }
 

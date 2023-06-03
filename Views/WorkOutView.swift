@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WorkOutView: View {
     
-  
+    
     @State private var ShowAlert = false
     @State var displayMap = false
     @Binding var bodyExercise : String
@@ -48,9 +48,9 @@ struct WorkOutView: View {
                             Text("Ready for the next lap!")
                         }
                     }
-                
+                    
                 }
-                               
+                
                 Text(String(format: "%02d:%02d:%02d", Int(timeManager.elapsedTime / 3600), Int(timeManager.elapsedTime.truncatingRemainder(dividingBy: 3600) / 60), Int(timeManager.elapsedTime.truncatingRemainder(dividingBy: 60))))
                     .padding()
                     .font(.largeTitle)
@@ -110,16 +110,16 @@ struct noviceWorkout: View {
     
     var body: some View {
         Text("\(workOutText)")
-          //  .padding(.horizontal)
+        //  .padding(.horizontal)
             .foregroundColor(.green)
             .fontWeight(.bold)
             .font(.largeTitle)
             .scaledToFit()
             .minimumScaleFactor(0.01)
             .background(
-            RoundedRectangle(cornerRadius: 5)
-                .stroke(Color("DetailGreen"), lineWidth: 2)
-        
+                RoundedRectangle(cornerRadius: 5)
+                    .stroke(Color("DetailGreen"), lineWidth: 2)
+                
             )
     }
 }

@@ -16,12 +16,12 @@ struct MapView: View {
     
     var body: some View {
         Map(coordinateRegion: $region,
-                        interactionModes: [.all],
-                        showsUserLocation: true,
-                        userTrackingMode: .constant(.follow)
+            interactionModes: [.all],
+            showsUserLocation: true,
+            userTrackingMode: .constant(.follow)
             
         )}
-        
+    
 }
 
 struct MapView_Previews: PreviewProvider {

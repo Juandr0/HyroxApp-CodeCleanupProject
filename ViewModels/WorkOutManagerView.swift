@@ -22,9 +22,9 @@ struct WorkOutManagerView: View {
         ZStack {
             Color.white
                 .edgesIgnoringSafeArea(.all)
-        
-        VStack {
-            Spacer()
+            
+            VStack {
+                Spacer()
                 Menu {
                     Button(action: {
                         workoutLevel = "Novice"
@@ -68,7 +68,7 @@ struct WorkOutManagerView: View {
                         runExercise = "8 ROUNDS: 1KM RUN - 25 SQUATS"
                         fitnessLevelString = "Intermediate"
                         displayNoviceWorkoutSheet.toggle()
-                
+                        
                     }
                     
                     if workoutLevel == "Advanced" {

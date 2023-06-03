@@ -33,18 +33,7 @@ struct SettingsView: View {
                 }
                 
                 if notificationsEnabled {
-                    VStack(alignment: .leading, spacing: 10) {
-                        Text("Reminders:")
-                            .font(.headline)
-                        
-                        Toggle(isOn: $waterReminderEnabled) {
-                            Text("Water Reminder")
-                        }
-                        
-                        Toggle(isOn: $workoutReminderEnabled) {
-                            Text("Workout Reminder")
-                        }
-                    }
+                    notificationsEnabledView(waterReminderEnabled: $waterReminderEnabled, workoutReminderEnabled: $workoutReminderEnabled)
                 }
             }
             .padding()
@@ -77,6 +66,28 @@ struct SettingsView: View {
         }
     }
 }
+
+struct notificationsEnabledView : View {
+    @Binding var waterReminderEnabled :Bool
+    @Binding var workoutReminderEnabled :Bool
+    
+    var body : some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Text("Reminders:")
+                .font(.headline)
+            
+            Toggle(isOn: $waterReminderEnabled) {
+                Text("Water Reminder")
+            }
+            
+            Toggle(isOn: $workoutReminderEnabled) {
+                Text("Workout Reminder")
+            }
+        }
+    }
+    
+}
+
 
 
 struct SettingsView_Previews: PreviewProvider {

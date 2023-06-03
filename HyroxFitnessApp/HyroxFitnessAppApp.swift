@@ -10,7 +10,7 @@ import Firebase
 
 @main
 struct HyroxFitnessAppApp: App {
-
+    
     
     init() {
         FirebaseApp.configure()

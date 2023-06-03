@@ -53,9 +53,9 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
             print("1km")
             finished = true
             distance = 0
-    
-        }
             
+        }
+        
         let distanceInKm = distance / 1000.0
         
     }
