@@ -28,7 +28,6 @@ struct CredentialsView: View {
     @Binding var email : String
     @Binding var password: String
     
-    
     var body: some View {
         inputFields(email: $email, password: $password)
     }

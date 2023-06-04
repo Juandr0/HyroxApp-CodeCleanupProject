@@ -40,6 +40,8 @@
 		09B12C49299BCAD300116CA9 /* TimerHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B12C48299BCAD200116CA9 /* TimerHandler.swift */; };
 		11762AF82A2B5086005CB2AB /* UserLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11762AF72A2B5086005CB2AB /* UserLoginView.swift */; };
 		11762AFC2A2B58AD005CB2AB /* SignInErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11762AFB2A2B58AD005CB2AB /* SignInErrorHandler.swift */; };
+		11762AFE2A2C72BA005CB2AB /* AlertHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11762AFD2A2C72BA005CB2AB /* AlertHandler.swift */; };
+		11762B022A2CA964005CB2AB /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11762B012A2CA964005CB2AB /* Workout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +90,8 @@
 		09B12C48299BCAD200116CA9 /* TimerHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerHandler.swift; sourceTree = "<group>"; };
 		11762AF72A2B5086005CB2AB /* UserLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginView.swift; sourceTree = "<group>"; };
 		11762AFB2A2B58AD005CB2AB /* SignInErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInErrorHandler.swift; sourceTree = "<group>"; };
+		11762AFD2A2C72BA005CB2AB /* AlertHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHandler.swift; sourceTree = "<group>"; };
+		11762B012A2CA964005CB2AB /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,10 +197,15 @@
 		09722A9B298419CB006F55CA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				11762AFD2A2C72BA005CB2AB /* AlertHandler.swift */,
+				097229D3296CAFE7006F55CA /* HomeScreenView.swift */,
+				09722A9E2986E081006F55CA /* MapView.swift */,
+				09722A942982A34C006F55CA /* NavbarHandler.swift */,
 				09722A8A29809E21006F55CA /* ProgressView.swift */,
 				09722A8629804553006F55CA /* SettingsView.swift */,
-				09B12C252987F4EA00116CA9 /* WorkOutView.swift */,
 				11762AF72A2B5086005CB2AB /* UserLoginView.swift */,
+				09B12C252987F4EA00116CA9 /* WorkOutView.swift */,
+				09722A40296F28F7006F55CA /* WorkOutManagerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -220,10 +229,8 @@
 		111125D72A28E6CF002C8603 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				09722A40296F28F7006F55CA /* WorkOutManagerView.swift */,
-				097229D3296CAFE7006F55CA /* HomeScreenView.swift */,
-				09722A9E2986E081006F55CA /* MapView.swift */,
-				09722A942982A34C006F55CA /* NavbarHandler.swift */,
+				09722A9229829EAA006F55CA /* AuthenticationHandler.swift */,
+				09B12C29298A8F3700116CA9 /* DatabaseHandler.swift */,
 				11762AFB2A2B58AD005CB2AB /* SignInErrorHandler.swift */,
 			);
 			path = ViewModels;
@@ -232,10 +239,9 @@
 		111125D82A28F36D002C8603 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				09722A9229829EAA006F55CA /* AuthenticationHandler.swift */,
-				09B12C29298A8F3700116CA9 /* DatabaseHandler.swift */,
 				09B12C48299BCAD200116CA9 /* TimerHandler.swift */,
 				09B12C27298A708900116CA9 /* User.swift */,
+				11762B012A2CA964005CB2AB /* Workout.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -390,8 +396,10 @@
 				09722A8729804554006F55CA /* SettingsView.swift in Sources */,
 				11762AFC2A2B58AD005CB2AB /* SignInErrorHandler.swift in Sources */,
 				09B12C49299BCAD300116CA9 /* TimerHandler.swift in Sources */,
+				11762B022A2CA964005CB2AB /* Workout.swift in Sources */,
 				09722AA12986ECEB006F55CA /* LocationManager.swift in Sources */,
 				09722A9329829EAA006F55CA /* AuthenticationHandler.swift in Sources */,
+				11762AFE2A2C72BA005CB2AB /* AlertHandler.swift in Sources */,
 				09722A952982A34C006F55CA /* NavbarHandler.swift in Sources */,
 				097229D4296CAFE7006F55CA /* HomeScreenView.swift in Sources */,
 				09B12C3A29913F1B00116CA9 /* FontStyles.swift in Sources */,

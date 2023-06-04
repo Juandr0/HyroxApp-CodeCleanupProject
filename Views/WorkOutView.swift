@@ -12,9 +12,7 @@ struct WorkOutView: View {
     
     @State private var ShowAlert = false
     @State var displayMap = false
-    @Binding var bodyExercise : String
-    @Binding var runExercise : String
-    @Binding var fitnessLevelString : String
+    @Binding var currentWorkout : Workout
     
     var locationManager = LocationManager()
     var firebaseDB = DatabaseHandler()
@@ -40,7 +38,7 @@ struct WorkOutView: View {
                     .fontWeight(.bold)
                     .foregroundColor(.white)
                     .font(.largeTitle)
-                    .alert("Do \(bodyExercise)!", isPresented: $ShowAlert) {
+                    .alert("Do \(currentWorkout.bodyExercise)!", isPresented: $ShowAlert) {
                         Button(action:{
                             locationManager.finished.toggle()
                             
@@ -61,7 +59,7 @@ struct WorkOutView: View {
                     .fontWeight(.bold)
                 
                 Spacer()
-                noviceWorkout(workOutText: $runExercise)
+                noviceWorkout(workOutText: $currentWorkout.runExercise)
                     .padding()
                     .padding(.bottom, 40)
                 
@@ -84,7 +82,7 @@ struct WorkOutView: View {
                         displayMap.toggle()
                         locationManager.stopLocationUpdates()
                         timeManager.stop()
-                        let newUser = User(fitnessLevel: "\(fitnessLevelString)", date: Date(), elapsedTime: timeManager.elapsedTime)
+                        let newUser = User(fitnessLevel: "\(currentWorkout.fitnessLevelString)", date: Date(), elapsedTime: timeManager.elapsedTime)
                         firebaseDB.addData(user: newUser)
                         
                         

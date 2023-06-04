@@ -13,9 +13,7 @@ struct WorkOutManagerView: View {
     
     @State var workoutLevel = ""
     @State var displayNoviceWorkoutSheet = false
-    @State var bodyExercise : String = ""
-    @State var runExercise : String = ""
-    @State var fitnessLevelString : String = ""
+    @State var currentWorkout = Workout()
     
     var body: some View {
         
@@ -54,39 +52,13 @@ struct WorkOutManagerView: View {
                 .font(.title3)
                 .bold()
                 Button(action: {
-                    
-                    if workoutLevel == "Novice" {
-                        bodyExercise = "10 PUSHUPS"
-                        runExercise = "4 ROUNDS: 1 KM RUN - 10 PUSHUPS"
-                        fitnessLevelString = "Novice"
-                        displayNoviceWorkoutSheet.toggle()
-                        
-                    }
-                    
-                    if workoutLevel == "Intermediate" {
-                        bodyExercise = "25 SQUATS"
-                        runExercise = "8 ROUNDS: 1KM RUN - 25 SQUATS"
-                        fitnessLevelString = "Intermediate"
-                        displayNoviceWorkoutSheet.toggle()
-                        
-                    }
-                    
-                    if workoutLevel == "Advanced" {
-                        bodyExercise = "20 LUNGES, 15 PUSHUPS"
-                        runExercise = "10 ROUNDS: 1KM RUN - 20 LUNGES, 15 PUSHUPS"
-                        fitnessLevelString = "Advanced"
-                        displayNoviceWorkoutSheet.toggle()
-                        
-                    }
-                    
+                    setWorkout(workoutLevel: workoutLevel)
                 }){
                     GoToWorkoutTextView()
                         .padding(.bottom, 100)
                 }
                 .sheet(isPresented: $displayNoviceWorkoutSheet) {
-                    
-                    WorkOutView(bodyExercise: $bodyExercise, runExercise: $runExercise, fitnessLevelString: $fitnessLevelString)
-                    
+                    WorkOutView(currentWorkout: $currentWorkout)
                 }
                 
             }
@@ -95,6 +67,31 @@ struct WorkOutManagerView: View {
         
     }
     
+
+    func setWorkout (workoutLevel : String) {
+        switch workoutLevel {
+        case "Novice":
+            currentWorkout.bodyExercise = "10 PUSHUPS"
+            currentWorkout.runExercise = "4 ROUNDS: 1 KM RUN - 10 PUSHUPS"
+            currentWorkout.fitnessLevelString = "Novice"
+            
+        case "Intermediate":
+            currentWorkout.bodyExercise = "25 SQUATS"
+            currentWorkout.runExercise = "8 ROUNDS: 1KM RUN - 25 SQUATS"
+            currentWorkout.fitnessLevelString = "Intermediate"
+            
+            
+        case "Advanced":
+            currentWorkout.bodyExercise = "20 LUNGES, 15 PUSHUPS"
+            currentWorkout.runExercise = "10 ROUNDS: 1KM RUN - 20 LUNGES, 15 PUSHUPS"
+            currentWorkout.fitnessLevelString = "Advanced"
+        default:
+            break
+        }
+        
+        
+        displayNoviceWorkoutSheet.toggle()
+    }
 }
 
 struct WorkoutView_Previews: PreviewProvider {
@@ -104,7 +101,7 @@ struct WorkoutView_Previews: PreviewProvider {
 }
 
 
-
+//Displays text
 struct GoToWorkoutTextView: View {
     var body: some View {
         Text("GO TO WORKOUT")
