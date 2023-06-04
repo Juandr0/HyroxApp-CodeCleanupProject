@@ -98,20 +98,4 @@ class DatabaseHandler: ObservableObject {
 }
 
 
-struct AlertHandler: View {
-    let errorMessage: String
-    @State private var showAlert = true
-    
-    var body: some View {
-        VStack {
-            EmptyView()
-        }
-        .alert(isPresented: $showAlert) {
-            Alert(
-                title: Text("Error"),
-                message: Text(errorMessage),
-                dismissButton: .default(Text("OK"))
-            )
-        }
-    }
-}
+
