@@ -14,7 +14,7 @@ struct SignInErrorHandler: View {
     @Binding var password: String
     @Binding var showAlert: Bool
     
-    
+    //Conditions that decide what error message is shown
     private var errorMessage: String {
         switch (email.isEmpty, password.isEmpty) {
         case (true, true):
@@ -29,18 +29,15 @@ struct SignInErrorHandler: View {
     }
     
     
+    //Sends errormessage to AlertHandler to display it, then resets the errormessage
     var body: some View {
         VStack {
-            EmptyView()
-        }
-        .alert(isPresented: $showAlert) {
-            Alert(
-                title: Text("Error"),
-                message: Text(errorMessage),
-                dismissButton: .default(Text("OK")) {
-                    resetErrorMessage()
-                }
-            )
+            if showAlert {
+                AlertHandler(errorMessage: errorMessage, onDismiss: resetErrorMessage)
+            } else {
+                EmptyView()
+            }
+          
         }
         .onChange(of: authHandler.errorMessage) { errorMessage in
             showAlert = !errorMessage.isEmpty

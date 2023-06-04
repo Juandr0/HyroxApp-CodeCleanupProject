@@ -25,7 +25,7 @@ class DatabaseHandler: ObservableObject {
     func addData(user: User) {
         guard let uid = currentUserID else {
             let errorMessage = "Error: User is not logged in."
-            showMessage(errorMessage)
+            displayError(errorMessage)
             return
         }
         
@@ -33,7 +33,7 @@ class DatabaseHandler: ObservableObject {
             let _ = try firestoreDB.collection("Users").document(currentUserID!).collection("Workouts").addDocument(from: user)
         } catch let error {
             let errorMessage = "Error writing user to Firestore: \(error.localizedDescription)"
-            showMessage(errorMessage)
+            displayError(errorMessage)
         }
     }
     
@@ -41,24 +41,24 @@ class DatabaseHandler: ObservableObject {
     func delete(users: User) {
         guard let uid = currentUserID, let id = users.id else {
             let errorMessage = "Error: User ID is nil or user is not logged in."
-            showMessage(errorMessage)
+            displayError(errorMessage)
             return
         }
         
         if currentUserID != id {
             let errorMessage = "Error: User can only delete their own data."
-            showMessage(errorMessage)
+            displayError(errorMessage)
             return
         }
         
         firestoreDB.collection("Users").document(id).delete() { error in
             if let error = error {
                 let errorMessage = "Error deleting user: \(error)"
-                self.showMessage(errorMessage)
+                self.displayError(errorMessage)
                 return
             }
             let message = "User successfully deleted"
-            self.showMessage(message)
+            self.displayError(message)
         }
     }
     
@@ -71,7 +71,7 @@ class DatabaseHandler: ObservableObject {
                 
                 if let err = err {
                     let message = "Error getting document \(err)"
-                    self.showMessage(message)
+                    self.displayError(message)
                 } else {
                     self.users.removeAll()
                     for document in snapshot.documents {
@@ -83,16 +83,16 @@ class DatabaseHandler: ObservableObject {
                             self.users.append(item)
                         case .failure(let error):
                             let errorMessage = "Error decoding item: \(error)"
-                            self.showMessage(errorMessage)
+                            self.displayError(errorMessage)
                         }
                     }
                 }
             }
     }
     
-    private func showMessage(_ message: String) {
-        let errorAlert = AlertHandler(errorMessage: message)
-        // Present the error alert using your preferred method (e.g., using SwiftUI's sheet)
+    //Displays error message if any errors occurs
+    private func displayError(_ message: String) {
+        let errorAlert = AlertHandler(errorMessage: message, onDismiss: nil)
     }
     
 }

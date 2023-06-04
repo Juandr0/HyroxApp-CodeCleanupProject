@@ -199,14 +199,13 @@
 			children = (
 				11762AFD2A2C72BA005CB2AB /* AlertHandler.swift */,
 				097229D3296CAFE7006F55CA /* HomeScreenView.swift */,
-				09722A942982A34C006F55CA /* NavbarHandler.swift */,
 				09722A9E2986E081006F55CA /* MapView.swift */,
+				09722A942982A34C006F55CA /* NavbarHandler.swift */,
 				09722A8A29809E21006F55CA /* ProgressView.swift */,
 				09722A8629804553006F55CA /* SettingsView.swift */,
-				11762AFB2A2B58AD005CB2AB /* SignInErrorHandler.swift */,
+				11762AF72A2B5086005CB2AB /* UserLoginView.swift */,
 				09B12C252987F4EA00116CA9 /* WorkOutView.swift */,
 				09722A40296F28F7006F55CA /* WorkOutManagerView.swift */,
-				11762AF72A2B5086005CB2AB /* UserLoginView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -232,6 +231,7 @@
 			children = (
 				09722A9229829EAA006F55CA /* AuthenticationHandler.swift */,
 				09B12C29298A8F3700116CA9 /* DatabaseHandler.swift */,
+				11762AFB2A2B58AD005CB2AB /* SignInErrorHandler.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
