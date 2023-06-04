@@ -52,33 +52,7 @@ struct WorkOutManagerView: View {
                 .font(.title3)
                 .bold()
                 Button(action: {
-                    
-                    
-                    
-                    if workoutLevel == "Novice" {
-                        currentWorkout.bodyExercise = "10 PUSHUPS"
-                        currentWorkout.runExercise = "4 ROUNDS: 1 KM RUN - 10 PUSHUPS"
-                        currentWorkout.fitnessLevelString = "Novice"
-                        displayNoviceWorkoutSheet.toggle()
-                        
-                    }
-                    
-                    if workoutLevel == "Intermediate" {
-                        currentWorkout.bodyExercise = "25 SQUATS"
-                        currentWorkout.runExercise = "8 ROUNDS: 1KM RUN - 25 SQUATS"
-                        currentWorkout.fitnessLevelString = "Intermediate"
-                        displayNoviceWorkoutSheet.toggle()
-                        
-                    }
-                    
-                    if workoutLevel == "Advanced" {
-                        currentWorkout.bodyExercise = "20 LUNGES, 15 PUSHUPS"
-                        currentWorkout.runExercise = "10 ROUNDS: 1KM RUN - 20 LUNGES, 15 PUSHUPS"
-                        currentWorkout.fitnessLevelString = "Advanced"
-                        displayNoviceWorkoutSheet.toggle()
-                        
-                    }
-                    
+                    setWorkout(workoutLevel: workoutLevel)
                 }){
                     GoToWorkoutTextView()
                         .padding(.bottom, 100)
@@ -94,10 +68,30 @@ struct WorkOutManagerView: View {
     }
     
 
-func getWorkout () {
-    
-}
-
+    func setWorkout (workoutLevel : String) {
+        switch workoutLevel {
+        case "Novice":
+            currentWorkout.bodyExercise = "10 PUSHUPS"
+            currentWorkout.runExercise = "4 ROUNDS: 1 KM RUN - 10 PUSHUPS"
+            currentWorkout.fitnessLevelString = "Novice"
+            
+        case "Intermediate":
+            currentWorkout.bodyExercise = "25 SQUATS"
+            currentWorkout.runExercise = "8 ROUNDS: 1KM RUN - 25 SQUATS"
+            currentWorkout.fitnessLevelString = "Intermediate"
+            
+            
+        case "Advanced":
+            currentWorkout.bodyExercise = "20 LUNGES, 15 PUSHUPS"
+            currentWorkout.runExercise = "10 ROUNDS: 1KM RUN - 20 LUNGES, 15 PUSHUPS"
+            currentWorkout.fitnessLevelString = "Advanced"
+        default:
+            break
+        }
+        
+        
+        displayNoviceWorkoutSheet.toggle()
+    }
 }
 
 struct WorkoutView_Previews: PreviewProvider {
