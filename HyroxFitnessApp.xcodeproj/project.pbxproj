@@ -16,7 +16,6 @@
 		097229EF296CAFEA006F55CA /* HyroxFitnessAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097229EE296CAFEA006F55CA /* HyroxFitnessAppUITestsLaunchTests.swift */; };
 		09722A37296F02FB006F55CA /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 09722A36296F02FA006F55CA /* FirebaseAuth */; };
 		09722A39296F02FB006F55CA /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 09722A38296F02FB006F55CA /* FirebaseFirestore */; };
-		09722A3F296F1A69006F55CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09722A3E296F1A69006F55CA /* GoogleService-Info.plist */; };
 		09722A41296F28F7006F55CA /* WorkOutManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09722A40296F28F7006F55CA /* WorkOutManagerView.swift */; };
 		09722A8729804554006F55CA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09722A8629804553006F55CA /* SettingsView.swift */; };
 		09722A8B29809E21006F55CA /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09722A8A29809E21006F55CA /* ProgressView.swift */; };
@@ -42,6 +41,9 @@
 		11762AFC2A2B58AD005CB2AB /* SignInErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11762AFB2A2B58AD005CB2AB /* SignInErrorHandler.swift */; };
 		11762AFE2A2C72BA005CB2AB /* AlertHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11762AFD2A2C72BA005CB2AB /* AlertHandler.swift */; };
 		11762B022A2CA964005CB2AB /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11762B012A2CA964005CB2AB /* Workout.swift */; };
+		11762B062A2DC2A3005CB2AB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11762B052A2DC2A3005CB2AB /* GoogleService-Info.plist */; };
+		11762B072A2DC2A3005CB2AB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11762B052A2DC2A3005CB2AB /* GoogleService-Info.plist */; };
+		11762B082A2DC2A3005CB2AB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11762B052A2DC2A3005CB2AB /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,7 +74,6 @@
 		097229E8296CAFEA006F55CA /* HyroxFitnessAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HyroxFitnessAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		097229EC296CAFEA006F55CA /* HyroxFitnessAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyroxFitnessAppUITests.swift; sourceTree = "<group>"; };
 		097229EE296CAFEA006F55CA /* HyroxFitnessAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyroxFitnessAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		09722A3E296F1A69006F55CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		09722A40296F28F7006F55CA /* WorkOutManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkOutManagerView.swift; sourceTree = "<group>"; };
 		09722A8629804553006F55CA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		09722A8A29809E21006F55CA /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
@@ -92,6 +93,7 @@
 		11762AFB2A2B58AD005CB2AB /* SignInErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInErrorHandler.swift; sourceTree = "<group>"; };
 		11762AFD2A2C72BA005CB2AB /* AlertHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHandler.swift; sourceTree = "<group>"; };
 		11762B012A2CA964005CB2AB /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
+		11762B052A2DC2A3005CB2AB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,9 +154,9 @@
 			children = (
 				09B12C3829913E9900116CA9 /* Info.plist */,
 				097229D1296CAFE7006F55CA /* HyroxFitnessAppApp.swift */,
+				11762B052A2DC2A3005CB2AB /* GoogleService-Info.plist */,
 				09B12C2F29913DA900116CA9 /* Fonts */,
 				097229D5296CAFE9006F55CA /* Assets.xcassets */,
-				09722A3E296F1A69006F55CA /* GoogleService-Info.plist */,
 				097229D7296CAFE9006F55CA /* Preview Content */,
 				09B12C3929913F1B00116CA9 /* FontStyles.swift */,
 			);
@@ -360,7 +362,7 @@
 			files = (
 				097229D9296CAFE9006F55CA /* Preview Assets.xcassets in Resources */,
 				097229D6296CAFE9006F55CA /* Assets.xcassets in Resources */,
-				09722A3F296F1A69006F55CA /* GoogleService-Info.plist in Resources */,
+				11762B062A2DC2A3005CB2AB /* GoogleService-Info.plist in Resources */,
 				09B12C3529913E4100116CA9 /* Inter-Thin.otf in Resources */,
 				09B12C3229913E4100116CA9 /* Inter-Medium.otf in Resources */,
 			);
@@ -372,6 +374,7 @@
 			files = (
 				09B12C3329913E4100116CA9 /* Inter-Medium.otf in Resources */,
 				09B12C3629913E4100116CA9 /* Inter-Thin.otf in Resources */,
+				11762B072A2DC2A3005CB2AB /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,6 +384,7 @@
 			files = (
 				09B12C3429913E4100116CA9 /* Inter-Medium.otf in Resources */,
 				09B12C3729913E4100116CA9 /* Inter-Thin.otf in Resources */,
+				11762B082A2DC2A3005CB2AB /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
