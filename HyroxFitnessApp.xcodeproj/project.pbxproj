@@ -233,6 +233,7 @@
 			children = (
 				09722A9229829EAA006F55CA /* AuthenticationHandler.swift */,
 				09B12C29298A8F3700116CA9 /* DatabaseHandler.swift */,
+				09B12C48299BCAD200116CA9 /* TimerHandler.swift */,
 				11762AFB2A2B58AD005CB2AB /* SignInErrorHandler.swift */,
 			);
 			path = ViewModels;
@@ -241,7 +242,6 @@
 		111125D82A28F36D002C8603 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				09B12C48299BCAD200116CA9 /* TimerHandler.swift */,
 				09B12C27298A708900116CA9 /* User.swift */,
 				11762B012A2CA964005CB2AB /* Workout.swift */,
 			);
