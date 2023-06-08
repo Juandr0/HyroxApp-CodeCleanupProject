@@ -2,7 +2,7 @@
 
 Av: Alexander Carlsson AU22
 
-# Vad som har gjorts
+## Vad som har gjorts
 - Sorterat filerna till en mappstruktur som följer MVVM
 - Brutit ut structar till egna filer där de ej var helt relevanta till den tidigare filen
 - Sett över variabel och funktionsnamn i hela projektet och ändrat vid behov samt där förtydligande behövs
