@@ -8,11 +8,10 @@
 import SwiftUI
 import Firebase
 
-// Logged on users data should be showing only for that user
-
+// Display user specific data only
 struct ProgressView: View {
     
-    @ObservedObject var userData = ViewModel()
+    @ObservedObject var userData = DatabaseHandler()
     
     var body: some View {
         
@@ -50,7 +49,7 @@ struct ProgressView: View {
                 
             }
             .onAppear() {
-                userData.fetchData()
+                userData.fetchUserData()
             }
             
         }

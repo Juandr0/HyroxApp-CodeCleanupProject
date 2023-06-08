@@ -9,21 +9,19 @@ import SwiftUI
 
 struct WorkOutView: View {
     
-  
-    @State private var showingAlert = false
-    @State var mapOn = false
-    @Binding var workOut : String
-    @Binding var workOutText : String
-    @Binding var fitnessLevelString : String
+    
+    @State private var ShowAlert = false
+    @State var displayMap = false
+    @Binding var currentWorkout : Workout
     
     var locationManager = LocationManager()
-    var db = ViewModel()
+    var firebaseDB = DatabaseHandler()
     
-    @ObservedObject var timeManager = TimerManager()
+    @ObservedObject var timeManager = TimerHandler()
     
     var body: some View {
         
-        if mapOn {
+        if displayMap {
             MapView()
         }
         
@@ -35,12 +33,12 @@ struct WorkOutView: View {
                 
                 if locationManager.finished == true {
                     Button("STOP RUNNING!") {
-                        showingAlert = true
+                        ShowAlert = true
                     }
                     .fontWeight(.bold)
                     .foregroundColor(.white)
                     .font(.largeTitle)
-                    .alert("Do \(workOut)!", isPresented: $showingAlert) {
+                    .alert("Do \(currentWorkout.bodyExercise)!", isPresented: $ShowAlert) {
                         Button(action:{
                             locationManager.finished.toggle()
                             
@@ -48,9 +46,9 @@ struct WorkOutView: View {
                             Text("Ready for the next lap!")
                         }
                     }
-                
+                    
                 }
-                               
+                
                 Text(String(format: "%02d:%02d:%02d", Int(timeManager.elapsedTime / 3600), Int(timeManager.elapsedTime.truncatingRemainder(dividingBy: 3600) / 60), Int(timeManager.elapsedTime.truncatingRemainder(dividingBy: 60))))
                     .padding()
                     .font(.largeTitle)
@@ -61,14 +59,14 @@ struct WorkOutView: View {
                     .fontWeight(.bold)
                 
                 Spacer()
-                noviceWorkout(workOutText: $workOutText)
+                noviceWorkout(workOutText: $currentWorkout.runExercise)
                     .padding()
                     .padding(.bottom, 40)
                 
                 HStack {
                     
                     Button(action: {
-                        mapOn.toggle()
+                        displayMap.toggle()
                         locationManager.startLocationUpdates()
                         timeManager.start()
                         
@@ -81,11 +79,11 @@ struct WorkOutView: View {
                     .padding()
                     
                     Button(action: {
-                        mapOn.toggle()
+                        displayMap.toggle()
                         locationManager.stopLocationUpdates()
                         timeManager.stop()
-                        let newUser = User(fitnessLevel: "\(fitnessLevelString)", date: Date(), elapsedTime: timeManager.elapsedTime)
-                        db.addData(user: newUser)
+                        let newUser = User(fitnessLevel: "\(currentWorkout.fitnessLevelString)", date: Date(), elapsedTime: timeManager.elapsedTime)
+                        firebaseDB.addData(user: newUser)
                         
                         
                     }){
@@ -110,16 +108,16 @@ struct noviceWorkout: View {
     
     var body: some View {
         Text("\(workOutText)")
-          //  .padding(.horizontal)
+        //  .padding(.horizontal)
             .foregroundColor(.green)
             .fontWeight(.bold)
             .font(.largeTitle)
             .scaledToFit()
             .minimumScaleFactor(0.01)
             .background(
-            RoundedRectangle(cornerRadius: 5)
-                .stroke(Color("DetailGreen"), lineWidth: 2)
-        
+                RoundedRectangle(cornerRadius: 5)
+                    .stroke(Color("DetailGreen"), lineWidth: 2)
+                
             )
     }
 }

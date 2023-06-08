@@ -21,14 +21,14 @@ struct User: Codable, Identifiable {
     }
     
     var elapsedTimeString: String {
-            guard let elapsedTime = elapsedTime else { return "00:00:00" }
-            
-            let hours = Int(elapsedTime) / 3600
-            let minutes = Int(elapsedTime) / 60 % 60
-            let seconds = Int(elapsedTime) % 60
-            
-            return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
-        }
+        guard let elapsedTime = elapsedTime else { return "00:00:00" }
+        
+        let hours = Int(elapsedTime) / 3600
+        let minutes = Int(elapsedTime) / 60 % 60
+        let seconds = Int(elapsedTime) % 60
+        
+        return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
+    }
     
     
 }

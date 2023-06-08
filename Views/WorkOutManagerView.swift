@@ -11,40 +11,38 @@ import FirebaseAuth
 
 struct WorkOutManagerView: View {
     
-    @State var choiceMade = ""
-    @State var isShowingNoviceWorkoutSheet = false
-    @State var workOut : String = ""
-    @State var workOutText : String = ""
-    @State var fitnessLevelString : String = ""
+    @State var workoutLevel = ""
+    @State var displayNoviceWorkoutSheet = false
+    @State var currentWorkout = Workout()
     
     var body: some View {
         
         ZStack {
             Color.white
                 .edgesIgnoringSafeArea(.all)
-        
-        VStack {
-            Spacer()
+            
+            VStack {
+                Spacer()
                 Menu {
                     Button(action: {
-                        choiceMade = "Novice"
+                        workoutLevel = "Novice"
                     }, label: {
                         Text("Novice")
                     })
                     Button(action: {
-                        choiceMade = "Intermediate"
+                        workoutLevel = "Intermediate"
                     }, label: {
                         Text("Intermediate")
                     })
                     Button(action: {
-                        choiceMade = "Advanced"
+                        workoutLevel = "Advanced"
                     }, label: {
                         Text("Advanced")
                     })
                     
                 } label: {
                     Label(
-                        title: {Text("Fitness-level: \(choiceMade)")},
+                        title: {Text("Fitness-level: \(workoutLevel)")},
                         icon: {Image(systemName: "text.badge.plus")}
                     )
                 }
@@ -54,39 +52,13 @@ struct WorkOutManagerView: View {
                 .font(.title3)
                 .bold()
                 Button(action: {
-                    
-                    if choiceMade == "Novice" {
-                        workOut = "10 PUSHUPS"
-                        workOutText = "4 ROUNDS: 1 KM RUN - 10 PUSHUPS"
-                        fitnessLevelString = "Novice"
-                        isShowingNoviceWorkoutSheet.toggle()
-                        
-                    }
-                    
-                    if choiceMade == "Intermediate" {
-                        workOut = "25 SQUATS"
-                        workOutText = "8 ROUNDS: 1KM RUN - 25 SQUATS"
-                        fitnessLevelString = "Intermediate"
-                        isShowingNoviceWorkoutSheet.toggle()
-                
-                    }
-                    
-                    if choiceMade == "Advanced" {
-                        workOut = "20 LUNGES, 15 PUSHUPS"
-                        workOutText = "10 ROUNDS: 1KM RUN - 20 LUNGES, 15 PUSHUPS"
-                        fitnessLevelString = "Advanced"
-                        isShowingNoviceWorkoutSheet.toggle()
-                        
-                    }
-                    
+                    setWorkout(workoutLevel: workoutLevel)
                 }){
                     GoToWorkoutTextView()
                         .padding(.bottom, 100)
                 }
-                .sheet(isPresented: $isShowingNoviceWorkoutSheet) {
-                    
-                    WorkOutView(workOut: $workOut, workOutText: $workOutText, fitnessLevelString: $fitnessLevelString)
-                    
+                .sheet(isPresented: $displayNoviceWorkoutSheet) {
+                    WorkOutView(currentWorkout: $currentWorkout)
                 }
                 
             }
@@ -95,6 +67,31 @@ struct WorkOutManagerView: View {
         
     }
     
+
+    func setWorkout (workoutLevel : String) {
+        switch workoutLevel {
+        case "Novice":
+            currentWorkout.bodyExercise = "10 PUSHUPS"
+            currentWorkout.runExercise = "4 ROUNDS: 1 KM RUN - 10 PUSHUPS"
+            currentWorkout.fitnessLevelString = "Novice"
+            
+        case "Intermediate":
+            currentWorkout.bodyExercise = "25 SQUATS"
+            currentWorkout.runExercise = "8 ROUNDS: 1KM RUN - 25 SQUATS"
+            currentWorkout.fitnessLevelString = "Intermediate"
+            
+            
+        case "Advanced":
+            currentWorkout.bodyExercise = "20 LUNGES, 15 PUSHUPS"
+            currentWorkout.runExercise = "10 ROUNDS: 1KM RUN - 20 LUNGES, 15 PUSHUPS"
+            currentWorkout.fitnessLevelString = "Advanced"
+        default:
+            break
+        }
+        
+        
+        displayNoviceWorkoutSheet.toggle()
+    }
 }
 
 struct WorkoutView_Previews: PreviewProvider {
@@ -104,7 +101,7 @@ struct WorkoutView_Previews: PreviewProvider {
 }
 
 
-
+//Displays text
 struct GoToWorkoutTextView: View {
     var body: some View {
         Text("GO TO WORKOUT")
